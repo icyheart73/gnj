@@ -1451,9 +1451,7 @@ if ( ! function_exists( 'ot_type_list_item' ) ) {
 		// Button.
 		echo '<a href="javascript:void(0);" class="option-tree-list-item-add option-tree-ui-button button button-primary right hug-right" title="' . esc_html__( 'Add New', 'option-tree' ) . '">' . esc_html__( 'Add New', 'option-tree' ) . '</a>';
 
-		// Description.
-		$list_desc = $sortable ? __( 'You can re-order with drag & drop, the order will update after saving.', 'option-tree' ) : '';
-		echo '<div class="list-item-description">' . esc_html( apply_filters( 'ot_list_item_description', $list_desc, $field_id ) ) . '</div>';
+		
 
 		echo '</div>';
 
@@ -2214,8 +2212,7 @@ if ( ! function_exists( 'ot_type_slider' ) ) {
 		// Button.
 		echo '<a href="javascript:void(0);" class="option-tree-list-item-add option-tree-ui-button button button-primary right hug-right" title="' . esc_html__( 'Add New', 'option-tree' ) . '">' . esc_html__( 'Add New', 'option-tree' ) . '</a>'; // phpcs:ignore
 
-		// Description.
-		echo '<div class="list-item-description">' . esc_html__( 'You can re-order with drag & drop, the order will update after saving.', 'option-tree' ) . '</div>';
+		
 
 		echo '</div>';
 
@@ -2379,8 +2376,7 @@ if ( ! function_exists( 'ot_type_social_links' ) ) {
 		// Button.
 		echo '<a href="javascript:void(0);" class="option-tree-social-links-add option-tree-ui-button button button-primary right hug-right" title="' . esc_html__( 'Add New', 'option-tree' ) . '">' . esc_html__( 'Add New', 'option-tree' ) . '</a>'; // phpcs:ignore
 
-		// Description.
-		echo '<div class="list-item-description">' . esc_html( apply_filters( 'ot_social_links_description', __( 'You can re-order with drag & drop, the order will update after saving.', 'option-tree' ), $field_id ) ) . '</div>';
+		
 
 		echo '</div>';
 
