@@ -62,7 +62,10 @@ class Ganje_Plugin_Admin {
 		 */
 		require_once GNJ_PATH . '/admin/option-tree/ot-loader.php';
 		require_once GNJ_PATH . '/admin/theme-options.php';
-		require_once GNJ_PATH . '/admin/admin-class/wc-persian.php';
+        if ( ! class_exists( 'Persian_Woocommerce_Core' ) ) {
+
+            require_once GNJ_PATH . '/admin/admin-class/wc-persian.php';
+        }
 
 	}
 

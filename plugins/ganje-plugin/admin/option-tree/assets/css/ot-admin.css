@@ -1,4 +1,4 @@
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: OptionTree Font
   ---------------------------------------------------*/
 @font-face {
@@ -11,8 +11,8 @@
   font-weight: normal;
   font-style: normal;
 }
-        
-[class^="ot-icon-"], 
+
+[class^="ot-icon-"],
 [class*=" ot-icon-"] {
   font-family: "option-tree-font";
   speak: none;
@@ -25,7 +25,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ui-tabs li > a [class^="ot-icon-"], 
+.ui-tabs li > a [class^="ot-icon-"],
 .ui-tabs li > a [class*=" ot-icon-"] {
   padding-right: 5px;
   line-height: 18px;
@@ -1139,8 +1139,8 @@
 .ot-icon-plus-square-o:before {
   content: "\f196";
 }
-       
-/* -------------------------------------------------- 
+
+/* --------------------------------------------------
   :: Screen Meta & Menu Icon
   ---------------------------------------------------*/
 .appearance_page_ot-theme-options #screen-meta {
@@ -1149,15 +1149,15 @@
   min-width: 533px;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Messages
   ---------------------------------------------------*/
 .wrap.settings-wrap div.error,
 .wrap.settings-wrap div.updated {
   margin: 9px 5px 0px 2px !important;
 }
- 
-/* -------------------------------------------------- 
+
+/* --------------------------------------------------
   :: OptionTree Wrappers
   ---------------------------------------------------*/
 #option-tree-settings-api .metabox-holder {
@@ -1201,7 +1201,7 @@
 	display: none !important;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Header
   ---------------------------------------------------*/
 #option-tree-header-wrap {
@@ -1461,76 +1461,76 @@
   border-left-color: #e75546;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Sub Header
   ---------------------------------------------------*/
-#option-tree-sub-header { 
-  background: #fafafa; 
-  border: 1px solid #ccc; 
-  border-top: none; 
-  display: block; 
-  margin: 0 5px 0 2px; 
-  min-width: 523px; 
-  overflow: hidden; 
-  padding: 5px; 
-  position: relative; 
+#option-tree-sub-header {
+  background: #fafafa;
+  border: 1px solid #ccc;
+  border-top: none;
+  display: block;
+  margin: 0 5px 0 2px;
+  min-width: 523px;
+  overflow: hidden;
+  padding: 5px;
+  position: relative;
   -webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 3px rgba(0,0,0,0.05);
      -moz-box-shadow: inset 0 1px 0 #fff, 0 1px 3px rgba(0,0,0,0.05);
           box-shadow: inset 0 1px 0 #fff, 0 1px 3px rgba(0,0,0,0.05);
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Tabs
   ---------------------------------------------------*/
-.wrap.settings-wrap .ui-tabs-nav { 
-  float: left; 
-  list-style: none; 
-  margin: 0 0 0 -4px; 
-  padding: 1em 0; 
-  width: 151px; 
+.wrap.settings-wrap .ui-tabs-nav {
+  float: left;
+  list-style: none;
+  margin: 0 0 0 -4px;
+  padding: 1em 0;
+  width: 151px;
 }
-.wrap.settings-wrap .ui-tabs-nav li { 
-  border: 1px solid transparent; 
-  border-right-width: 0px; 
-  display: block; margin: 0; 
+.wrap.settings-wrap .ui-tabs-nav li {
+  border: 1px solid transparent;
+  border-right-width: 0px;
+  display: block; margin: 0;
   -webkit-border-radius: 2px 0 0 2px;
      -moz-border-radius: 2px 0 0 2px;
-          border-radius: 2px 0 0 2px; 
+          border-radius: 2px 0 0 2px;
 }
-.wrap.settings-wrap .ui-tabs-nav li.ui-state-active { 
-  background: #fff; 
-  border-color: #ccc; 
-  color: #000; 
+.wrap.settings-wrap .ui-tabs-nav li.ui-state-active {
+  background: #fff;
+  border-color: #ccc;
+  color: #000;
 }
-.wrap.settings-wrap .ui-tabs-nav li a { 
-  color: #21759b; 
-  display: block; 
-  line-height: 18px; 
-  padding: 5px 5px 5px 12px; 
-  text-decoration: none; 
+.wrap.settings-wrap .ui-tabs-nav li a {
+  color: #21759b;
+  display: block;
+  line-height: 18px;
+  padding: 5px 5px 5px 12px;
+  text-decoration: none;
 }
 .wrap.settings-wrap .ui-tabs-nav li a:hover,
-.wrap.settings-wrap .ui-tabs-nav li.ui-state-active a { 
-  color: #000; 
-  outline: none; 
+.wrap.settings-wrap .ui-tabs-nav li.ui-state-active a {
+  color: #000;
+  outline: none;
 }
-.wrap.settings-wrap .ui-tabs-panel { 
-  clear: both; 
+.wrap.settings-wrap .ui-tabs-panel {
+  clear: both;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Format Settings
   ---------------------------------------------------*/
 .format-settings {
-  position: relative; 
-  width: 100%; 
+  position: relative;
+  width: 100%;
 }
 .format-setting-wrap,
 .option-tree-sortable .format-settings {
-  padding: 10px 0 20px 0; 
+  padding: 10px 0 20px 0;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Format Setting Label
   ---------------------------------------------------*/
 .format-setting-label {
@@ -1555,8 +1555,8 @@
   -webkit-user-select: text;
   text-shadow: none;
 }
-    
-/* -------------------------------------------------- 
+
+/* --------------------------------------------------
   :: Format Setting
   ---------------------------------------------------*/
 .format-setting {
@@ -1663,7 +1663,7 @@
   top: 10px;
 }
 @media only screen and (max-width: 1020px) {
-  .format-setting .description, 
+  .format-setting .description,
   .format-setting .format-setting-inner {
     width: 100%;
   }
@@ -1684,7 +1684,7 @@
   text-indent: -9999px;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Code formatting
   ---------------------------------------------------*/
 #option-tree-settings-api code,
@@ -1714,7 +1714,7 @@
   background: url(../images/ot-pre-bg.gif) repeat left top;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Input & Upload
   ---------------------------------------------------*/
 input.option-tree-ui-upload-input,
@@ -1753,7 +1753,7 @@ input:focus.option-tree-ui-input {
   }
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Upload
   ---------------------------------------------------*/
 div.option-tree-ui-media-wrap {
@@ -1796,7 +1796,7 @@ div.option-tree-ui-media-wrap {
   top: 1px;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Textarea
   ---------------------------------------------------*/
 .fill-area .description,
@@ -1815,6 +1815,8 @@ div.option-tree-ui-media-wrap {
   outline: 0;
   padding: 10px;
   resize: vertical;
+  text-align: left;
+  direction: ltr;
 }
 #contextual-help-setting .textarea {
   width: 99.75%;
@@ -1840,22 +1842,22 @@ div.option-tree-ui-media-wrap {
   }
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Setting Item with Drag & Drop
   ---------------------------------------------------*/
-.option-tree-setting-wrap { 
-  margin-top: 0px; 
+.option-tree-setting-wrap {
+  margin-top: 0px;
 }
-.option-tree-setting-wrap li { 
-  margin: 5px 0px; 
+.option-tree-setting-wrap li {
+  margin: 5px 0px;
 }
-.option-tree-setting { 
-  border: 1px solid #ccc; 
-  overflow: hidden; 
-  position: relative; 
+.option-tree-setting {
+  border: 1px solid #ccc;
+  overflow: hidden;
+  position: relative;
   -webkit-border-radius: 2px;
      -moz-border-radius: 2px;
-          border-radius: 2px; 
+          border-radius: 2px;
 }
 .option-tree-setting:hover {
   border-color: #999;
@@ -1863,8 +1865,8 @@ div.option-tree-ui-media-wrap {
      -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0980392);
           box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0980392);
 }
-.option-tree-setting a { 
-  text-decoration: none; 
+.option-tree-setting a {
+  text-decoration: none;
 }
 .option-tree-setting .open {
   background: #fafafa;
@@ -1907,8 +1909,8 @@ div.option-tree-ui-media-wrap {
   right: 0px;
   top: 1px;
 }
-.option-tree-setting.is-section { 
-  border: 1px solid #000; 
+.option-tree-setting.is-section {
+  border: 1px solid #000;
 }
 .option-tree-setting.is-section .option-tree-setting-body,
 .option-tree-setting.is-section .option-tree-ui-button {
@@ -1928,8 +1930,8 @@ div.option-tree-ui-media-wrap {
 /* light */
 .admin-color-light .option-tree-setting.is-section,
 .admin-color-light .option-tree-setting.is-section .option-tree-setting-body,
-.admin-color-light .option-tree-setting.is-section .option-tree-ui-button { 
-  border-color: #3c3c3c !important; 
+.admin-color-light .option-tree-setting.is-section .option-tree-ui-button {
+  border-color: #3c3c3c !important;
 }
 .admin-color-light .option-tree-setting.is-section .open:hover:before {
   color: #3c3c3c;
@@ -1945,8 +1947,8 @@ div.option-tree-ui-media-wrap {
 /* blue */
 .admin-color-blue .option-tree-setting.is-section,
 .admin-color-blue .option-tree-setting.is-section .option-tree-setting-body,
-.admin-color-blue .option-tree-setting.is-section .option-tree-ui-button { 
-  border-color: #002b39 !important; 
+.admin-color-blue .option-tree-setting.is-section .option-tree-ui-button {
+  border-color: #002b39 !important;
 }
 .admin-color-blue .option-tree-setting.is-section .open:hover:before {
   color: #002b39;
@@ -1962,8 +1964,8 @@ div.option-tree-ui-media-wrap {
 /* coffee */
 .admin-color-coffee .option-tree-setting.is-section,
 .admin-color-coffee .option-tree-setting.is-section .option-tree-setting-body,
-.admin-color-coffee .option-tree-setting.is-section .option-tree-ui-button { 
-  border-color: #0f0e0d !important; 
+.admin-color-coffee .option-tree-setting.is-section .option-tree-ui-button {
+  border-color: #0f0e0d !important;
 }
 .admin-color-coffee .option-tree-setting.is-section .open:hover:before {
   color: #0f0e0d;
@@ -1979,8 +1981,8 @@ div.option-tree-ui-media-wrap {
 /* ectoplasm */
 .admin-color-ectoplasm .option-tree-setting.is-section,
 .admin-color-ectoplasm .option-tree-setting.is-section .option-tree-setting-body,
-.admin-color-ectoplasm .option-tree-setting.is-section .option-tree-ui-button { 
-  border-color: #181220 !important; 
+.admin-color-ectoplasm .option-tree-setting.is-section .option-tree-ui-button {
+  border-color: #181220 !important;
 }
 .admin-color-ectoplasm .option-tree-setting.is-section .open:hover:before {
   color: #181220;
@@ -1996,8 +1998,8 @@ div.option-tree-ui-media-wrap {
 /* midnight */
 .admin-color-midnight .option-tree-setting.is-section,
 .admin-color-midnight .option-tree-setting.is-section .option-tree-setting-body,
-.admin-color-midnight .option-tree-setting.is-section .option-tree-ui-button { 
-  border-color: #090a0b !important; 
+.admin-color-midnight .option-tree-setting.is-section .option-tree-ui-button {
+  border-color: #090a0b !important;
 }
 .admin-color-midnight .option-tree-setting.is-section .open:hover:before {
   color: #090a0b;
@@ -2013,8 +2015,8 @@ div.option-tree-ui-media-wrap {
 /* ocean */
 .admin-color-ocean .option-tree-setting.is-section,
 .admin-color-ocean .option-tree-setting.is-section .option-tree-setting-body,
-.admin-color-ocean .option-tree-setting.is-section .option-tree-ui-button { 
-  border-color: #39464a !important; 
+.admin-color-ocean .option-tree-setting.is-section .option-tree-ui-button {
+  border-color: #39464a !important;
 }
 .admin-color-ocean .option-tree-setting.is-section .open:hover:before {
   color: #39464a;
@@ -2030,8 +2032,8 @@ div.option-tree-ui-media-wrap {
 /* sunrise */
 .admin-color-sunrise .option-tree-setting.is-section,
 .admin-color-sunrise .option-tree-setting.is-section .option-tree-setting-body,
-.admin-color-sunrise .option-tree-setting.is-section .option-tree-ui-button { 
-  border-color: #8a322a !important; 
+.admin-color-sunrise .option-tree-setting.is-section .option-tree-ui-button {
+  border-color: #8a322a !important;
 }
 .admin-color-sunrise .option-tree-setting.is-section .open:hover:before {
   color: #8a322a;
@@ -2072,7 +2074,7 @@ li ul .format-setting-label {
   margin: 0px;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Layouts
   ---------------------------------------------------*/
 #option_tree_layouts {
@@ -2119,7 +2121,7 @@ li ul .format-setting-label {
   padding-left: 1px;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Option Group
   ---------------------------------------------------*/
 .ot-option-group {
@@ -2230,7 +2232,7 @@ li ul .format-setting-label {
   width: 100%;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Select
   ---------------------------------------------------*/
 .select-wrapper {
@@ -2308,14 +2310,14 @@ select.option-tree-ui-select option {
   }
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Measurement
   ---------------------------------------------------*/
-.option-tree-ui-measurement-input-wrap { 
-  margin-right: 80px; 
+.option-tree-ui-measurement-input-wrap {
+  margin-right: 80px;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Checkbox & Radio
   ---------------------------------------------------*/
 .format-setting.type-checkbox input,
@@ -2339,8 +2341,8 @@ select.option-tree-ui-select option {
     padding-top: 0.3em;
   }
 }
-     
-/* -------------------------------------------------- 
+
+/* --------------------------------------------------
   :: Radio Images
   ---------------------------------------------------*/
 .type-radio-image .option-tree-ui-radio-images {
@@ -2366,14 +2368,14 @@ select.option-tree-ui-select option {
           box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Social Links
   ---------------------------------------------------*/
 .type-social-links input.option-tree-ui-input {
   margin-top: 5px;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Numeric Slider
   ---------------------------------------------------*/
 .type-numeric-slider .format-setting-inner {
@@ -2391,26 +2393,26 @@ select.option-tree-ui-select option {
 .ot-numeric-slider-wrap {
   margin: 0 96px 0 0;
 }
-.ot-numeric-slider-wrap .ot-numeric-slider-helper-input { 
-  position: absolute; 
+.ot-numeric-slider-wrap .ot-numeric-slider-helper-input {
+  position: absolute;
   right: 5px;
   text-align: center;
   top: 5px;
   width: 90px !important;
 }
-.ot-numeric-slider.ui-slider { 
+.ot-numeric-slider.ui-slider {
   background: #fff;
   border: 1px solid #ccc;
-  margin: 8px 8px 0 8px; 
-  position: relative; 
+  margin: 8px 8px 0 8px;
+  position: relative;
   -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05);
-     -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05); 
-          box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05); 
+     -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05);
   -webkit-border-radius: 2px;
      -moz-border-radius: 2px;
           border-radius: 2px;
 }
-.ot-numeric-slider.ui-slider-horizontal { 
+.ot-numeric-slider.ui-slider-horizontal {
   height: 11px;
 }
 .ot-numeric-slider.ui-slider .ui-slider-handle {
@@ -2418,10 +2420,10 @@ select.option-tree-ui-select option {
   color: #555;
   cursor: pointer;
   display: block;
-  height: 27px; 
+  height: 27px;
   margin: -9px -8px;
   outline: 0;
-  position: absolute; 
+  position: absolute;
   width: 16px;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 0 rgba(0,0,0,.08);
      -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 0 rgba(0,0,0,.08);
@@ -2511,7 +2513,7 @@ select.option-tree-ui-select option {
   border-color: #e75546;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Colorpicker
   ---------------------------------------------------*/
 .option-tree-ui-colorpicker-input-wrap {
@@ -2581,7 +2583,7 @@ select.option-tree-ui-select option {
   }
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Colorpicker Opacity (Derivative work of the Codestar WP Color Picker.)
   ---------------------------------------------------*/
 .option-tree-opacity-wrap {
@@ -2646,7 +2648,7 @@ select.option-tree-ui-select option {
   text-align: center;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Google Font
   ---------------------------------------------------*/
 .type-google-font {
@@ -2665,8 +2667,8 @@ select.option-tree-ui-select option {
   margin-top: 0;
 }
 
-/* -------------------------------------------------- 
-  :: OptionTree UI Buttons 
+/* --------------------------------------------------
+  :: OptionTree UI Buttons
   ---------------------------------------------------*/
 .option-tree-ui-button.button {
   float: left;
@@ -2779,7 +2781,7 @@ select.option-tree-ui-select option {
   background: #f5f5f5;
   border-color: #dfdfdf;
 }
-.option-tree-ui-buttons:before, 
+.option-tree-ui-buttons:before,
 .option-tree-ui-buttons:after {
   content: "\0020";
   display: block;
@@ -2798,8 +2800,8 @@ button.reset-settings {
   left: 8px;
 }
 
-/* -------------------------------------------------- 
-  :: OptionTree UI Button Icons 
+/* --------------------------------------------------
+  :: OptionTree UI Button Icons
   ---------------------------------------------------*/
 .option-tree-ui-button .icon {
   color: #3a3a3a;
@@ -2849,31 +2851,31 @@ button.option-tree-ui-button .icon {
   background-position: -54px -0px;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: WP 3.8 Fixes (via Github @AlxMedia)
   ---------------------------------------------------*/
 #option-tree-settings-api #poststuff,
-#option-tree-settings-api #post-body-content { 
+#option-tree-settings-api #post-body-content {
   min-width: 0;
 }
-#option-tree-settings-api #poststuff h3 { 
+#option-tree-settings-api #poststuff h3 {
   font-family: inherit !important;
 }
-#option-tree-settings-api .postbox { 
+#option-tree-settings-api .postbox {
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
           box-shadow: none;
 }
-#option-tree-settings-api p input[type="checkbox"], 
-#option-tree-settings-api p input[type="radio"] { 
+#option-tree-settings-api p input[type="checkbox"],
+#option-tree-settings-api p input[type="radio"] {
   margin-top: 2px;
 }
-#option-tree-settings-api .format-setting.type-checkbox p, 
-#option-tree-settings-api .format-setting.type-radio p { 
+#option-tree-settings-api .format-setting.type-checkbox p,
+#option-tree-settings-api .format-setting.type-radio p {
   margin: 0.3em 0 !important;
 }
-input.option-tree-ui-upload-input, 
-input.option-tree-ui-input { 
+input.option-tree-ui-upload-input,
+input.option-tree-ui-input {
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -2884,7 +2886,7 @@ input.option-tree-ui-input {
   }
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Gallery
   ---------------------------------------------------*/
 ul.ot-gallery-list {
@@ -2916,7 +2918,7 @@ ul.ot-gallery-list li img {
   margin-bottom: 0px;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Google Fonts
   ---------------------------------------------------*/
 .option-tree-google-font-family,
@@ -2948,7 +2950,7 @@ ul.ot-gallery-list li img {
   }
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: On/Off Switch
   ---------------------------------------------------*/
 .on-off-switch .slide-button {
@@ -2979,7 +2981,7 @@ ul.ot-gallery-list li img {
   .on-off-switch * {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
-            box-sizing: border-box; 
+            box-sizing: border-box;
   }
   .on-off-switch input {
     position: absolute;
@@ -3029,7 +3031,7 @@ ul.ot-gallery-list li img {
             box-shadow: inset 0 1px 0 #c8eb8e, 0 1px 0 rgba(0,0,0,.08);
     -webkit-transition: all 0.2s ease-out;
        -moz-transition: all 0.2s ease-out;
-            transition: all 0.2s ease-out; 
+            transition: all 0.2s ease-out;
   }
   .on-off-switch input:last-of-type:checked ~ .slide-button {
     background: #b73b27;
@@ -3043,19 +3045,19 @@ ul.ot-gallery-list li img {
 }
 @media only screen and (-webkit-max-device-pixel-ratio: 2) and (max-device-width: 1280px) {
   .on-off-switch {
-    -webkit-animation: webkitSiblingBugfix infinite 1s; 
-  } 
+    -webkit-animation: webkitSiblingBugfix infinite 1s;
+  }
 }
 @-webkit-keyframes webkitSiblingBugfix {
   from {
-    -webkit-transform: translate3d(0, 0, 0); 
+    -webkit-transform: translate3d(0, 0, 0);
   }
   to {
-    -webkit-transform: translate3d(0, 0, 0); 
-  } 
+    -webkit-transform: translate3d(0, 0, 0);
+  }
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Simple Input Append & Prepend
   ---------------------------------------------------*/
 .ot-input-append,
@@ -3136,7 +3138,7 @@ ul.ot-gallery-list li img {
           border-radius: 0 2px 2px 0;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: CSS Editor
   ---------------------------------------------------*/
 #option-tree-settings-api pre.ot-css-editor,
@@ -3174,9 +3176,9 @@ ul.ot-gallery-list li img {
   -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0980392);
      -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0980392);
           box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0980392);
-} 
+}
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Date Picker
   ---------------------------------------------------*/
 .ui-datepicker {
@@ -3211,7 +3213,7 @@ ul.ot-gallery-list li img {
 .ui-datepicker .ui-datepicker-title {
   text-align: center;
 }
-.ui-datepicker-prev, 
+.ui-datepicker-prev,
 .ui-datepicker-next {
   color: #ccc;
   display: inline-block;
@@ -3230,11 +3232,11 @@ ul.ot-gallery-list li img {
      -moz-border-radius: 0 2px 0 0;
           border-radius: 0 2px 0 0;
 }
-.ui-datepicker-prev span, 
+.ui-datepicker-prev span,
 .ui-datepicker-next span {
   display: none;
 }
-.ui-datepicker-prev:hover, 
+.ui-datepicker-prev:hover,
 .ui-datepicker-next:hover {
   color: #fff;
 }
@@ -3263,7 +3265,7 @@ ul.ot-gallery-list li img {
   float: right;
   width: 31px;
 }
-a.ui-datepicker-prev, 
+a.ui-datepicker-prev,
 a.ui-datepicker-next {
   outline: 0;
 }
@@ -3291,7 +3293,7 @@ a.ui-datepicker-next {
 .ui-datepicker tbody tr:last-child {
   border-bottom: 0px;
 }
-.ui-datepicker td span, 
+.ui-datepicker td span,
 .ui-datepicker td a {
   display: inline-block;
   font-size: 11px;
@@ -3431,7 +3433,7 @@ a.ui-datepicker-next {
 .ui-datepicker-prev:before {
   border-color: #444;
 }
-.ui-datepicker-prev:hover, 
+.ui-datepicker-prev:hover,
 .ui-datepicker-next:hover {
   background: #222;
   color: #0074a2 !important;
@@ -3452,7 +3454,7 @@ a.ui-datepicker-next {
 .admin-color-light .ui-datepicker-prev:before {
   border-color: #999;
 }
-.admin-color-light .ui-datepicker-prev:hover, 
+.admin-color-light .ui-datepicker-prev:hover,
 .admin-color-light .ui-datepicker-next:hover {
   background: #777;
   color: #eee !important;
@@ -3473,7 +3475,7 @@ a.ui-datepicker-next {
 .admin-color-blue .ui-datepicker-prev:before {
   border-color: #5dc2e6;
 }
-.admin-color-blue .ui-datepicker-prev:hover, 
+.admin-color-blue .ui-datepicker-prev:hover,
 .admin-color-blue .ui-datepicker-next:hover {
   background: #006484;
   color: #fff !important;
@@ -3494,7 +3496,7 @@ a.ui-datepicker-next {
 .admin-color-coffee .ui-datepicker-prev:before {
   border-color: #675f58;
 }
-.admin-color-coffee .ui-datepicker-prev:hover, 
+.admin-color-coffee .ui-datepicker-prev:hover,
 .admin-color-coffee .ui-datepicker-next:hover {
   background: #cca588;
   color: #fff !important;
@@ -3515,7 +3517,7 @@ a.ui-datepicker-next {
 .admin-color-ectoplasm .ui-datepicker-prev:before {
   border-color: #644d85;
 }
-.admin-color-ectoplasm .ui-datepicker-prev:hover, 
+.admin-color-ectoplasm .ui-datepicker-prev:hover,
 .admin-color-ectoplasm .ui-datepicker-next:hover {
   background: #a3b542;
   color: #fff !important;
@@ -3536,7 +3538,7 @@ a.ui-datepicker-next {
 .admin-color-midnight .ui-datepicker-prev:before {
   border-color: #4c5359;
 }
-.admin-color-midnight .ui-datepicker-prev:hover, 
+.admin-color-midnight .ui-datepicker-prev:hover,
 .admin-color-midnight .ui-datepicker-next:hover {
   background: #ed543f;
   color: #fff !important;
@@ -3557,7 +3559,7 @@ a.ui-datepicker-next {
 .admin-color-ocean .ui-datepicker-prev:before {
   border-color: #87a6af;
 }
-.admin-color-ocean .ui-datepicker-prev:hover, 
+.admin-color-ocean .ui-datepicker-prev:hover,
 .admin-color-ocean .ui-datepicker-next:hover {
   background: #9ab8a0;
   color: #fff !important;
@@ -3578,20 +3580,20 @@ a.ui-datepicker-next {
 .admin-color-sunrise .ui-datepicker-prev:before {
   border-color: #e75546;
 }
-.admin-color-sunrise .ui-datepicker-prev:hover, 
+.admin-color-sunrise .ui-datepicker-prev:hover,
 .admin-color-sunrise .ui-datepicker-next:hover {
   background: #e88436;
   color: #fff !important;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Time Picker
   ---------------------------------------------------*/
 .ui-timepicker-div {
   border-top: 1px solid #ccc;
   padding: 0 .4em;
 }
-.ui-timepicker-div .ui-widget-content { 
+.ui-timepicker-div .ui-widget-content {
   border: 1px solid #aaa;
   background: #fff;
   font-weight: normal;
@@ -3615,12 +3617,12 @@ a.ui-datepicker-next {
   color: #555;
   cursor: pointer;
   display: block;
-  height: 1.3em; 
+  height: 1.3em;
   margin-left: -.5em;
   outline: 0;
   position: absolute;
   top: -.325em;
-  width: .8em; 
+  width: .8em;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 0 rgba(0,0,0,.08);
      -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 0 rgba(0,0,0,.08);
           box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 0 rgba(0,0,0,.08);
@@ -3647,31 +3649,31 @@ a.ui-datepicker-next {
 .ui-datepicker-prev:before {
   border-color: #444;
 }
-.ui-datepicker-prev:hover, 
+.ui-datepicker-prev:hover,
 .ui-datepicker-next:hover {
   background: #222;
   color: #0074a2 !important;
 }
 
-.ui-timepicker-div dl { 
-  text-align: left; 
+.ui-timepicker-div dl {
+  text-align: left;
 }
-.ui-timepicker-div dl dt { 
-  float: left; 
-  clear: left; 
-  padding: 0 0 0 5px; 
+.ui-timepicker-div dl dt {
+  float: left;
+  clear: left;
+  padding: 0 0 0 5px;
 }
-.ui-timepicker-div dl dd { 
-  margin: 0 10px 10px 45%; 
+.ui-timepicker-div dl dd {
+  margin: 0 10px 10px 45%;
 }
-.ui-timepicker-div td { 
-  font-size: 90%; 
+.ui-timepicker-div td {
+  font-size: 90%;
 }
-.ui-tpicker-grid-label { 
-  background: none; 
-  border: none; 
-  margin: 0; 
-  padding: 0; 
+.ui-tpicker-grid-label {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 /* default */
 .ui-timepicker-div .ui-slider-horizontal .ui-slider-handle {
@@ -3754,7 +3756,7 @@ a.ui-datepicker-next {
   border-color: #e75546;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Meta Box Tabs
   ---------------------------------------------------*/
 .ot-metabox-tabs.ui-tabs {
@@ -3821,7 +3823,7 @@ a.ui-datepicker-next {
   clear: both;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Theme Option & Side Metabox Tabs
   ---------------------------------------------------*/
 .ot-theme-option-tabs.ui-tabs
@@ -3914,7 +3916,7 @@ a.ui-datepicker-next {
   width: 100%;
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
   :: Metabox Tabs for Small Screens & Mobile Devices
   ---------------------------------------------------*/
 @media screen and ( max-width: 1020px ) {

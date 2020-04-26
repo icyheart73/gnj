@@ -13,118 +13,47 @@ $saved_settings = get_option( 'option_tree_settings', array() );
  * passes to the OptionTree Settings API Class.
  */
 $custom_settings = array(
-	'contextual_help' => array(
-		'content'       => array(
-			array(
-				'id'        => 'general_help',
-				'title'     => 'General',
-				'content'   => '<p>Help content goes here!</p>'
-			)
-		),
-		'sidebar'       => '<p>Sidebar content goes here!</p>',
-	),
 	'sections'        => array(
 		array(
-			'id'          => 'general',
-			'title'       => 'General'
+			'id'          => 'woocommerce',
+			'title'       => 'ووکامرس'
 		)
 	),
 	'settings'        => array(
-		array(
-			'id'          => 'my_checkbox',
-			'label'       => 'Checkbox',
-			'desc'        => '',
-			'std'         => '',
-			'type'        => 'checkbox',
-			'section'     => 'general',
-			'class'       => '',
-			'choices'     => array(
-				array(
-					'value' => 'yes',
-					'label' => 'Yes'
-				)
-			)
-		),
-		array(
-			'id'          => 'my_layout',
-			'label'       => 'Layout',
-			'desc'        => 'Choose a layout for your theme',
-			'std'         => 'right-sidebar',
-			'type'        => 'radio-image',
-			'section'     => 'general',
-			'class'       => '',
-			'choices'     => array(
-				array(
-					'value'   => 'left-sidebar',
-					'label'   => 'Left Sidebar',
-					'src'     => OT_URL . '/assets/images/layout/left-sidebar.png'
-				),
-				array(
-					'value'   => 'right-sidebar',
-					'label'   => 'Right Sidebar',
-					'src'     => OT_URL . '/assets/images/layout/right-sidebar.png'
-				),
-				array(
-					'value'   => 'full-width',
-					'label'   => 'Full Width (no sidebar)',
-					'src'     => OT_URL . '/assets/images/layout/full-width.png'
-				),
-				array(
-					'value'   => 'dual-sidebar',
-					'label'   => __( 'Dual Sidebar', 'option-tree' ),
-					'src'     => OT_URL . '/assets/images/layout/dual-sidebar.png'
-				),
-				array(
-					'value'   => 'left-dual-sidebar',
-					'label'   => __( 'Left Dual Sidebar', 'option-tree' ),
-					'src'     => OT_URL . '/assets/images/layout/left-dual-sidebar.png'
-				),
-				array(
-					'value'   => 'right-dual-sidebar',
-					'label'   => __( 'Right Dual Sidebar', 'option-tree' ),
-					'src'     => OT_URL . '/assets/images/layout/right-dual-sidebar.png'
-				)
-			)
-		),
-		array(
-			'id'          => 'my_slider',
-			'label'       => 'Images',
-			'desc'        => '',
-			'std'         => '',
-			'type'        => 'list-item',
-			'section'     => 'general',
-			'class'       => '',
-			'choices'     => array(),
-			'settings'    => array(
-				array(
-					'id'      => 'slider_image',
-					'label'   => 'Image',
-					'desc'    => '',
-					'std'     => '',
-					'type'    => 'upload',
-					'class'   => '',
-					'choices' => array()
-				),
-				array(
-					'id'      => 'slider_link',
-					'label'   => 'Link to Post',
-					'desc'    => 'Enter the posts url.',
-					'std'     => '',
-					'type'    => 'text',
-					'class'   => '',
-					'choices' => array()
-				),
-				array(
-					'id'      => 'slider_description',
-					'label'   => 'Description',
-					'desc'    => 'This text is used to add fancy captions in the slider.',
-					'std'     => '',
-					'type'    => 'textarea',
-					'class'   => '',
-					'choices' => array()
-				)
-			)
-		)
+        array(
+            'id'           => 'empty_price',
+            'label'        => 'فعالسازی متن دلخواه برای محصولات بدون قیمت',
+            'desc'         => 'اگر میخاهید برای محصولاتی که قیمت ندارند به جای قیمت ، متن دلخواهی را نمایش دهید این گزینه را روشن کنید. دقت کنید که قیمت 0 به معنای رایگان بودن محصول می باشد و باید قسمت قیمت را در صفحه ویرایش محصول خالی بگذارید.',
+            'std'          => 'on',
+            'type'         => 'on-off',
+            'section'      => 'woocommerce',
+        ),
+            array(
+                'id'           => 'empty_price_text',
+                'label'        => 'متن دلخواه مورد نظرتان را وارد کنید.',
+                'desc'         => sprintf('میتوانید از کد HTML در این قسمت استفاده کنید. مثلا میتوانید متن را به صفحه دلخواه لینک کنید و یا آیکون دلخواهی به جای متن نمایش دهید. برای اطلاعات بیشتر روی لینک زیر کلیک کنید %1$s', '<br><a href="#" target="_blank" > نمایش آموزش در سایت گنجه </a>' ),
+                'std'          => '<a href="#" target="_blank" > تماس بگیرید </a>',
+                'type'         => 'textarea-simple',
+                'section'      => 'woocommerce',
+                'rows'         => '4',
+                'condition'    => 'empty_price:is(on)'
+            ),
+        array(
+            'id'           => 'persian_price',
+            'label'        => 'نمایش اعداد فارسی در قیمت ها',
+            'desc'         => 'در صورتی که میخاهید اعداد قیمت ها با فونت فارسی (۰ ۱ ۲ ۳ ۴ ۵ ۶ ۷ ۸ ۹) نمایش داده شود این گزینه را فعال کنید. ',
+            'std'          => 'on',
+            'type'         => 'on-off',
+            'section'      => 'woocommerce',
+        ),
+        array(
+            'id'           => 'download_checkout',
+            'label'        => 'حذف فیلد های اضافی برای محصولات دانلودی',
+            'desc'         => 'در صورتی که در سایت محصولات دانلودی برای فروش دارید میتوانید با فعال کردن این گزینه فیلد های اضافی مثله آدرس و ... را در زمان تسویه حساب برای این محصولات غیر فعال کنید.',
+            'std'          => 'on',
+            'type'         => 'on-off',
+            'section'      => 'woocommerce',
+        ),
 	)
 );
 

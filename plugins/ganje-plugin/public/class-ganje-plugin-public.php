@@ -51,8 +51,20 @@ class Ganje_Plugin_Public {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+        $this->load_dependencies();
 
 	}
+
+    private function load_dependencies() {
+        /**
+         * Required: include OptionTree.
+         */
+        if ( ! class_exists( 'Persian_Woocommerce_Core' ) ) {
+
+            require_once GNJ_PATH . '/admin/admin-class/wc-persian.php';
+        }
+
+    }
 
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
