@@ -58,7 +58,7 @@ class Ganje_Plugin_Admin {
 
 	private function load_dependencies() {
 		/**
-		 * Required: include OptionTree.
+		 * Required: include OptionTree...
 		 */
 		require_once GNJ_PATH . '/admin/option-tree/ot-loader.php';
 		require_once GNJ_PATH . '/admin/theme-options.php';
