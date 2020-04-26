@@ -125,7 +125,13 @@ $custom_settings = array(
 				)
 			)
 		)
-	)
+	),
+    'sections2'        => array(
+    array(
+        'id'          => 'gseneral',
+        'title'       => 'Gesneral'
+    )
+),
 );
 
 /* settings are not the same update the DB */
