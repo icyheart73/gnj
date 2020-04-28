@@ -63,7 +63,10 @@ class Ganje_Plugin_Public {
 
             require_once GNJ_PATH . '/public/public-class/wc-persian.php';
         }
-
+            if(is_product()) {
+                require_once GNJ_PATH . '/public/public-class/view-product-meta.php';
+                echo 'amir';
+            }
     }
 
 	/**
