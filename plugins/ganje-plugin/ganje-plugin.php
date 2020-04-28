@@ -29,6 +29,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
+add_action('plugins_loaded','run_ganje_plugin',99);
 
 /**
  * Define Plugin Constants.
@@ -79,9 +80,6 @@ require GNJ_PATH . '/includes/class-ganje-plugin.php';
  * @since    1.0.0
  */
 function run_ganje_plugin() {
-
-	$plugin = Ganje_Plugin::getInstance();
-	$plugin->run();
-
+    $plugin = Ganje_Plugin::getInstance();
+    $plugin->run();
 }
-run_ganje_plugin();

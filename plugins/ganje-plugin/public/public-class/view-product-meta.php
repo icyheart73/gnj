@@ -4,17 +4,9 @@ class Ganje_Product_Meta {
     public $settings = array();
 
     public function __construct() {
-        //flush_rewrite_rules_on_shop_page_save();
-        $this->get_meta_settings();
-        global $post;
-        echo 'amir';
-        var_dump($post);
-        if($this->settings['type_video'])
-            add_action( 'woocommerce_product_thumbnails', array($this , 'product_intro_video'), 10 );
-        if($this->settings['product_catalog'])
-            add_action( 'woocommerce_product_thumbnails', array($this , 'product_catalog'), 10 );
-        if($this->settings['product_alert'])
-            add_action( 'woocommerce_after_add_to_cart_form', array($this , 'product_alert'), 10 );
+
+        add_action('woocommerce_before_single_product' , array($this , 'get_meta_settings'));
+        add_action('woocommerce_before_single_product' , array($this , 'load_action'));
     }
     // The object is created from within the class itself
     // only if the class has no instance.
@@ -25,23 +17,31 @@ class Ganje_Product_Meta {
         return self::$instance;
     }
 
-    private function get_meta_settings(){
+    public function load_action()
+    {
+        if($this->settings['type_video'])
+            add_action( 'woocommerce_product_thumbnails', array($this , 'product_intro_video'), 10 );
+        if($this->settings['product_catalog'])
+            add_action( 'woocommerce_product_thumbnails', array($this , 'product_catalog'), 10 );
+        if($this->settings['product_alert'])
+            add_action( 'woocommerce_after_add_to_cart_form', array($this , 'product_alert'), 10 );
+    }
+
+    public function get_meta_settings(){
         global $post;
-        $this->settings['type_video']= get_post_meta(197, 'type_video',true);
+        $this->settings['type_video']= get_post_meta($post->ID, 'type_video',true);
         $this->settings['direct_link_url'] = get_post_meta($post->ID, 'direct_link_url',true);
         $this->settings['aparat_embed'] = get_post_meta($post->ID, 'aparat_embed',true);
         $this->settings['direct_link_title'] = get_post_meta($post->ID, 'direct_link_title',true);
         $this->settings['product_catalog'] = get_post_meta($post->ID, 'product_catalog',true);
         $this->settings['product_alert'] = get_post_meta($post->ID, 'product_alert',true);
         $this->settings['attention_text'] = get_post_meta($post->ID, 'attention_text',true);
-
-        return $this->settings;
     }
 
     public function product_intro_video()
     {
 
-
+        var_dump(is_product());
        var_dump( $this->settings);
 
 
