@@ -69,7 +69,8 @@ class Ganje_Plugin_Admin {
             require_once GNJ_PATH . '/admin/admin-class/wc-persian.php';
         }
 
-	}
+        require_once GNJ_PATH . '/admin/admin-class/dev-mode.php';
+    }
 
 	public function disable_ui_option(){
 		/* Lets OptionTree know the UI Builder is being overridden */

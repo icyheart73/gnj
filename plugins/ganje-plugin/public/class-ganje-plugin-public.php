@@ -61,7 +61,7 @@ class Ganje_Plugin_Public {
          */
         if ( ! class_exists( 'Persian_Woocommerce_Core' ) ) {
 
-            require_once GNJ_PATH . '/admin/admin-class/wc-persian.php';
+            require_once GNJ_PATH . '/public/public-class/wc-persian.php';
         }
 
     }
