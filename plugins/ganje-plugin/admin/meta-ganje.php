@@ -80,7 +80,7 @@ function custom_meta_boxes() {
                 'choices' => array(
 
                     array(
-                        'value'       => 'red',
+                        'value'       => 'error',
                         'label'       => 'قرمز',
                     ),
                     array(
@@ -88,11 +88,11 @@ function custom_meta_boxes() {
                         'label'       => 'زرد',
                     ),
                     array(
-                        'value'       => 'blue',
+                        'value'       => 'info',
                         'label'       => 'آبی',
                     ),
                     array(
-                        'value'       => 'green',
+                        'value'       => 'message',
                         'label'       => 'سبز',
 
                     ),
