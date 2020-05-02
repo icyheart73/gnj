@@ -23,7 +23,7 @@ class Ganje_Product_Meta {
             add_action( 'woocommerce_product_thumbnails', array($this , 'product_intro_video'), 10 );
         if($this->settings['product_catalog'])
             add_action( 'woocommerce_product_thumbnails', array($this , 'product_catalog'), 10 );
-        if($this->settings['product_alert'])
+       // if($this->settings['product_alert'])
             add_action( 'woocommerce_after_add_to_cart_form', array($this , 'product_alert'), 10 );
     }
 
