@@ -32,7 +32,6 @@ class Ganje_PB_Wc_Persian {
             add_filter( 'woocommerce_cart_shipping_method_full_label', array( $this, 'persian_number' ) );
             add_filter( 'woocommerce_cart_total', array( $this, 'persian_number' ) );
         }
-        add_action( 'devmode' , array($this , 'test') , 10 );
 
     }
 

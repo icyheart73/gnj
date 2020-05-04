@@ -1,0 +1,200 @@
+.cafe-scrollto-nav-icons {
+    position: fixed;
+    z-index: 1;
+    opacity: 1;
+    top: 50vh;
+    transform: translateY(-50%);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: $white_text;
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: 0 0 5px $black_transparent_2;
+}
+
+.cafe-scrollto-section .cafe-scrollto-nav-menu {
+    opacity: 1;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.cafe-scrollto-section .cafe-scrollto-nav-icons-hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.cafe-scrollto-nav-icons.middle {
+    top: 50%
+}
+
+.cafe-scrollto-nav-icons.top {
+    top: 40px
+}
+
+.cafe-scrollto-nav-icons.bottom {
+    bottom: 30px
+}
+
+.cafe-scrollto-nav-icons.right {
+    right: 17px
+}
+
+.cafe-scrollto-nav-icons.left {
+    left: 17px
+}
+
+ul.cafe-scrollto-nav-icons-list,
+.cafe-scrollto-section .cafe-scrollto-nav-menu {
+    margin: 0 !important;
+    padding: 0;
+}
+
+ul.cafe-scrollto-nav-icons-list {
+    li {
+        padding: 0;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px 0;
+        list-style: none;
+    }
+    &.dots li {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: $black_transparent_2;
+        overflow: visible;
+        .cafe-scrollto-nav-item-link {
+            display: block;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .cafe-scrollto-nav-item-link i {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include transition(all 300ms);
+            border-radius: 50%;
+            &:not(.cs-font) {
+                transform: scale(0);
+                border-radius: 50%;
+            }
+        }
+        &.active, &:hover {
+            .cafe-scrollto-nav-item-link i {
+                background: $black_transparent_8;
+                &:not(.cs-font) {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+    &.lines {
+        display: flex;
+        flex-direction: column;
+        li {
+            max-width: 25px;
+            border-bottom: 2px solid;
+            overflow: hidden;
+            transition: all 300ms;
+            cursor: pointer;
+            .cafe-scrollto-nav-item-link {
+                white-space: nowrap;
+                opacity: 0;
+                transition: all 300ms;
+            }
+            &:hover, &.active {
+                max-width: 50vw !important;
+                .cafe-scrollto-nav-item-link {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+.cafe-scrollto-nav-icons.right .lines {
+    align-items: flex-end;
+}
+.cafe-scrollto-nav-icons.left .lines {
+    align-items: flex-start;
+}
+.cafe-scrollto-nav-item .cafe-scrollto-nav-item-tooltip {
+    position: absolute;
+    font-size: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    max-width: 220px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: $white_text;
+    border-radius:10px
+}
+
+.cafe-scrollto-nav-icons.right .cafe-scrollto-nav-item-tooltip {
+    right: calc(100% + 15px)
+}
+.cafe-scrollto-nav-icons.left .cafe-scrollto-nav-item-tooltip {
+    left: calc(100% + 15px)
+}
+
+@media(max-width: 768px) {
+    .cafe-scrollto-nav-icons.right {
+        right: 7px
+    }
+    .cafe-scrollto-nav-icons.left {
+        left: 7px
+    }
+}
+
+.cafe-scrollto-nav-menu {
+    position: fixed;
+    top: 20px;
+    height: 40px;
+    z-index: 100;
+    padding: 0;
+    margin: 0
+}
+
+.cafe-scrollto-nav-menu.left {
+    left: 0
+}
+
+.cafe-scrollto-nav-menu.right {
+    right: 0
+}
+
+.cafe-scrollto-nav-menu .cafe-scrollto-nav-menu-item {
+    display: inline-block;
+    margin: 10px;
+    color: #000;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.3)
+}
+
+.cafe-scrollto-nav-menu .cafe-scrollto-nav-menu-item .cafe-scrollto-nav-item-link {
+    padding: 9px 18px;
+    display: block;
+    cursor: pointer;
+}
+
+.cafe-scrollto-nav-menu .cafe-scrollto-nav-menu-item .cafe-scrollto-nav-item-link,
+.cafe-scrollto-nav-menu .cafe-scrollto-nav-menu-item .cafe-scrollto-nav-item-link:hover {
+    color: #000
+}
+
+.cafe-scrollto-nav-menu .cafe-scrollto-nav-menu-item .cafe-scrollto-nav-item-link:focus,
+.multiscroll-nav li a:focus {
+    outline: none
+}

@@ -70,6 +70,9 @@ class Ganje_Plugin_Admin {
         }
 
         require_once GNJ_PATH . '/admin/admin-class/dev-mode.php';
+
+        if (class_exists('WooCommerce'))
+        require_once GNJ_PATH . '/admin/product-list-price.php';
     }
 
 	public function disable_ui_option(){

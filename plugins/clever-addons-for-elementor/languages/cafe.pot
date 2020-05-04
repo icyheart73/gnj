@@ -1,0 +1,4049 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Clever Addons for Elementor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-02 08:51+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.3.1; wp-5.2.4"
+
+#: src/helpers/wc.php:236
+msgid " in stock!"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:141
+#: src/widgets/class-clever-pricing-table.php:881
+msgid "/Month"
+msgstr ""
+
+#: clever-addons-for-elementor.php:104 clever-addons-for-elementor.php:109
+msgid ""
+"<strong>Clever Elementor Addon</strong> requires Elementor Page Builder "
+"plugin to be active. Please install and activate Elementor Page Builder!"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:135
+#: src/widgets/class-clever-multi-banner .php:99
+msgid ""
+"A web banner or banner ad is a form of advertising. It is intended to "
+"attract traffic to a website by linking to the website of the advertiser. - "
+"Wikipedia"
+msgstr ""
+
+#: src/widgets/class-clever-product-deal.php:62
+msgid "Action link"
+msgstr ""
+
+#: src/widgets/class-clever-product-deal.php:57
+#: src/widgets/class-clever-product-deal.php:59
+msgid "Action title"
+msgstr ""
+
+#: clever-addons-for-elementor.php:105
+msgid "Activate Elementor"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:729
+msgid "Active"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:276
+#: src/widgets/class-clever-product-advanced.php:384
+msgid "Active Color"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:516
+msgid "Active Dot Background Color"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:258
+msgid "Active/Hover Color"
+msgstr ""
+
+#: src/widgets/class-clever-multi-banner .php:135
+msgid "Add Banner"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:161
+#: src/widgets/class-clever-button.php:66 src/widgets/class-clever-multi-banner
+#: .php:121 src/widgets/class-clever-pricing-table.php:192
+#: src/widgets/class-clever-product-category-banner.php:122
+msgid "After"
+msgstr ""
+
+#: src/widgets/class-clever-image-comparison.php:117
+msgid "After Image"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:207
+msgid "Ajax Load More"
+msgstr ""
+
+#: src/class-clever-widgets-manager.php:58
+#: src/class-clever-widgets-manager.php:86
+#: src/widgets/class-clever-product-advanced.php:356
+#: src/widgets/class-clever-product-list-categories.php:305
+#: src/widgets/class-clever-product-list-categories.php:373
+#: src/widgets/class-clever-product-list-categories.php:441
+#: src/widgets/class-clever-progress-bar.php:123
+#: src/widgets/class-clever-testimonial.php:345
+#: src/widgets/class-clever-testimonial.php:381
+#: src/widgets/class-clever-video-light-box.php:92
+msgid "Align"
+msgstr ""
+
+#: src/class-clever-widgets-manager.php:371
+#: src/widgets/class-clever-hide-this.php:151
+#: src/widgets/class-clever-icon.php:58
+#: src/widgets/class-clever-single-scroll-to.php:135
+msgid "Alignment"
+msgstr ""
+
+#: src/widgets/class-clever-widget-base.php:84
+msgid "All"
+msgstr ""
+
+#: src/templates/template-product-advanced.php:320
+msgid "All items loaded"
+msgstr ""
+
+#. Description of the plugin
+msgid "An ultimate addon for Elementor Page Builder."
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:72
+#: src/widgets/class-clever-single-scroll-to.php:76
+msgid "Animation"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:121
+msgid "Animation Duration"
+msgstr ""
+
+#: src/widgets/class-clever-hide-this.php:85
+#: src/widgets/class-clever-hide-this.php:102
+msgid "Anyone"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:324
+msgid "Apply Link On"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:80
+#: src/widgets/class-clever-auto-typing.php:87
+msgid "Apply only number."
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:428
+msgid "Arrow"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:1125
+#: src/widgets/class-clever-time-line.php:607
+msgid "Arrow Left"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:1132
+#: src/widgets/class-clever-time-line.php:611
+msgid "Arrow Right"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:1117
+msgid "Arrows"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:1169
+msgid "Arrows Color"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:1179
+msgid "Arrows Color Hover"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:1139
+msgid "Arrows Position"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:1152
+msgid "Arrows Size"
+msgstr ""
+
+#: src/widgets/class-clever-widget-base.php:132
+msgid "ASC"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:75
+#: src/widgets/class-clever-product-advanced.php:109
+#: src/widgets/class-clever-product-advanced.php:121
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:87
+#: src/widgets/class-clever-product-carousel.php:93
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:95
+#: src/widgets/class-clever-product-grid-tabs.php:71
+#: src/widgets/class-clever-product-grid-tabs.php:95
+#: src/widgets/class-clever-product-grid-tabs.php:107
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:177
+msgid "Asset type"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:57
+#: src/widgets/class-clever-testimonial.php:575
+msgid "Author"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:65
+#: src/widgets/class-clever-testimonial.php:623
+msgid "Author Description"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:227
+#: src/widgets/class-clever-services.php:315
+#: src/widgets/class-clever-testimonial.php:222
+msgid "Auto Play"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:237
+#: src/widgets/class-clever-services.php:325
+msgid "Auto play speed"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:61
+msgid "Auto Size"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:838
+msgid "Autoplay"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:844
+msgid "Autoplay Speed"
+msgstr ""
+
+#: src/widgets/class-clever-team-member.php:213
+#: src/widgets/class-clever-testimonial.php:51
+#: src/widgets/class-clever-testimonial.php:441
+msgid "Avatar"
+msgstr ""
+
+#: src/widgets/class-clever-button.php:190
+#: src/widgets/class-clever-icon.php:187
+#: src/widgets/class-clever-pricing-table.php:311
+#: src/widgets/class-clever-product-advanced.php:339
+#: src/widgets/class-clever-product-categories-nav.php:93
+#: src/widgets/class-clever-product-categories-nav.php:149
+#: src/widgets/class-clever-product-categories-nav.php:237
+#: src/widgets/class-clever-product-list-categories.php:253
+#: src/widgets/class-clever-progress-bar.php:171
+#: src/widgets/class-clever-services.php:356
+#: src/widgets/class-clever-services.php:496
+#: src/widgets/class-clever-slider.php:59
+#: src/widgets/class-clever-slider.php:663
+#: src/widgets/class-clever-slider.php:720
+#: src/widgets/class-clever-team-member.php:416
+#: src/widgets/class-clever-testimonial.php:280
+#: src/widgets/class-clever-testimonial.php:372
+#: src/widgets/class-clever-testimonial.php:459
+#: src/widgets/class-clever-testimonial.php:522
+msgid "Background"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:223
+msgid "Background Animation"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:302
+#: src/widgets/class-clever-pricing-table.php:606
+#: src/widgets/class-clever-pricing-table.php:654
+msgid "Background Block"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:422
+msgid "Background Block Color"
+msgstr ""
+
+#: src/widgets/class-clever-count-down.php:167
+#: src/widgets/class-clever-edd-tabs.php:240
+#: src/widgets/class-clever-pricing-table.php:68
+#: src/widgets/class-clever-pricing-table.php:748
+#: src/widgets/class-clever-pricing-table.php:830
+#: src/widgets/class-clever-scroll-to.php:591
+#: src/widgets/class-clever-scroll-to.php:703
+#: src/widgets/class-clever-scroll-to.php:766
+#: src/widgets/class-clever-services.php:689
+#: src/widgets/class-clever-services.php:717
+#: src/widgets/class-clever-slider.php:1062
+#: src/widgets/class-clever-slider.php:1090
+msgid "Background Color"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:756
+msgid "Background Color Hover"
+msgstr ""
+
+#: src/widgets/class-clever-product-category-banner.php:418
+#: src/widgets/class-clever-product-category-banner.php:425
+msgid "Background Content"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:108
+msgctxt "Background Control"
+msgid "Auto"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:107
+msgctxt "Background Control"
+msgid "Contain"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:106
+msgctxt "Background Control"
+msgid "Cover"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:71
+msgctxt "Background Control"
+msgid "Image"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:102
+msgctxt "Background Control"
+msgid "Size"
+msgstr ""
+
+#: src/widgets/class-clever-product-categories-nav.php:156
+#: src/widgets/class-clever-product-categories-nav.php:244
+#: src/widgets/class-clever-team-member.php:423
+msgid "Background Hover"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:408
+#: src/widgets/class-clever-banner.php:422
+#: src/widgets/class-clever-banner.php:470
+#: src/widgets/class-clever-banner.php:477
+#: src/widgets/class-clever-multi-banner .php:444
+#: src/widgets/class-clever-multi-banner .php:458
+#: src/widgets/class-clever-multi-banner .php:506
+#: src/widgets/class-clever-multi-banner .php:513
+#: src/widgets/class-clever-product-category-banner.php:204
+#: src/widgets/class-clever-product-category-banner.php:398
+#: src/widgets/class-clever-product-category-banner.php:405
+#: src/widgets/class-clever-services.php:406
+#: src/widgets/class-clever-services.php:418
+#: src/widgets/class-clever-slider.php:160
+#: src/widgets/class-clever-slider.php:1259
+msgid "Background Overlay"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:251
+#: src/widgets/class-clever-pricing-table.php:797
+msgid "Badge"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:801
+msgid "Badge size"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:264
+msgid "Badge type"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:268
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:403
+msgid "Banner"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:471
+msgid "Banner Button Background"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:478
+msgid "Banner Button Background Hover"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:529
+msgid "Banner Button Border Radius"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:457
+msgid "Banner Button Color"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:464
+msgid "Banner Button Color Hover"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:495
+msgid "Banner Button Padding"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:511
+msgid "Banner Button Position Left"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:503
+msgid "Banner Button Position Top"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:489
+msgid "Banner Button Typo"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:432
+msgid "Banner Description Color"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:449
+msgid "Banner Description Padding"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:443
+msgid "Banner Description Typo"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:407
+msgid "Banner Title Color"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:424
+msgid "Banner Title Padding"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:418
+msgid "Banner Title Typo"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:675
+msgid "Base Color"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:116
+msgid "Basic"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:160
+#: src/widgets/class-clever-button.php:65 src/widgets/class-clever-multi-banner
+#: .php:120 src/widgets/class-clever-pricing-table.php:191
+#: src/widgets/class-clever-product-category-banner.php:121
+msgid "Before"
+msgstr ""
+
+#: src/widgets/class-clever-image-comparison.php:65
+msgid "Before Image"
+msgstr ""
+
+#: src/templates/template-product-advanced.php:205
+#: src/templates/template-product-advanced.php:240
+#: src/templates/template-product-advanced.php:240
+#: src/templates/template-product-deal-and-asset-tabs.php:191
+#: src/templates/template-product-deal-and-asset-tabs.php:223
+#: src/templates/template-product-deal-and-asset-tabs.php:223
+#: src/templates/template-product-grid-tabs.php:159
+#: src/templates/template-product-grid-tabs.php:193
+#: src/templates/template-product-grid-tabs.php:193
+#: src/widgets/class-clever-widget-base.php:89
+#: src/widgets/class-clever-widget-base.php:98
+msgid "Best Seller"
+msgstr ""
+
+#: src/widgets/class-clever-team-member.php:146
+msgid "Biographical Info"
+msgstr ""
+
+#: src/widgets/class-clever-services.php:377
+#: src/widgets/class-clever-slider.php:193
+#: src/widgets/class-clever-slider.php:1267
+msgid "Blend Mode"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:478
+msgid "Block"
+msgstr ""
+
+#: src/widgets/class-clever-icon.php:142
+#: src/widgets/class-clever-pricing-table.php:353
+#: src/widgets/class-clever-pricing-table.php:623
+#: src/widgets/class-clever-pricing-table.php:695
+#: src/widgets/class-clever-product-categories-nav.php:174
+#: src/widgets/class-clever-product-categories-nav.php:262
+#: src/widgets/class-clever-product-list-categories.php:281
+#: src/widgets/class-clever-services.php:429
+#: src/widgets/class-clever-services.php:514
+#: src/widgets/class-clever-testimonial.php:416
+#: src/widgets/class-clever-testimonial.php:477
+#: src/widgets/class-clever-testimonial.php:541
+#: src/widgets/class-clever-testimonial.php:597
+#: src/widgets/class-clever-testimonial.php:645
+#: src/widgets/class-clever-time-line.php:674
+#: src/widgets/class-clever-time-line.php:695
+msgid "Border"
+msgstr ""
+
+#: src/widgets/class-clever-button.php:197
+#: src/widgets/class-clever-edd-tabs.php:229
+#: src/widgets/class-clever-icon.php:180
+#: src/widgets/class-clever-pricing-table.php:763
+#: src/widgets/class-clever-services.php:697
+#: src/widgets/class-clever-services.php:725
+#: src/widgets/class-clever-slider.php:1070
+#: src/widgets/class-clever-slider.php:1098
+#: src/widgets/class-clever-time-line.php:244
+msgid "Border Color"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:771
+msgid "Border Color Hover"
+msgstr ""
+
+#: src/widgets/class-clever-time-line.php:246
+msgid "Border color in left side"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:272
+#: src/widgets/class-clever-banner.php:399
+#: src/widgets/class-clever-button.php:153
+#: src/widgets/class-clever-count-down.php:181
+#: src/widgets/class-clever-icon.php:158
+#: src/widgets/class-clever-product-categories-nav.php:121
+#: src/widgets/class-clever-product-category-banner.php:350
+#: src/widgets/class-clever-product-list-categories.php:269
+#: src/widgets/class-clever-progress-bar.php:227
+#: src/widgets/class-clever-scroll-to.php:397
+#: src/widgets/class-clever-scroll-to.php:545
+#: src/widgets/class-clever-scroll-to.php:606
+#: src/widgets/class-clever-scroll-to.php:801
+#: src/widgets/class-clever-services.php:437
+#: src/widgets/class-clever-services.php:522
+#: src/widgets/class-clever-services.php:655
+#: src/widgets/class-clever-slider.php:1028
+#: src/widgets/class-clever-team-member.php:257
+#: src/widgets/class-clever-testimonial.php:315
+#: src/widgets/class-clever-testimonial.php:404
+#: src/widgets/class-clever-testimonial.php:485
+#: src/widgets/class-clever-time-line.php:514
+#: src/widgets/class-clever-time-line.php:568
+#: src/widgets/class-clever-time-line.php:643
+msgid "Border Radius"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:778
+#: src/widgets/class-clever-product-advanced.php:492
+msgid "Border radius"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:209
+#: src/widgets/class-clever-services.php:641
+#: src/widgets/class-clever-slider.php:1014
+msgid "Border Width"
+msgstr ""
+
+#: src/widgets/class-clever-time-line.php:252
+msgid "Border width"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:247
+#: src/widgets/class-clever-multi-banner .php:325
+#: src/widgets/class-clever-product-category-banner.php:166
+#: src/widgets/class-clever-progress-bar.php:86
+#: src/widgets/class-clever-services.php:163
+#: src/widgets/class-clever-slider.php:522
+msgid "Bottom"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:82
+#: src/widgets/class-clever-slider.php:238
+#: src/widgets/class-clever-slider.php:348
+#: src/widgets/class-clever-slider.php:883
+msgid "Bounce"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:83
+#: src/widgets/class-clever-slider.php:239
+#: src/widgets/class-clever-slider.php:349
+#: src/widgets/class-clever-slider.php:884
+msgid "Bounce In"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:84
+#: src/widgets/class-clever-slider.php:240
+#: src/widgets/class-clever-slider.php:350
+#: src/widgets/class-clever-slider.php:885
+msgid "Bounce In Down"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:85
+#: src/widgets/class-clever-slider.php:241
+#: src/widgets/class-clever-slider.php:351
+#: src/widgets/class-clever-slider.php:886
+msgid "Bounce In Left"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:86
+#: src/widgets/class-clever-slider.php:242
+#: src/widgets/class-clever-slider.php:352
+#: src/widgets/class-clever-slider.php:887
+msgid "Bounce In Right"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:87
+#: src/widgets/class-clever-slider.php:243
+#: src/widgets/class-clever-slider.php:353
+#: src/widgets/class-clever-slider.php:888
+msgid "Bounce In Up"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:117
+#: src/widgets/class-clever-services.php:196
+msgid "Boxed"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:140
+#: src/widgets/class-clever-banner.php:144
+#: src/widgets/class-clever-banner.php:148
+#: src/widgets/class-clever-banner.php:365
+#: src/widgets/class-clever-button.php:46
+#: src/widgets/class-clever-button.php:50
+#: src/widgets/class-clever-button.php:53 src/widgets/class-clever-multi-banner
+#: .php:104 src/widgets/class-clever-multi-banner .php:108
+#: src/widgets/class-clever-multi-banner .php:417
+#: src/widgets/class-clever-pricing-table.php:174
+#: src/widgets/class-clever-pricing-table.php:703
+#: src/widgets/class-clever-pricing-table.php:884
+#: src/widgets/class-clever-product-category-banner.php:105
+#: src/widgets/class-clever-product-category-banner.php:109
+#: src/widgets/class-clever-product-category-banner.php:316
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:522
+#: src/widgets/class-clever-services.php:84
+#: src/widgets/class-clever-services.php:630
+#: src/widgets/class-clever-slider.php:636
+#: src/widgets/class-clever-slider.php:995
+msgid "Button"
+msgstr ""
+
+#: src/widgets/class-clever-button.php:100
+msgid "Button Align"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:376
+#: src/widgets/class-clever-banner.php:456
+#: src/widgets/class-clever-button.php:128
+#: src/widgets/class-clever-multi-banner .php:428
+#: src/widgets/class-clever-multi-banner .php:492
+#: src/widgets/class-clever-product-category-banner.php:327
+#: src/widgets/class-clever-product-category-banner.php:384
+#: src/widgets/class-clever-single-scroll-to.php:197
+msgid "Button Background"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:647
+msgid "Button Block"
+msgstr ""
+
+#: src/widgets/class-clever-button.php:146
+msgid "Button Border"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:369
+#: src/widgets/class-clever-banner.php:449
+#: src/widgets/class-clever-button.php:121
+#: src/widgets/class-clever-multi-banner .php:421
+#: src/widgets/class-clever-multi-banner .php:485
+#: src/widgets/class-clever-product-category-banner.php:320
+#: src/widgets/class-clever-product-category-banner.php:377
+msgid "Button Color"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:693
+msgid "Button Hover"
+msgstr ""
+
+#: src/widgets/class-clever-services.php:77
+msgid "Button Icon"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:143
+#: src/widgets/class-clever-button.php:49 src/widgets/class-clever-multi-banner
+#: .php:103 src/widgets/class-clever-product-category-banner.php:104
+msgid "Button Label"
+msgstr ""
+
+#: src/widgets/class-clever-video-light-box.php:159
+msgid "Button Margin"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:328
+msgid "Button Only"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:165
+#: src/widgets/class-clever-button.php:86 src/widgets/class-clever-multi-banner
+#: .php:125 src/widgets/class-clever-pricing-table.php:238
+#: src/widgets/class-clever-product-category-banner.php:126
+#: src/widgets/class-clever-services.php:89
+#: src/widgets/class-clever-slider.php:308
+msgid "Button style"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:131
+#: src/widgets/class-clever-slider.php:303
+msgid "Button Text"
+msgstr ""
+
+#: src/widgets/class-clever-video-light-box.php:119
+msgid "Button Type"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:707
+msgid "Button Width"
+msgstr ""
+
+#: src/helpers/wc.php:233
+msgid "Buy"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:52
+msgid "CAFE Instagram"
+msgstr ""
+
+#: src/class-cafe-settings-page.php:65 src/class-cafe-settings-page.php:66
+msgid "CAFE Settings"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:53
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:54
+#: src/widgets/class-clever-product-carousel.php:67
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:54
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:67
+#: src/widgets/class-clever-product-deal.php:54
+#: src/widgets/class-clever-product-grid-tabs.php:54
+#: src/widgets/class-clever-product-list-categories.php:57
+#: src/widgets/class-clever-product-list-tags.php:54
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:51
+msgid "CAFE Woo"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:137
+#: src/widgets/class-clever-multi-banner .php:152
+#: src/widgets/class-clever-posts.php:106
+#: src/widgets/class-clever-product-advanced.php:63
+#: src/widgets/class-clever-product-list-categories.php:73
+#: src/widgets/class-clever-services.php:186
+#: src/widgets/class-clever-testimonial.php:125
+#: src/widgets/class-clever-time-line.php:81
+msgid "Carousel"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:424
+msgid "Carousel style"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:217
+#: src/widgets/class-clever-multi-banner .php:233
+#: src/widgets/class-clever-product-advanced.php:264
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:158
+#: src/widgets/class-clever-product-carousel.php:164
+#: src/widgets/class-clever-product-deal.php:181
+#: src/widgets/class-clever-product-list-categories.php:179
+#: src/widgets/class-clever-product-list-tags.php:117
+#: src/widgets/class-clever-time-line.php:162
+msgid "Carousel: Auto Play"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:241
+#: src/widgets/class-clever-multi-banner .php:257
+#: src/widgets/class-clever-product-advanced.php:288
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:176
+#: src/widgets/class-clever-product-carousel.php:182
+#: src/widgets/class-clever-product-deal.php:199
+#: src/widgets/class-clever-product-list-categories.php:203
+#: src/widgets/class-clever-product-list-tags.php:135
+#: src/widgets/class-clever-time-line.php:198
+msgid "Carousel: Navigation"
+msgstr ""
+
+#: src/widgets/class-clever-product-carousel.php:191
+msgid "Carousel: Navigation Position"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:253
+#: src/widgets/class-clever-multi-banner .php:269
+#: src/widgets/class-clever-product-advanced.php:300
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:185
+#: src/widgets/class-clever-product-deal.php:208
+#: src/widgets/class-clever-product-list-tags.php:144
+msgid "Carousel: Navigation position"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:229
+#: src/widgets/class-clever-multi-banner .php:245
+#: src/widgets/class-clever-product-advanced.php:276
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:167
+#: src/widgets/class-clever-product-carousel.php:173
+#: src/widgets/class-clever-product-deal.php:190
+#: src/widgets/class-clever-product-list-categories.php:191
+#: src/widgets/class-clever-product-list-tags.php:126
+#: src/widgets/class-clever-time-line.php:180
+msgid "Carousel: Pagination"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:208
+#: src/widgets/class-clever-multi-banner .php:224
+#: src/widgets/class-clever-product-advanced.php:255
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:152
+#: src/widgets/class-clever-product-carousel.php:158
+#: src/widgets/class-clever-product-deal.php:175
+#: src/widgets/class-clever-product-list-categories.php:170
+#: src/widgets/class-clever-product-list-tags.php:111
+#: src/widgets/class-clever-time-line.php:147
+msgid "Carousel: Slide to Scroll"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:199
+#: src/widgets/class-clever-multi-banner .php:214
+#: src/widgets/class-clever-product-advanced.php:245
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:146
+#: src/widgets/class-clever-product-carousel.php:152
+#: src/widgets/class-clever-product-deal.php:169
+#: src/widgets/class-clever-product-list-categories.php:161
+#: src/widgets/class-clever-product-list-tags.php:105
+#: src/widgets/class-clever-time-line.php:132
+msgid "Carousel: Speed to Scroll"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:48
+#: src/widgets/class-clever-product-advanced.php:88
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:65
+#: src/widgets/class-clever-product-carousel.php:78
+#: src/widgets/class-clever-product-categories-nav.php:46
+#: src/widgets/class-clever-product-categories-nav.php:54
+#: src/widgets/class-clever-product-deal.php:101
+#: src/widgets/class-clever-product-grid-tabs.php:76
+#: src/widgets/class-clever-product-list-categories.php:98
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:149
+msgid "Categories"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:74
+#: src/widgets/class-clever-product-categories-nav.php:131
+#: src/widgets/class-clever-product-category-banner.php:45
+#: src/widgets/class-clever-product-category-banner.php:48
+#: src/widgets/class-clever-product-grid-tabs.php:70
+msgid "Category"
+msgstr ""
+
+#: src/widgets/class-clever-product-grid-tabs.php:65
+msgid "Category / Asset type"
+msgstr ""
+
+#: src/widgets/class-clever-product-list-categories.php:299
+msgid "Category Heading"
+msgstr ""
+
+#: src/class-clever-widgets-manager.php:66
+#: src/class-clever-widgets-manager.php:94
+#: src/class-clever-widgets-manager.php:379
+#: src/widgets/class-clever-banner.php:220
+#: src/widgets/class-clever-button.php:107
+#: src/widgets/class-clever-hide-this.php:159
+#: src/widgets/class-clever-multi-banner .php:340
+#: src/widgets/class-clever-pricing-table.php:328
+#: src/widgets/class-clever-pricing-table.php:589
+#: src/widgets/class-clever-pricing-table.php:670
+#: src/widgets/class-clever-product-advanced.php:363
+#: src/widgets/class-clever-product-category-banner.php:181
+#: src/widgets/class-clever-product-list-categories.php:313
+#: src/widgets/class-clever-product-list-categories.php:381
+#: src/widgets/class-clever-product-list-categories.php:449
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:106
+#: src/widgets/class-clever-progress-bar.php:130
+#: src/widgets/class-clever-services.php:136
+#: src/widgets/class-clever-services.php:212
+#: src/widgets/class-clever-slider.php:482
+#: src/widgets/class-clever-slider.php:554
+#: src/widgets/class-clever-team-member.php:188
+#: src/widgets/class-clever-testimonial.php:353
+#: src/widgets/class-clever-testimonial.php:389
+#: src/widgets/class-clever-time-line.php:230
+#: src/widgets/class-clever-video-light-box.php:101
+msgid "Center"
+msgstr ""
+
+#: src/widgets/class-clever-time-line.php:351
+msgid "Center Mode"
+msgstr ""
+
+#: src/widgets/class-clever-time-line.php:117
+msgid "Center mode"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:200
+#: src/widgets/class-clever-multi-banner .php:310
+msgid "Chico"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:113
+msgid "Chooose image"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:269
+msgid "Circle"
+msgstr ""
+
+#. Name of the plugin
+msgid "Clever Addons for Elementor"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:24
+msgid "Clever Auto Typing"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:30
+#: src/widgets/class-clever-banner.php:105
+msgid "Clever Banner"
+msgstr ""
+
+#: src/widgets/class-clever-button.php:29
+msgid "Clever Button"
+msgstr ""
+
+#: src/widgets/class-clever-contact-form-7.php:27
+msgid "Clever Contact Form 7"
+msgstr ""
+
+#: src/widgets/class-clever-count-down.php:28
+msgid "Clever Count Down"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:43
+msgid "Clever EDD Tabs"
+msgstr ""
+
+#: src/class-clever-elements-category.php:45
+msgid "Clever Elements"
+msgstr ""
+
+#: src/widgets/class-clever-hide-this.php:41
+msgid "Clever Hide This"
+msgstr ""
+
+#: src/widgets/class-clever-icon.php:28
+msgid "Clever Icon"
+msgstr ""
+
+#: src/widgets/class-clever-image-360-view.php:26
+msgid "Clever Image 360 View"
+msgstr ""
+
+#: src/widgets/class-clever-image-comparison.php:28
+msgid "Clever Image Comparison"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:28
+msgid "Clever Instagram"
+msgstr ""
+
+#: src/widgets/class-clever-multi-banner .php:31
+#: src/widgets/class-clever-multi-banner .php:75
+msgid "Clever Multi Banner"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:28
+msgid "Clever Posts"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:28
+msgid "Clever Pricing Table"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:29
+msgid "Clever Product Advanced"
+msgstr ""
+
+#: src/widgets/class-clever-product-carousel.php:30
+msgid "Clever Product Carousel"
+msgstr ""
+
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:30
+msgid "Clever Product Carousel with Category Tabs"
+msgstr ""
+
+#: src/widgets/class-clever-product-list-categories.php:33
+msgid "Clever Product Categories List"
+msgstr ""
+
+#: src/widgets/class-clever-product-categories-nav.php:29
+msgid "Clever Product Categories Navigation"
+msgstr ""
+
+#: src/widgets/class-clever-product-category-banner.php:29
+msgid "Clever Product Category Banner"
+msgstr ""
+
+#: src/widgets/class-clever-product-deal.php:30
+msgid "Clever Product Deal"
+msgstr ""
+
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:30
+msgid "Clever Product Deal And Asset Tabs"
+msgstr ""
+
+#: src/widgets/class-clever-product-grid-tabs.php:30
+msgid "Clever Product Grid Tabs"
+msgstr ""
+
+#: src/widgets/class-clever-product-list-tags.php:30
+msgid "Clever Product List Tags"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:29
+msgid "Clever Product With Banner And Tabs"
+msgstr ""
+
+#: src/widgets/class-clever-progress-bar.php:28
+msgid "Clever Progress Bar"
+msgstr ""
+
+#: src/widgets/class-clever-revolution-slider.php:27
+msgid "Clever Revolution Slider"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:26
+msgid "Clever Scroll To"
+msgstr ""
+
+#: src/widgets/class-clever-services.php:33
+msgid "Clever Services"
+msgstr ""
+
+#: src/widgets/class-clever-single-product.php:29
+msgid "Clever Single Product"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:26
+msgid "Clever Single Scroll To"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:21
+msgid "Clever Slider"
+msgstr ""
+
+#: src/widgets/class-clever-team-member.php:29
+msgid "Clever Team Member"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:32
+msgid "Clever Testimonial"
+msgstr ""
+
+#: src/widgets/class-clever-time-line.php:29
+msgid "Clever Time Line"
+msgstr ""
+
+#: src/widgets/class-clever-video-light-box.php:28
+msgid "Clever Video Light Box"
+msgstr ""
+
+#. Author of the plugin
+msgid "CleverSoft"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:133
+#: src/widgets/class-clever-slider.php:305
+#: src/widgets/class-clever-slider.php:747
+#: src/widgets/class-clever-slider.php:753
+#: src/widgets/class-clever-slider.php:759
+msgid "Click Here"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:127
+#: src/widgets/class-clever-button.php:183
+#: src/widgets/class-clever-count-down.php:152
+#: src/widgets/class-clever-edd-tabs.php:261
+#: src/widgets/class-clever-edd-tabs.php:309
+#: src/widgets/class-clever-icon.php:116 src/widgets/class-clever-icon.php:173
+#: src/widgets/class-clever-image-comparison.php:93
+#: src/widgets/class-clever-image-comparison.php:145
+#: src/widgets/class-clever-pricing-table.php:60
+#: src/widgets/class-clever-pricing-table.php:515
+#: src/widgets/class-clever-pricing-table.php:733
+#: src/widgets/class-clever-pricing-table.php:823
+#: src/widgets/class-clever-product-advanced.php:324
+#: src/widgets/class-clever-product-advanced.php:377
+#: src/widgets/class-clever-product-advanced.php:432
+#: src/widgets/class-clever-product-advanced.php:464
+#: src/widgets/class-clever-product-categories-nav.php:86
+#: src/widgets/class-clever-product-categories-nav.php:135
+#: src/widgets/class-clever-product-categories-nav.php:223
+#: src/widgets/class-clever-product-category-banner.php:294
+#: src/widgets/class-clever-product-list-categories.php:327
+#: src/widgets/class-clever-product-list-categories.php:395
+#: src/widgets/class-clever-product-list-categories.php:463
+#: src/widgets/class-clever-progress-bar.php:114
+#: src/widgets/class-clever-scroll-to.php:248
+#: src/widgets/class-clever-services.php:489
+#: src/widgets/class-clever-services.php:557
+#: src/widgets/class-clever-services.php:591
+#: src/widgets/class-clever-single-scroll-to.php:170
+#: src/widgets/class-clever-single-scroll-to.php:190
+#: src/widgets/class-clever-slider.php:62
+#: src/widgets/class-clever-slider.php:176
+#: src/widgets/class-clever-slider.php:648
+#: src/widgets/class-clever-slider.php:705
+#: src/widgets/class-clever-team-member.php:271
+#: src/widgets/class-clever-team-member.php:305
+#: src/widgets/class-clever-team-member.php:339
+#: src/widgets/class-clever-team-member.php:402
+#: src/widgets/class-clever-testimonial.php:273
+#: src/widgets/class-clever-testimonial.php:515
+#: src/widgets/class-clever-testimonial.php:579
+#: src/widgets/class-clever-testimonial.php:627
+#: src/widgets/class-clever-time-line.php:466
+#: src/widgets/class-clever-time-line.php:534
+#: src/widgets/class-clever-time-line.php:664
+#: src/widgets/class-clever-time-line.php:685
+msgid "Color"
+msgstr ""
+
+#: src/widgets/class-clever-video-light-box.php:151
+msgid "Color Background"
+msgstr ""
+
+#: src/widgets/class-clever-video-light-box.php:142
+msgid "Color Button"
+msgstr ""
+
+#: src/widgets/class-clever-count-down.php:159
+msgid "Color count"
+msgstr ""
+
+#: src/widgets/class-clever-video-light-box.php:192
+msgid "Color Description"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:741
+#: src/widgets/class-clever-product-categories-nav.php:142
+#: src/widgets/class-clever-product-categories-nav.php:230
+#: src/widgets/class-clever-product-list-categories.php:334
+#: src/widgets/class-clever-product-list-categories.php:402
+#: src/widgets/class-clever-product-list-categories.php:470
+#: src/widgets/class-clever-team-member.php:409
+msgid "Color Hover"
+msgstr ""
+
+#: src/widgets/class-clever-count-down.php:164
+msgid "Color of number count."
+msgstr ""
+
+#: src/widgets/class-clever-video-light-box.php:172
+msgid "Color Title"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:128
+#: src/widgets/class-clever-time-line.php:85
+msgid "Columns"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:143
+#: src/widgets/class-clever-multi-banner .php:158
+#: src/widgets/class-clever-product-advanced.php:173
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:138
+#: src/widgets/class-clever-product-grid-tabs.php:158
+#: src/widgets/class-clever-product-list-categories.php:110
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:214
+msgid "Columns for row"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:133
+msgid ""
+"Columns post display per row. With grid layout, min column is 1, max is 6. "
+"Unlimited with carousel."
+msgstr ""
+
+#: src/widgets/class-clever-contact-form-7.php:58
+msgid "Contact form"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:584
+msgid "Container"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:789
+msgid "Container width"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:42
+#: src/widgets/class-clever-banner.php:96
+#: src/widgets/class-clever-edd-tabs.php:300
+#: src/widgets/class-clever-image-comparison.php:70
+#: src/widgets/class-clever-image-comparison.php:122
+#: src/widgets/class-clever-pricing-table.php:45
+#: src/widgets/class-clever-slider.php:286
+#: src/widgets/class-clever-testimonial.php:92
+#: src/widgets/class-clever-testimonial.php:511
+msgid "Content"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:320
+#: src/widgets/class-clever-pricing-table.php:581
+#: src/widgets/class-clever-pricing-table.php:662
+#: src/widgets/class-clever-team-member.php:181
+#: src/widgets/class-clever-time-line.php:223
+msgid "Content Align"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:342
+#: src/widgets/class-clever-slider.php:878
+msgid "Content Animation"
+msgstr ""
+
+#: src/widgets/class-clever-product-category-banner.php:217
+#: src/widgets/class-clever-product-category-banner.php:224
+msgid "Content Background"
+msgstr ""
+
+#: src/widgets/class-clever-product-list-categories.php:249
+#: src/widgets/class-clever-testimonial.php:368
+msgid "Content Block"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:62
+msgid "Content display"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:126
+msgid "Content here!"
+msgstr ""
+
+#: src/widgets/class-clever-product-category-banner.php:155
+msgid "Content of product will show below image."
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:121
+msgid "Content Overlay"
+msgstr ""
+
+#: src/widgets/class-clever-team-member.php:202
+msgid "Content Padding"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:45
+#: src/widgets/class-clever-services.php:109
+#: src/widgets/class-clever-testimonial.php:89
+msgid "Content Settings"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:58
+msgid "Content Type"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:405
+msgid "Content Width"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:182
+#: src/widgets/class-clever-multi-banner .php:293
+msgid "Content will show up on image banner."
+msgstr ""
+
+#: src/widgets/class-clever-count-down.php:132
+msgid "Count Typography"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:124
+msgid "Currency"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:399
+msgid "Custom"
+msgstr ""
+
+#: src/widgets/class-clever-product-categories-nav.php:74
+msgid "Custom css class"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:73
+msgid "Custom height of banner."
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:134
+#: src/widgets/class-clever-banner.php:88
+#: src/widgets/class-clever-button.php:76
+#: src/widgets/class-clever-contact-form-7.php:65
+#: src/widgets/class-clever-count-down.php:80
+#: src/widgets/class-clever-icon.php:80
+#: src/widgets/class-clever-image-360-view.php:76
+#: src/widgets/class-clever-posts.php:247
+#: src/widgets/class-clever-product-category-banner.php:143
+#: src/widgets/class-clever-revolution-slider.php:54
+#: src/widgets/class-clever-single-product.php:56
+#: src/widgets/class-clever-testimonial.php:263
+#: src/widgets/class-clever-video-light-box.php:81
+msgid "Custom HTML Class"
+msgstr ""
+
+#: src/class-clever-widgets-manager.php:172
+msgid "Custom Media Queries"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:118
+#: src/widgets/class-clever-time-line.php:47
+#: src/widgets/class-clever-time-line.php:290
+#: src/widgets/class-clever-time-line.php:368
+#: src/widgets/class-clever-widget-base.php:114
+msgid "Date"
+msgstr ""
+
+#: src/widgets/class-clever-count-down.php:51
+msgid "Date and time ended count down."
+msgstr ""
+
+#: src/widgets/class-clever-time-line.php:303
+#: src/widgets/class-clever-time-line.php:381
+msgid "Date Color"
+msgstr ""
+
+#: src/widgets/class-clever-product-deal.php:85
+#: src/widgets/class-clever-product-deal.php:93
+msgid "Date for sale"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:125
+msgid "Date format"
+msgstr ""
+
+#: src/widgets/class-clever-time-line.php:49
+msgid "Date of time line."
+msgstr ""
+
+#: src/templates/template-product-advanced.php:199
+#: src/templates/template-product-advanced.php:234
+#: src/templates/template-product-advanced.php:234
+#: src/templates/template-product-deal-and-asset-tabs.php:185
+#: src/templates/template-product-deal-and-asset-tabs.php:217
+#: src/templates/template-product-deal-and-asset-tabs.php:217
+#: src/templates/template-product-grid-tabs.php:153
+#: src/templates/template-product-grid-tabs.php:187
+#: src/templates/template-product-grid-tabs.php:187
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:61
+#: src/widgets/class-clever-widget-base.php:88
+#: src/widgets/class-clever-widget-base.php:97
+msgid "Deal"
+msgstr ""
+
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:70
+msgid "Deal product"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:115
+#: src/widgets/class-clever-pricing-table.php:285
+#: src/widgets/class-clever-product-deal.php:79
+#: src/widgets/class-clever-services.php:195
+#: src/widgets/class-clever-testimonial.php:134
+msgid "Default"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:132
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:103
+#: src/widgets/class-clever-product-grid-tabs.php:118
+msgid "Default asset"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:99
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:73
+#: src/widgets/class-clever-product-grid-tabs.php:85
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:170
+msgid "Default categories"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:84
+msgid "Delay time"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:122
+msgid "Deposits"
+msgstr ""
+
+#: src/widgets/class-clever-widget-base.php:131
+msgid "DESC"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:126
+#: src/widgets/class-clever-banner.php:131
+#: src/widgets/class-clever-banner.php:326
+#: src/widgets/class-clever-image-360-view.php:68
+#: src/widgets/class-clever-multi-banner .php:95
+#: src/widgets/class-clever-multi-banner .php:390
+#: src/widgets/class-clever-pricing-table.php:114
+#: src/widgets/class-clever-pricing-table.php:146
+#: src/widgets/class-clever-product-category-banner.php:80
+#: src/widgets/class-clever-product-category-banner.php:264
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:124
+#: src/widgets/class-clever-services.php:72
+#: src/widgets/class-clever-services.php:586
+#: src/widgets/class-clever-slider.php:296
+#: src/widgets/class-clever-slider.php:960
+#: src/widgets/class-clever-time-line.php:62
+#: src/widgets/class-clever-time-line.php:330
+#: src/widgets/class-clever-time-line.php:408
+#: src/widgets/class-clever-video-light-box.php:58
+#: src/widgets/class-clever-video-light-box.php:187
+msgid "Description"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:330
+#: src/widgets/class-clever-banner.php:442
+#: src/widgets/class-clever-multi-banner .php:394
+#: src/widgets/class-clever-multi-banner .php:478
+#: src/widgets/class-clever-pricing-table.php:385
+#: src/widgets/class-clever-product-category-banner.php:268
+#: src/widgets/class-clever-product-category-banner.php:370
+#: src/widgets/class-clever-slider.php:606
+#: src/widgets/class-clever-time-line.php:343
+#: src/widgets/class-clever-time-line.php:421
+msgid "Description Color"
+msgstr ""
+
+#: src/widgets/class-clever-product-category-banner.php:81
+msgid "Description for Category."
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:400
+msgid "Description Padding"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:264
+#: src/widgets/class-clever-multi-banner .php:348
+#: src/widgets/class-clever-product-category-banner.php:189
+msgid "Dimensions"
+msgstr ""
+
+#: src/class-cafe-settings-page.php:112
+msgid "Disable Elements"
+msgstr ""
+
+#: src/class-cafe-settings-page.php:115
+msgid "Disable unused elements may improve your site performance."
+msgstr ""
+
+#: src/class-cafe-settings-page.php:164 src/class-cafe-settings-page.php:168
+msgid "Dismiss this notice."
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:473
+msgid "Display type"
+msgstr ""
+
+#: src/widgets/class-clever-time-line.php:266
+msgid "Dot Color"
+msgstr ""
+
+#: src/widgets/class-clever-time-line.php:268
+msgid "Dot color in left side"
+msgstr ""
+
+#: src/widgets/class-clever-progress-bar.php:205
+msgid "Dot Height"
+msgstr ""
+
+#: src/widgets/class-clever-time-line.php:275
+msgid "Dot size"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:168
+#: src/widgets/class-clever-scroll-to.php:455
+#: src/widgets/class-clever-slider.php:1190
+#: src/widgets/class-clever-slider.php:1203
+msgid "Dots"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:502
+msgid "Dots Background"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:531
+msgid "Dots Border Color"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:488
+#: src/widgets/class-clever-slider.php:1245
+msgid "Dots Color"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:1213
+msgid "Dots Position"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:1226
+msgid "Dots Size"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:1199
+msgid "Dots Style"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:459
+msgid "Dotted"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:58
+msgid "Down"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:116
+msgid "Download Discounts"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:115
+#: src/widgets/class-clever-edd-tabs.php:141
+msgid "Download History"
+msgstr ""
+
+#: src/widgets/class-clever-progress-bar.php:104
+msgid "Duration (ms)"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:121
+msgid "Edit Wishlist Items"
+msgstr ""
+
+#: src/class-cafe-settings-page.php:98
+msgid "Elements"
+msgstr ""
+
+#: src/class-clever-widgets-manager.php:182
+msgid "Enable"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:96
+msgid "Enable Loop"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:204
+msgid "Enable Navigation"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:213
+msgid "Enable Pagination"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:114
+msgid "Enable Quotation icon"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:87
+msgid "Enable Sound"
+msgstr ""
+
+#: src/widgets/class-clever-product-categories-nav.php:67
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:162
+msgid "Enable Sub categories accordion"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:127
+msgid ""
+"Ex: F j, Y .Note: Default is date format in WordPress settings if this value "
+"is blank."
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:66
+msgid "Excerpt"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:73
+msgid "Excerpt Length"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:144
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:80
+#: src/widgets/class-clever-product-carousel.php:86
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:110
+#: src/widgets/class-clever-product-deal.php:109
+#: src/widgets/class-clever-product-grid-tabs.php:130
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:186
+msgid "Exclude product IDs"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:46
+msgid "Extra Large"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:42
+msgid "Extra Small"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:867
+msgid "Fade"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:88
+#: src/widgets/class-clever-slider.php:244
+#: src/widgets/class-clever-slider.php:354
+#: src/widgets/class-clever-slider.php:889
+msgid "Fade In"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:89
+#: src/widgets/class-clever-slider.php:245
+#: src/widgets/class-clever-slider.php:355
+#: src/widgets/class-clever-slider.php:890
+msgid "Fade In Down"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:90
+#: src/widgets/class-clever-slider.php:246
+#: src/widgets/class-clever-slider.php:356
+#: src/widgets/class-clever-slider.php:891
+msgid "Fade In Left"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:91
+#: src/widgets/class-clever-slider.php:247
+#: src/widgets/class-clever-slider.php:357
+#: src/widgets/class-clever-slider.php:892
+msgid "Fade In Right"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:92
+#: src/widgets/class-clever-slider.php:248
+#: src/widgets/class-clever-slider.php:358
+#: src/widgets/class-clever-slider.php:893
+msgid "Fade In Up"
+msgstr ""
+
+#: src/widgets/class-clever-widget-base.php:269
+#, php-format
+msgid "Failed to load template with slug \"%s\" and name \"%s\"."
+msgstr ""
+
+#: src/class-cafe-settings-page.php:168
+msgid "Failed to save settings. Please try again!"
+msgstr ""
+
+#: src/templates/template-posts.php:102 src/templates/template-posts.php:117
+#: src/templates/template-posts.php:194 src/templates/template-posts.php:209
+#: src/templates/template-posts.php:272 src/templates/template-posts.php:289
+#: src/templates/template-posts.php:355 src/templates/template-posts.php:370
+#: src/templates/template-product-advanced.php:193
+#: src/templates/template-product-advanced.php:228
+#: src/templates/template-product-advanced.php:228
+#: src/templates/template-product-deal-and-asset-tabs.php:179
+#: src/templates/template-product-deal-and-asset-tabs.php:211
+#: src/templates/template-product-deal-and-asset-tabs.php:211
+#: src/templates/template-product-grid-tabs.php:147
+#: src/templates/template-product-grid-tabs.php:181
+#: src/templates/template-product-grid-tabs.php:181
+#: src/widgets/class-clever-widget-base.php:86
+#: src/widgets/class-clever-widget-base.php:95
+msgid "Featured"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:152
+msgid "Features"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:511
+msgid "Features Block"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:155
+msgid "Features list"
+msgstr ""
+
+#: src/class-clever-widgets-manager.php:37
+#: src/widgets/class-clever-product-advanced.php:68
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:61
+#: src/widgets/class-clever-product-carousel.php:74
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:90
+#: src/widgets/class-clever-product-deal.php:71
+#: src/widgets/class-clever-product-grid-tabs.php:61
+#: src/widgets/class-clever-product-list-categories.php:64
+#: src/widgets/class-clever-product-list-tags.php:61
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:145
+msgid "Filter"
+msgstr ""
+
+#: src/class-clever-widgets-manager.php:45
+msgid "Filter on Hover"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:350
+msgid "Filter style"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:305
+msgid "Filter Tabs"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:390
+msgid "Filter Tabs Padding"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:120
+msgid "First Large (work ony with Grid)"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:52
+msgid "Fixed Text"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:120
+msgid "Fixed text Color"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:93
+#: src/widgets/class-clever-slider.php:249
+#: src/widgets/class-clever-slider.php:359
+#: src/widgets/class-clever-slider.php:894
+msgid "Flash"
+msgstr ""
+
+#: src/widgets/class-clever-button.php:93
+#: src/widgets/class-clever-pricing-table.php:245
+#: src/widgets/class-clever-services.php:96
+#: src/widgets/class-clever-video-light-box.php:124
+msgid "Flat"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:59
+#: src/widgets/class-clever-single-scroll-to.php:63
+msgid "Font Icon"
+msgstr ""
+
+#: src/class-clever-widgets-manager.php:273
+#: src/widgets/class-clever-auto-typing.php:107
+#: src/widgets/class-clever-services.php:475
+#: src/widgets/class-clever-team-member.php:374
+msgid "Font Size"
+msgstr ""
+
+#: src/widgets/class-clever-widget-base.php:295
+msgid "Full"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:67
+msgid "Full Content"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:217
+msgid "Full Section Scroll"
+msgstr ""
+
+#: src/class-cafe-settings-page.php:97
+#: src/widgets/class-clever-image-comparison.php:53
+#: src/widgets/class-clever-pricing-table.php:277
+#: src/widgets/class-clever-progress-bar.php:45
+#: src/widgets/class-clever-single-scroll-to.php:43
+msgid "General"
+msgstr ""
+
+#: src/class-cafe-settings-page.php:105
+msgid "General Settings"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:180
+#: src/widgets/class-clever-pricing-table.php:875
+msgid "Get Started"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:132
+#: src/widgets/class-clever-multi-banner .php:96
+msgid "Give a description to this banner."
+msgstr ""
+
+#: src/widgets/class-clever-image-comparison.php:101
+#: src/widgets/class-clever-image-comparison.php:153
+msgid "Grayscale"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:136
+#: src/widgets/class-clever-multi-banner .php:153
+#: src/widgets/class-clever-posts.php:104
+#: src/widgets/class-clever-product-advanced.php:62
+#: src/widgets/class-clever-product-list-categories.php:72
+#: src/widgets/class-clever-services.php:185
+#: src/widgets/class-clever-testimonial.php:124
+msgid "Grid"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:1205
+msgid "Group"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:94
+#: src/widgets/class-clever-slider.php:250
+#: src/widgets/class-clever-slider.php:360
+#: src/widgets/class-clever-slider.php:895
+msgid "Head Shake"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:86
+#: src/widgets/class-clever-product-list-categories.php:218
+msgid "Heading"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:294
+msgid "Heading Block"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:590
+msgid "Heading Color"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:319
+msgid "Heading style"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:68
+#: src/widgets/class-clever-image-360-view.php:63
+#: src/widgets/class-clever-progress-bar.php:192
+#: src/widgets/class-clever-scroll-to.php:276
+#: src/widgets/class-clever-slider.php:767
+#: src/widgets/class-clever-team-member.php:244
+#: src/widgets/class-clever-time-line.php:486
+#: src/widgets/class-clever-time-line.php:554
+#: src/widgets/class-clever-video-light-box.php:207
+msgid "Height"
+msgstr ""
+
+#: src/widgets/class-clever-video-light-box.php:221
+msgid "Height for block"
+msgstr ""
+
+#: src/class-clever-widgets-manager.php:235
+#: src/widgets/class-clever-instagram.php:80
+#: src/widgets/class-clever-instagram.php:89
+#: src/widgets/class-clever-instagram.php:98
+#: src/widgets/class-clever-instagram.php:107
+#: src/widgets/class-clever-instagram.php:221
+#: src/widgets/class-clever-instagram.php:233
+#: src/widgets/class-clever-instagram.php:245
+#: src/widgets/class-clever-multi-banner .php:237
+#: src/widgets/class-clever-multi-banner .php:249
+#: src/widgets/class-clever-multi-banner .php:261
+#: src/widgets/class-clever-product-advanced.php:268
+#: src/widgets/class-clever-product-advanced.php:280
+#: src/widgets/class-clever-product-advanced.php:292
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:162
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:171
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:180
+#: src/widgets/class-clever-product-carousel.php:168
+#: src/widgets/class-clever-product-carousel.php:177
+#: src/widgets/class-clever-product-carousel.php:186
+#: src/widgets/class-clever-product-deal.php:185
+#: src/widgets/class-clever-product-deal.php:194
+#: src/widgets/class-clever-product-deal.php:203
+#: src/widgets/class-clever-product-list-categories.php:183
+#: src/widgets/class-clever-product-list-categories.php:195
+#: src/widgets/class-clever-product-list-categories.php:207
+#: src/widgets/class-clever-product-list-tags.php:121
+#: src/widgets/class-clever-product-list-tags.php:130
+#: src/widgets/class-clever-product-list-tags.php:139
+#: src/widgets/class-clever-time-line.php:166
+#: src/widgets/class-clever-time-line.php:184
+#: src/widgets/class-clever-time-line.php:202
+msgid "Hide"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:165
+#: src/widgets/class-clever-image-comparison.php:60
+msgid "Horizontal"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:473
+msgid "Horizontal Position"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:431
+#: src/widgets/class-clever-button.php:179
+#: src/widgets/class-clever-icon.php:169 src/widgets/class-clever-multi-banner
+#: .php:467 src/widgets/class-clever-product-category-banner.php:359
+#: src/widgets/class-clever-services.php:413
+#: src/widgets/class-clever-services.php:706
+#: src/widgets/class-clever-single-scroll-to.php:186
+#: src/widgets/class-clever-slider.php:1079
+#: src/widgets/class-clever-time-line.php:683
+msgid "Hover"
+msgstr ""
+
+#: src/widgets/class-clever-services.php:757
+#: src/widgets/class-clever-testimonial.php:733
+msgid "Hover & Active"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:471
+msgid "Hover & Active Color"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:439
+msgid "Hover Color"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:187
+#: src/widgets/class-clever-multi-banner .php:298
+msgid "Hover Effect"
+msgstr ""
+
+#: src/widgets/class-clever-time-line.php:532
+msgid "Hover/Active"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:61
+msgid "HTML ID"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:111
+#: src/widgets/class-clever-multi-banner .php:79
+#: src/widgets/class-clever-pricing-table.php:96
+msgid "HTML Tag"
+msgstr ""
+
+#. URI of the plugin
+msgid ""
+"http://www.zootemplate.com/wordpress-plugins/clever-addons-for-elementor"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:80
+msgid "https://www.youtube.com/watch?v=xxxx"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:138
+#: src/widgets/class-clever-slider.php:320
+msgid "https://yoursite.com"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:152
+#: src/widgets/class-clever-button.php:57 src/widgets/class-clever-icon.php:45
+#: src/widgets/class-clever-icon.php:48 src/widgets/class-clever-multi-banner
+#: .php:112 src/widgets/class-clever-pricing-table.php:53
+#: src/widgets/class-clever-pricing-table.php:183
+#: src/widgets/class-clever-pricing-table.php:260
+#: src/widgets/class-clever-product-category-banner.php:113
+#: src/widgets/class-clever-scroll-to.php:82
+#: src/widgets/class-clever-scroll-to.php:134
+#: src/widgets/class-clever-services.php:56
+#: src/widgets/class-clever-single-scroll-to.php:53
+msgid "Icon"
+msgstr ""
+
+#: src/widgets/class-clever-icon.php:123
+#: src/widgets/class-clever-single-scroll-to.php:177
+msgid "Icon Background"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:530
+msgid "Icon Color"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:156
+#: src/widgets/class-clever-button.php:61 src/widgets/class-clever-multi-banner
+#: .php:116 src/widgets/class-clever-pricing-table.php:187
+#: src/widgets/class-clever-product-category-banner.php:117
+msgid "Icon position"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:477
+#: src/widgets/class-clever-testimonial.php:287
+#: src/widgets/class-clever-time-line.php:629
+msgid "Icon Size"
+msgstr ""
+
+#: src/widgets/class-clever-icon.php:90
+#: src/widgets/class-clever-pricing-table.php:537
+#: src/widgets/class-clever-single-scroll-to.php:157
+msgid "Icon size"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:551
+msgid "Icon space"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:48
+#: src/widgets/class-clever-single-scroll-to.php:123
+msgid "ID of block want scroll to when click."
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:47
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:96
+msgid "Image"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:570
+msgid "Image Banner Min Height"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:561
+msgid "Image Banner Padding"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:119
+msgid "Image Left"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:118
+msgid "Image Shadow"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:64
+#: src/widgets/class-clever-posts.php:139
+msgid "Image size"
+msgstr ""
+
+#: src/widgets/class-clever-services.php:203
+msgid "Image/Icon position"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:145
+msgid "In"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:856
+msgid "Infinite Loop"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:208
+msgid "Infinity Scroll"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:81
+#: src/widgets/class-clever-slider.php:237
+#: src/widgets/class-clever-slider.php:347
+msgid "Inherit"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:477
+msgid "Inline"
+msgstr ""
+
+#: src/widgets/class-clever-progress-bar.php:87
+msgid "Inner"
+msgstr ""
+
+#: src/widgets/class-clever-count-down.php:118
+msgid "Inner Space"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:1143
+#: src/widgets/class-clever-slider.php:1218
+msgid "Inside"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:55
+msgid "Instagram tag"
+msgstr ""
+
+#: clever-addons-for-elementor.php:110
+msgid "Install Elementor"
+msgstr ""
+
+#: clever-addons-for-elementor.php:70
+msgid "Invalid setting!"
+msgstr ""
+
+#: src/helpers/wc.php:228 src/helpers/wc.php:235
+msgid "item "
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:631
+#: src/widgets/class-clever-pricing-table.php:639
+msgid "Item Border"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:309
+msgid "Item Color"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:316
+msgid "Item Color Hover"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:332
+msgid "Item Padding"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:326
+msgid "Item Typo"
+msgstr ""
+
+#: src/widgets/class-clever-count-down.php:90
+msgid "Item Width"
+msgstr ""
+
+#: src/helpers/wc.php:228 src/helpers/wc.php:235
+msgid "items "
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:96
+#: src/widgets/class-clever-slider.php:252
+#: src/widgets/class-clever-slider.php:362
+#: src/widgets/class-clever-slider.php:897
+msgid "Jello"
+msgstr ""
+
+#: src/widgets/class-clever-hide-this.php:167
+msgid "Justified"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:125
+msgid "Ken Burns Effect"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:73
+#: src/widgets/class-clever-scroll-to.php:125
+msgid "Label"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:71
+#: src/widgets/class-clever-slider.php:45
+msgid "Large"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:196
+#: src/widgets/class-clever-multi-banner .php:307
+msgid "Layla"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:131
+#: src/widgets/class-clever-multi-banner .php:147
+#: src/widgets/class-clever-posts.php:97 src/widgets/class-clever-posts.php:100
+#: src/widgets/class-clever-product-advanced.php:57
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:205
+#: src/widgets/class-clever-product-carousel.php:208
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:166
+#: src/widgets/class-clever-product-deal.php:228
+#: src/widgets/class-clever-product-grid-tabs.php:186
+#: src/widgets/class-clever-product-list-categories.php:67
+#: src/widgets/class-clever-product-list-tags.php:164
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:241
+#: src/widgets/class-clever-scroll-to.php:165
+#: src/widgets/class-clever-services.php:181
+#: src/widgets/class-clever-testimonial.php:120
+#: src/widgets/class-clever-time-line.php:77
+msgid "Layout"
+msgstr ""
+
+#: src/widgets/class-clever-product-deal.php:80
+msgid "Layout 1"
+msgstr ""
+
+#: src/widgets/class-clever-product-deal.php:81
+msgid "Layout 2"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:108
+msgid "Layout of blog."
+msgstr ""
+
+#: src/widgets/class-clever-services.php:188
+msgid "Layout of service."
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:127
+msgid "Layout of testimonial."
+msgstr ""
+
+#: src/widgets/class-clever-services.php:178
+#: src/widgets/class-clever-testimonial.php:111
+msgid "Layout Settings"
+msgstr ""
+
+#: src/widgets/class-clever-team-member.php:152
+msgid "Layout Style"
+msgstr ""
+
+#: src/widgets/class-clever-product-deal.php:74
+#: src/widgets/class-clever-product-list-categories.php:77
+msgid "Layout style"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:145
+#: src/widgets/class-clever-multi-banner .php:105
+#: src/widgets/class-clever-product-category-banner.php:106
+msgid "Leave it blank if don't use it"
+msgstr ""
+
+#: src/widgets/class-clever-product-category-banner.php:67
+#: src/widgets/class-clever-product-category-banner.php:82
+msgid "Leave it blank if use default category name."
+msgstr ""
+
+#: src/class-clever-widgets-manager.php:62
+#: src/class-clever-widgets-manager.php:90
+#: src/class-clever-widgets-manager.php:375
+#: src/widgets/class-clever-banner.php:216
+#: src/widgets/class-clever-button.php:104
+#: src/widgets/class-clever-hide-this.php:155
+#: src/widgets/class-clever-multi-banner .php:339
+#: src/widgets/class-clever-pricing-table.php:324
+#: src/widgets/class-clever-pricing-table.php:585
+#: src/widgets/class-clever-pricing-table.php:666
+#: src/widgets/class-clever-product-advanced.php:360
+#: src/widgets/class-clever-product-category-banner.php:180
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:81
+#: src/widgets/class-clever-product-list-categories.php:309
+#: src/widgets/class-clever-product-list-categories.php:377
+#: src/widgets/class-clever-product-list-categories.php:445
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:105
+#: src/widgets/class-clever-progress-bar.php:127
+#: src/widgets/class-clever-scroll-to.php:189
+#: src/widgets/class-clever-services.php:132
+#: src/widgets/class-clever-services.php:208
+#: src/widgets/class-clever-slider.php:478
+#: src/widgets/class-clever-slider.php:550
+#: src/widgets/class-clever-team-member.php:185
+#: src/widgets/class-clever-testimonial.php:349
+#: src/widgets/class-clever-testimonial.php:385
+#: src/widgets/class-clever-time-line.php:227
+#: src/widgets/class-clever-video-light-box.php:97
+msgid "Left"
+msgstr ""
+
+#: src/helpers/wc.php:229
+msgid "left in stock!"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:123
+msgid "License Keys"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:95
+#: src/widgets/class-clever-slider.php:251
+#: src/widgets/class-clever-slider.php:361
+#: src/widgets/class-clever-slider.php:896
+msgid "Light Speed In"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:195
+#: src/widgets/class-clever-multi-banner .php:306
+msgid "Lily"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:1204
+msgid "Line"
+msgstr ""
+
+#: src/class-clever-widgets-manager.php:305
+msgid "Line Height"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:169
+#: src/widgets/class-clever-scroll-to.php:238
+msgid "Lines"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:82
+#: src/widgets/class-clever-button.php:70 src/widgets/class-clever-icon.php:53
+#: src/widgets/class-clever-multi-banner .php:65
+#: src/widgets/class-clever-pricing-table.php:205
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:136
+#: src/widgets/class-clever-slider.php:318
+#: src/widgets/class-clever-team-member.php:121
+msgid "Link"
+msgstr ""
+
+#: src/widgets/class-clever-team-member.php:167
+msgid "Link to social account of member."
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:196
+msgid "Link Type"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:105
+#: src/widgets/class-clever-time-line.php:80
+msgid "List"
+msgstr ""
+
+#: src/widgets/class-clever-product-list-categories.php:83
+msgid "List categories"
+msgstr ""
+
+#: src/templates/template-product-advanced.php:324
+msgid "Load More"
+msgstr ""
+
+#: src/templates/template-product-advanced.php:318
+msgid "LOADING..."
+msgstr ""
+
+#: src/widgets/class-clever-progress-bar.php:81
+msgid "Location for display Percentage."
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:746
+#: src/widgets/class-clever-slider.php:752
+#: src/widgets/class-clever-slider.php:758
+msgid "Lorem ipsum dolor sit amet consectetur adipiscing elit dolor"
+msgstr ""
+
+#: src/widgets/class-clever-hide-this.php:121
+#: src/widgets/class-clever-slider.php:298
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, "
+"luctus nec ullamcorper mattis, pulvinar dapibus leo."
+msgstr ""
+
+#: src/class-clever-widgets-manager.php:327
+#: src/widgets/class-clever-scroll-to.php:298
+#: src/widgets/class-clever-scroll-to.php:423
+#: src/widgets/class-clever-scroll-to.php:569
+#: src/widgets/class-clever-scroll-to.php:813
+#: src/widgets/class-clever-services.php:539
+#: src/widgets/class-clever-testimonial.php:432
+#: src/widgets/class-clever-testimonial.php:502
+#: src/widgets/class-clever-testimonial.php:566
+#: src/widgets/class-clever-testimonial.php:614
+#: src/widgets/class-clever-testimonial.php:662
+#: src/widgets/class-clever-testimonial.php:703
+msgid "Margin"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:203
+#: src/widgets/class-clever-multi-banner .php:313
+msgid "Marley"
+msgstr ""
+
+#: src/widgets/class-clever-team-member.php:217
+msgid "Mask Background"
+msgstr ""
+
+#: src/class-clever-widgets-manager.php:213
+msgid "Max Width"
+msgstr ""
+
+#: src/widgets/class-clever-product-list-categories.php:133
+msgid "Maximum sub cat"
+msgstr ""
+
+#: src/widgets/class-clever-product-list-categories.php:134
+msgid "Maximum sub cat display, leave it 0 if want display all"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:44
+msgid "Medium"
+msgstr ""
+
+#: src/widgets/class-clever-team-member.php:130
+msgid "Member Avatar"
+msgstr ""
+
+#: src/widgets/class-clever-team-member.php:335
+msgid "Member Bio"
+msgstr ""
+
+#: src/widgets/class-clever-team-member.php:140
+#: src/widgets/class-clever-team-member.php:301
+msgid "Member Description"
+msgstr ""
+
+#: src/widgets/class-clever-team-member.php:134
+#: src/widgets/class-clever-team-member.php:267
+msgid "Member Name"
+msgstr ""
+
+#: src/widgets/class-clever-team-member.php:370
+msgid "Member Social"
+msgstr ""
+
+#: src/widgets/class-clever-widget-base.php:115
+msgid "Menu order"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:243
+#: src/widgets/class-clever-instagram.php:259
+#: src/widgets/class-clever-multi-banner .php:275
+#: src/widgets/class-clever-multi-banner .php:324
+#: src/widgets/class-clever-product-advanced.php:306
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:191
+#: src/widgets/class-clever-product-carousel.php:197
+#: src/widgets/class-clever-product-category-banner.php:165
+#: src/widgets/class-clever-product-deal.php:214
+#: src/widgets/class-clever-product-list-tags.php:150
+#: src/widgets/class-clever-services.php:159
+#: src/widgets/class-clever-slider.php:518
+msgid "Middle"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:205
+#: src/widgets/class-clever-multi-banner .php:315
+msgid "Milo"
+msgstr ""
+
+#: src/class-clever-widgets-manager.php:191
+msgid "Min Width"
+msgstr ""
+
+#: src/widgets/class-clever-multi-banner .php:51
+msgid "Multi Banners"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:209
+#: src/widgets/class-clever-scroll-to.php:158
+#: src/widgets/class-clever-scroll-to.php:228
+#: src/widgets/class-clever-services.php:297
+#: src/widgets/class-clever-slider.php:1112
+#: src/widgets/class-clever-time-line.php:444
+msgid "Navigation"
+msgstr ""
+
+#: src/widgets/class-clever-services.php:736
+#: src/widgets/class-clever-testimonial.php:712
+msgid "Navigation & Pagination"
+msgstr ""
+
+#: src/widgets/class-clever-services.php:743
+#: src/widgets/class-clever-services.php:763
+#: src/widgets/class-clever-testimonial.php:719
+#: src/widgets/class-clever-testimonial.php:739
+msgid "Navigation Color"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:645
+msgid "Navigation Menu"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:186
+msgid "Navigation Width"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:892
+msgid "New"
+msgstr ""
+
+#: src/templates/template-product-advanced.php:202
+#: src/templates/template-product-advanced.php:237
+#: src/templates/template-product-advanced.php:237
+#: src/templates/template-product-deal-and-asset-tabs.php:188
+#: src/templates/template-product-deal-and-asset-tabs.php:220
+#: src/templates/template-product-deal-and-asset-tabs.php:220
+#: src/templates/template-product-grid-tabs.php:156
+#: src/templates/template-product-grid-tabs.php:190
+#: src/templates/template-product-grid-tabs.php:190
+#: src/widgets/class-clever-widget-base.php:85
+#: src/widgets/class-clever-widget-base.php:94
+msgid "New Arrivals"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:257
+msgid "New!"
+msgstr ""
+
+#: src/widgets/class-clever-contact-form-7.php:51
+msgid "No forms found"
+msgstr ""
+
+#: src/templates/template-product-advanced.php:321
+msgid "No more page"
+msgstr ""
+
+#: src/widgets/class-clever-widget-base.php:221
+msgid "No sliders found"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:68
+#: src/widgets/class-clever-product-advanced.php:73
+#: src/widgets/class-clever-product-advanced.php:205
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:108
+#: src/widgets/class-clever-slider.php:882
+msgid "None"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:85
+msgid "none"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:169
+#: src/widgets/class-clever-banner.php:176
+#: src/widgets/class-clever-banner.php:194
+#: src/widgets/class-clever-button.php:82
+#: src/widgets/class-clever-button.php:90 src/widgets/class-clever-icon.php:86
+#: src/widgets/class-clever-multi-banner .php:129
+#: src/widgets/class-clever-multi-banner .php:287
+#: src/widgets/class-clever-multi-banner .php:305
+#: src/widgets/class-clever-pricing-table.php:242
+#: src/widgets/class-clever-product-category-banner.php:130
+#: src/widgets/class-clever-product-category-banner.php:149
+#: src/widgets/class-clever-scroll-to.php:666
+#: src/widgets/class-clever-services.php:93
+#: src/widgets/class-clever-services.php:380
+#: src/widgets/class-clever-services.php:400
+#: src/widgets/class-clever-services.php:678
+#: src/widgets/class-clever-single-scroll-to.php:131
+#: src/widgets/class-clever-slider.php:196
+#: src/widgets/class-clever-slider.php:312
+#: src/widgets/class-clever-slider.php:1051
+#: src/widgets/class-clever-slider.php:1270
+#: src/widgets/class-clever-time-line.php:463
+#: src/widgets/class-clever-time-line.php:661
+msgid "Normal"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:91
+msgid ""
+"Not work with carousel layout. Numeric pagination work only with page have "
+"single widget posts. "
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:56
+msgid "Number of items"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:59
+msgid "Number post display."
+msgstr ""
+
+#: src/widgets/class-clever-services.php:290
+msgid "Number services scroll per time."
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:70
+msgid "Number testimonial display."
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:203
+#: src/widgets/class-clever-testimonial.php:197
+msgid "Number testimonial scroll per time."
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:86
+#: src/widgets/class-clever-product-advanced.php:206
+msgid "Numeric"
+msgstr ""
+
+#: src/templates/template-product-advanced.php:196
+#: src/templates/template-product-advanced.php:231
+#: src/templates/template-product-advanced.php:231
+#: src/templates/template-product-deal-and-asset-tabs.php:182
+#: src/templates/template-product-deal-and-asset-tabs.php:214
+#: src/templates/template-product-deal-and-asset-tabs.php:214
+#: src/templates/template-product-grid-tabs.php:150
+#: src/templates/template-product-grid-tabs.php:184
+#: src/templates/template-product-grid-tabs.php:184
+msgid "On Sale"
+msgstr ""
+
+#: src/widgets/class-clever-widget-base.php:87
+#: src/widgets/class-clever-widget-base.php:96
+msgid "On sale"
+msgstr ""
+
+#: src/helpers/wc.php:226
+msgid "Only"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:228
+msgid "Open new window"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:84
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:118
+#: src/widgets/class-clever-product-carousel.php:124
+#: src/widgets/class-clever-product-deal.php:141
+#: src/widgets/class-clever-product-list-tags.php:77
+msgid "Options"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:158
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:101
+#: src/widgets/class-clever-product-carousel.php:107
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:125
+#: src/widgets/class-clever-product-deal.php:124
+#: src/widgets/class-clever-product-grid-tabs.php:144
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:200
+msgid "Order"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:151
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:94
+#: src/widgets/class-clever-product-carousel.php:100
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:118
+#: src/widgets/class-clever-product-deal.php:117
+#: src/widgets/class-clever-product-grid-tabs.php:137
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:193
+msgid "Order by"
+msgstr ""
+
+#: src/widgets/class-clever-image-comparison.php:56
+msgid "Orientation"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:72
+msgid "Original"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:135
+#: src/widgets/class-clever-pricing-table.php:437
+msgid "Original Price"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:137
+#: src/widgets/class-clever-pricing-table.php:143
+msgid "Original Price before sale for display"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:198
+#: src/widgets/class-clever-multi-banner .php:309
+msgid "Oscar"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:199
+msgid "Oscar 2"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:146
+msgid "Out"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:171
+#: src/widgets/class-clever-button.php:92 src/widgets/class-clever-multi-banner
+#: .php:131 src/widgets/class-clever-pricing-table.php:244
+#: src/widgets/class-clever-product-category-banner.php:132
+#: src/widgets/class-clever-services.php:95
+#: src/widgets/class-clever-slider.php:314
+msgid "Outline"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:1144
+#: src/widgets/class-clever-slider.php:1217
+msgid "Outside"
+msgstr ""
+
+#: src/widgets/class-clever-product-category-banner.php:153
+msgid "Overlap image"
+msgstr ""
+
+#: src/widgets/class-clever-image-comparison.php:175
+#: src/widgets/class-clever-product-category-banner.php:197
+msgid "Overlay Background"
+msgstr ""
+
+#: src/widgets/class-clever-services.php:372
+msgid "Overlay background"
+msgstr ""
+
+#: src/widgets/class-clever-video-light-box.php:227
+msgid "Overlay Background Color"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:180
+#: src/widgets/class-clever-multi-banner .php:291
+msgid "Overlay banner"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:206
+msgid "Overlay box"
+msgstr ""
+
+#: src/class-clever-widgets-manager.php:349
+#: src/widgets/class-clever-button.php:168
+#: src/widgets/class-clever-count-down.php:190
+#: src/widgets/class-clever-icon.php:150
+#: src/widgets/class-clever-pricing-table.php:342
+#: src/widgets/class-clever-pricing-table.php:376
+#: src/widgets/class-clever-pricing-table.php:612
+#: src/widgets/class-clever-pricing-table.php:684
+#: src/widgets/class-clever-pricing-table.php:787
+#: src/widgets/class-clever-pricing-table.php:838
+#: src/widgets/class-clever-product-advanced.php:413
+#: src/widgets/class-clever-product-categories-nav.php:182
+#: src/widgets/class-clever-product-categories-nav.php:270
+#: src/widgets/class-clever-product-list-categories.php:260
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:616
+#: src/widgets/class-clever-scroll-to.php:310
+#: src/widgets/class-clever-scroll-to.php:438
+#: src/widgets/class-clever-scroll-to.php:557
+#: src/widgets/class-clever-scroll-to.php:626
+#: src/widgets/class-clever-scroll-to.php:825
+#: src/widgets/class-clever-services.php:446
+#: src/widgets/class-clever-services.php:531
+#: src/widgets/class-clever-services.php:620
+#: src/widgets/class-clever-services.php:668
+#: src/widgets/class-clever-slider.php:442
+#: src/widgets/class-clever-slider.php:1041
+#: src/widgets/class-clever-testimonial.php:424
+#: src/widgets/class-clever-testimonial.php:494
+#: src/widgets/class-clever-testimonial.php:557
+#: src/widgets/class-clever-testimonial.php:605
+#: src/widgets/class-clever-testimonial.php:653
+msgid "Padding"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:201
+#: src/widgets/class-clever-pricing-table.php:215
+msgid "Page"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:81 src/widgets/class-clever-posts.php:218
+#: src/widgets/class-clever-product-advanced.php:200
+#: src/widgets/class-clever-services.php:306
+#: src/widgets/class-clever-time-line.php:589
+msgid "Pagination"
+msgstr ""
+
+#: src/widgets/class-clever-services.php:750
+#: src/widgets/class-clever-services.php:770
+#: src/widgets/class-clever-testimonial.php:726
+#: src/widgets/class-clever-testimonial.php:746
+msgid "Pagination Color"
+msgstr ""
+
+#: src/widgets/class-clever-product-list-categories.php:87
+msgid "Parent categories"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:832
+msgid "Pause on Hover"
+msgstr ""
+
+#: src/widgets/class-clever-progress-bar.php:185
+msgid "Percentage Color"
+msgstr ""
+
+#: src/widgets/class-clever-progress-bar.php:73
+msgid "Percentage loading"
+msgstr ""
+
+#: src/widgets/class-clever-progress-bar.php:80
+msgid "Percentage Location"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:140
+msgid "Period"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:457
+msgid "Period Color"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:485
+msgid "Period Description Color"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:59
+msgid "Photos count"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:186
+msgid "Position"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:121
+#: src/widgets/class-clever-pricing-table.php:129
+msgid "Price"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:411
+msgid "Price Block"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:501
+msgid "Price Block Padding"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:415
+#: src/widgets/class-clever-pricing-table.php:441
+msgid "Price Color"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:132
+msgid "Price for display"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:91
+msgid "Pricing Table"
+msgstr ""
+
+#: src/templates/template-product-category-banner.php:46
+#: src/widgets/class-clever-single-product.php:49
+msgid "Product"
+msgstr ""
+
+#: src/widgets/class-clever-product-categories-nav.php:51
+#: src/widgets/class-clever-product-categories-nav.php:309
+msgid "Product Categories"
+msgstr ""
+
+#: src/widgets/class-clever-product-category-banner.php:290
+msgid "Product Count"
+msgstr ""
+
+#: src/templates/template-product-category-banner.php:48
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:589
+msgid "Products"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:166
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:108
+#: src/widgets/class-clever-product-carousel.php:114
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:132
+#: src/widgets/class-clever-product-deal.php:131
+#: src/widgets/class-clever-product-grid-tabs.php:152
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:208
+msgid "Products per pages"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:118
+msgid "Profile Editor"
+msgstr ""
+
+#: src/widgets/class-clever-progress-bar.php:50
+#: src/widgets/class-clever-progress-bar.php:243
+msgid "Progress"
+msgstr ""
+
+#: src/widgets/class-clever-progress-bar.php:178
+msgid "Progress Background"
+msgstr ""
+
+#: src/widgets/class-clever-progress-bar.php:167
+msgid "Progress bar"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:97
+#: src/widgets/class-clever-slider.php:253
+#: src/widgets/class-clever-slider.php:363
+#: src/widgets/class-clever-slider.php:898
+msgid "Pulse"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:117
+#: src/widgets/class-clever-edd-tabs.php:137
+msgid "Purchase History"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:269
+msgid "Quotation icon"
+msgstr ""
+
+#: src/widgets/class-clever-widget-base.php:117
+msgid "Random"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:682
+msgid "Rate Color"
+msgstr ""
+
+#: src/templates/template-posts.php:169 src/templates/template-posts.php:256
+#: src/templates/template-posts.php:335 src/templates/template-posts.php:440
+msgid "Read more"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:84
+#: src/widgets/class-clever-button.php:72 src/widgets/class-clever-multi-banner
+#: .php:67 src/widgets/class-clever-pricing-table.php:207
+msgid "Redirect link when click to banner."
+msgstr ""
+
+#: src/widgets/class-clever-icon.php:55
+msgid "Redirect link when click to icon."
+msgstr ""
+
+#: src/class-clever-widgets-manager.php:70
+#: src/class-clever-widgets-manager.php:98
+#: src/class-clever-widgets-manager.php:383
+#: src/widgets/class-clever-banner.php:224
+#: src/widgets/class-clever-button.php:111
+#: src/widgets/class-clever-hide-this.php:163
+#: src/widgets/class-clever-multi-banner .php:341
+#: src/widgets/class-clever-pricing-table.php:332
+#: src/widgets/class-clever-pricing-table.php:593
+#: src/widgets/class-clever-pricing-table.php:674
+#: src/widgets/class-clever-product-advanced.php:367
+#: src/widgets/class-clever-product-category-banner.php:182
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:82
+#: src/widgets/class-clever-product-list-categories.php:317
+#: src/widgets/class-clever-product-list-categories.php:385
+#: src/widgets/class-clever-product-list-categories.php:453
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:107
+#: src/widgets/class-clever-progress-bar.php:134
+#: src/widgets/class-clever-scroll-to.php:190
+#: src/widgets/class-clever-services.php:140
+#: src/widgets/class-clever-services.php:216
+#: src/widgets/class-clever-slider.php:486
+#: src/widgets/class-clever-slider.php:558
+#: src/widgets/class-clever-team-member.php:192
+#: src/widgets/class-clever-testimonial.php:357
+#: src/widgets/class-clever-testimonial.php:393
+#: src/widgets/class-clever-time-line.php:234
+#: src/widgets/class-clever-video-light-box.php:105
+msgid "Right"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:103
+#: src/widgets/class-clever-slider.php:259
+#: src/widgets/class-clever-slider.php:369
+#: src/widgets/class-clever-slider.php:904
+msgid "Roll In"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:99
+#: src/widgets/class-clever-slider.php:255
+#: src/widgets/class-clever-slider.php:365
+#: src/widgets/class-clever-slider.php:900
+msgid "Rotate Down Left"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:100
+#: src/widgets/class-clever-slider.php:256
+#: src/widgets/class-clever-slider.php:366
+#: src/widgets/class-clever-slider.php:901
+msgid "Rotate Down Right"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:98
+#: src/widgets/class-clever-slider.php:254
+#: src/widgets/class-clever-slider.php:364
+#: src/widgets/class-clever-slider.php:899
+msgid "Rotate In"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:101
+#: src/widgets/class-clever-slider.php:257
+#: src/widgets/class-clever-slider.php:367
+#: src/widgets/class-clever-slider.php:902
+msgid "Rotate Up Left"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:102
+#: src/widgets/class-clever-slider.php:258
+#: src/widgets/class-clever-slider.php:368
+#: src/widgets/class-clever-slider.php:903
+msgid "Rotate Up Right"
+msgstr ""
+
+#: src/widgets/class-clever-video-light-box.php:123
+msgid "Round"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:202
+#: src/widgets/class-clever-multi-banner .php:312
+msgid "Roxy"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:105
+#: src/widgets/class-clever-slider.php:261
+#: src/widgets/class-clever-slider.php:371
+#: src/widgets/class-clever-slider.php:906
+msgid "Rubber Band"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:201
+#: src/widgets/class-clever-multi-banner .php:311
+msgid "Ruby"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:197
+#: src/widgets/class-clever-multi-banner .php:308
+msgid "Sadie"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:204
+#: src/widgets/class-clever-multi-banner .php:314
+msgid "Sarah"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:201
+msgid "Scroll Settings"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:208
+msgid "Scroll Speed"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:116
+msgid "Section ID"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:42
+#: src/widgets/class-clever-scroll-to.php:101
+#: src/widgets/class-clever-scroll-to.php:143
+msgid "Sections"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:112
+#: src/widgets/class-clever-multi-banner .php:80
+#: src/widgets/class-clever-pricing-table.php:97
+#: src/widgets/class-clever-progress-bar.php:56
+msgid ""
+"Select a heading tag for the title. Headings are defined with H1 to H6 tags."
+msgstr ""
+
+#: src/widgets/class-clever-image-comparison.php:73
+#: src/widgets/class-clever-image-comparison.php:125
+msgid "Select an image for compare."
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:52 src/widgets/class-clever-multi-banner
+#: .php:56 src/widgets/class-clever-product-category-banner.php:56
+msgid "Select an image for the banner."
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:52
+msgid "Select categories want display."
+msgstr ""
+
+#: src/widgets/class-clever-product-category-banner.php:49
+msgid "Select category you want display"
+msgstr ""
+
+#: src/widgets/class-clever-contact-form-7.php:61
+msgid "Select contact from 7 you want display"
+msgstr ""
+
+#: src/controls/class-clever-icon.php:90 src/controls/class-clever-icon.php:91
+msgid "Select Icon"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:143
+msgid "Select image size fit to layout you want use."
+msgstr ""
+
+#: src/widgets/class-clever-single-product.php:51
+msgid "Select product you want display."
+msgstr ""
+
+#: src/widgets/class-clever-widget-base.php:216
+msgid "Select slider"
+msgstr ""
+
+#: src/widgets/class-clever-revolution-slider.php:50
+msgid "Select slider you want display."
+msgstr ""
+
+#: src/widgets/class-clever-progress-bar.php:95
+msgid "Select style."
+msgstr ""
+
+#: src/widgets/class-clever-services.php:337
+msgid "Service"
+msgstr ""
+
+#: src/widgets/class-clever-services.php:118
+msgid "Service 1"
+msgstr ""
+
+#: src/widgets/class-clever-services.php:120
+msgid "Service 2"
+msgstr ""
+
+#: src/widgets/class-clever-services.php:112
+msgid "Services"
+msgstr ""
+
+#: src/widgets/class-clever-image-360-view.php:65
+msgid "Set a height value in px."
+msgstr ""
+
+#: src/widgets/class-clever-image-360-view.php:60
+msgid "Set a width value in px."
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:401
+msgid "Set custom style that will only affect this specific slide."
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:210
+msgid "Set scrolling speed in seconds, the default is 1"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:60
+msgid "Set text for typing."
+msgstr ""
+
+#: src/widgets/class-clever-multi-banner .php:143
+#: src/widgets/class-clever-product-advanced.php:47
+msgid "Setting"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:49
+#: src/widgets/class-clever-contact-form-7.php:55
+#: src/widgets/class-clever-count-down.php:46
+#: src/widgets/class-clever-image-360-view.php:43
+#: src/widgets/class-clever-instagram.php:46
+#: src/widgets/class-clever-revolution-slider.php:44
+#: src/widgets/class-clever-single-product.php:46
+#: src/widgets/class-clever-team-member.php:127
+#: src/widgets/class-clever-time-line.php:67
+#: src/widgets/class-clever-video-light-box.php:45
+msgid "Settings"
+msgstr ""
+
+#: src/class-cafe-settings-page.php:164
+msgid "Settings have been saved successfully!"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:618
+#: src/widgets/class-clever-scroll-to.php:718
+#: src/widgets/class-clever-scroll-to.php:781
+msgid "Shadow"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:106
+#: src/widgets/class-clever-slider.php:262
+#: src/widgets/class-clever-slider.php:372
+#: src/widgets/class-clever-slider.php:907
+msgid "Shake"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:340
+msgid "Shop All Color"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:347
+msgid "Shop All Color Hover"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:74
+msgid "Shop All Icon"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:64
+msgid "Shop All Label"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:84
+msgid "Shop All link"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:357
+msgid "Shop All Typo"
+msgstr ""
+
+#: src/widgets/class-clever-image-360-view.php:69
+#: src/widgets/class-clever-image-360-view.php:70
+msgid "Short description of block."
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:79
+#: src/widgets/class-clever-instagram.php:88
+#: src/widgets/class-clever-instagram.php:97
+#: src/widgets/class-clever-instagram.php:106
+#: src/widgets/class-clever-instagram.php:220
+#: src/widgets/class-clever-instagram.php:232
+#: src/widgets/class-clever-instagram.php:244
+#: src/widgets/class-clever-multi-banner .php:236
+#: src/widgets/class-clever-multi-banner .php:248
+#: src/widgets/class-clever-multi-banner .php:260
+#: src/widgets/class-clever-product-advanced.php:267
+#: src/widgets/class-clever-product-advanced.php:279
+#: src/widgets/class-clever-product-advanced.php:291
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:161
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:170
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:179
+#: src/widgets/class-clever-product-carousel.php:167
+#: src/widgets/class-clever-product-carousel.php:176
+#: src/widgets/class-clever-product-carousel.php:185
+#: src/widgets/class-clever-product-deal.php:184
+#: src/widgets/class-clever-product-deal.php:193
+#: src/widgets/class-clever-product-deal.php:202
+#: src/widgets/class-clever-product-list-categories.php:182
+#: src/widgets/class-clever-product-list-categories.php:194
+#: src/widgets/class-clever-product-list-categories.php:206
+#: src/widgets/class-clever-product-list-tags.php:120
+#: src/widgets/class-clever-product-list-tags.php:129
+#: src/widgets/class-clever-product-list-tags.php:138
+#: src/widgets/class-clever-time-line.php:165
+#: src/widgets/class-clever-time-line.php:183
+#: src/widgets/class-clever-time-line.php:201
+msgid "Show"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:820
+msgid "Show Arrows"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:160
+msgid "Show author post"
+msgstr ""
+
+#: src/widgets/class-clever-product-category-banner.php:75
+msgid "Show category description."
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:85
+msgid "Show comments count"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:90
+msgid "Show Cursor"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:93
+msgid "Show Cursor when typing or not."
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:146
+msgid "Show date post"
+msgstr ""
+
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:76
+msgid "Show deal position"
+msgstr ""
+
+#: src/widgets/class-clever-product-category-banner.php:73
+msgid "Show description"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:827
+msgid "Show Dots"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:94
+msgid "Show icons type( image/video )"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:100
+msgid "Show image"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:76
+msgid "Show likes count"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:153
+msgid "Show post categories"
+msgstr ""
+
+#: src/widgets/class-clever-product-category-banner.php:90
+msgid "Show Product Count"
+msgstr ""
+
+#: src/widgets/class-clever-product-category-banner.php:92
+msgid "Show product count."
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:167
+msgid "Show read more"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:256
+msgid "Show Star"
+msgstr ""
+
+#: src/widgets/class-clever-product-categories-nav.php:62
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:157
+msgid "Show Sub categories"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:103
+msgid "Show time"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:177
+msgid "Show Tooltips"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:242
+msgid "Show user avatar"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:249
+msgid "Show user description"
+msgstr ""
+
+#: src/widgets/class-clever-product-list-categories.php:142
+msgid "Show view more"
+msgstr ""
+
+#: src/widgets/class-clever-icon.php:103
+#: src/widgets/class-clever-product-advanced.php:446
+#: src/widgets/class-clever-product-advanced.php:478
+#: src/widgets/class-clever-scroll-to.php:466
+#: src/widgets/class-clever-services.php:460
+#: src/widgets/class-clever-slider.php:1000
+#: src/widgets/class-clever-team-member.php:388
+#: src/widgets/class-clever-testimonial.php:301
+#: src/widgets/class-clever-testimonial.php:445
+#: src/widgets/class-clever-testimonial.php:690
+#: src/widgets/class-clever-time-line.php:615
+#: src/widgets/class-clever-video-light-box.php:128
+msgid "Size"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:63
+msgid "Size of banner will apply follow image size."
+msgstr ""
+
+#: src/widgets/class-clever-button.php:94
+#: src/widgets/class-clever-pricing-table.php:246
+#: src/widgets/class-clever-slider.php:866
+msgid "Slide"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:745
+msgid "Slide 1"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:751
+msgid "Slide 2"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:757
+msgid "Slide 3"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:862
+msgid "Slide Effect"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:291
+msgid "Slide Heading"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:108
+#: src/widgets/class-clever-slider.php:264
+#: src/widgets/class-clever-slider.php:374
+#: src/widgets/class-clever-slider.php:909
+msgid "Slide In Down"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:109
+#: src/widgets/class-clever-slider.php:265
+#: src/widgets/class-clever-slider.php:375
+#: src/widgets/class-clever-slider.php:910
+msgid "Slide In Left"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:110
+#: src/widgets/class-clever-slider.php:266
+#: src/widgets/class-clever-slider.php:376
+#: src/widgets/class-clever-slider.php:911
+msgid "Slide In Right"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:111
+#: src/widgets/class-clever-slider.php:267
+#: src/widgets/class-clever-slider.php:377
+#: src/widgets/class-clever-slider.php:912
+msgid "Slide In Up"
+msgstr ""
+
+#: src/widgets/class-clever-revolution-slider.php:47
+msgid "Slider"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:816
+msgid "Slider Settings"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:200
+#: src/widgets/class-clever-services.php:287
+#: src/widgets/class-clever-testimonial.php:194
+msgid "Slider to scroll"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:54
+#: src/widgets/class-clever-slider.php:739
+msgid "Slides"
+msgstr ""
+
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:121
+msgid "Slides to Show"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:70
+#: src/widgets/class-clever-slider.php:43
+msgid "Small"
+msgstr ""
+
+#: src/widgets/class-clever-team-member.php:164
+msgid "Social account"
+msgstr ""
+
+#: src/helpers/wc.php:244
+msgid "Sold: "
+msgstr ""
+
+#: src/widgets/class-clever-hide-this.php:134
+msgid "Sorry! You are not allowed to see this content."
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:306
+#: src/widgets/class-clever-banner.php:345
+#: src/widgets/class-clever-count-down.php:104
+#: src/widgets/class-clever-pricing-table.php:565
+#: src/widgets/class-clever-product-advanced.php:399
+#: src/widgets/class-clever-product-categories-nav.php:108
+#: src/widgets/class-clever-product-list-categories.php:349
+#: src/widgets/class-clever-product-list-categories.php:417
+#: src/widgets/class-clever-product-list-categories.php:485
+#: src/widgets/class-clever-services.php:342
+#: src/widgets/class-clever-services.php:564
+#: src/widgets/class-clever-services.php:606
+#: src/widgets/class-clever-team-member.php:286
+#: src/widgets/class-clever-team-member.php:321
+#: src/widgets/class-clever-team-member.php:355
+#: src/widgets/class-clever-time-line.php:428
+#: src/widgets/class-clever-time-line.php:500
+msgid "Space"
+msgstr ""
+
+#: src/widgets/class-clever-product-advanced.php:400
+msgid "Space between filter item"
+msgstr ""
+
+#: src/widgets/class-clever-count-down.php:115
+msgid "Space with each countdown elements."
+msgstr ""
+
+#: src/widgets/class-clever-count-down.php:129
+msgid "Space with of countdown number and text."
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:391
+#: src/widgets/class-clever-product-category-banner.php:342
+#: src/widgets/class-clever-progress-bar.php:153
+#: src/widgets/class-clever-slider.php:929
+#: src/widgets/class-clever-slider.php:965
+#: src/widgets/class-clever-testimonial.php:329
+msgid "Spacing"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:232
+msgid "Speed"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:671
+msgid "Stars"
+msgstr ""
+
+#: src/widgets/class-clever-progress-bar.php:88
+msgid "Stuck Left"
+msgstr ""
+
+#: src/widgets/class-clever-progress-bar.php:89
+msgid "Stuck Right"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:104
+#: src/widgets/class-clever-count-down.php:86
+#: src/widgets/class-clever-image-comparison.php:91
+#: src/widgets/class-clever-image-comparison.php:143
+#: src/widgets/class-clever-image-comparison.php:171
+#: src/widgets/class-clever-posts.php:111
+#: src/widgets/class-clever-pricing-table.php:58
+#: src/widgets/class-clever-pricing-table.php:281
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:54
+#: src/widgets/class-clever-progress-bar.php:94
+#: src/widgets/class-clever-services.php:191
+#: src/widgets/class-clever-slider.php:396
+#: src/widgets/class-clever-team-member.php:175
+#: src/widgets/class-clever-testimonial.php:130
+#: src/widgets/class-clever-time-line.php:217
+#: src/widgets/class-clever-video-light-box.php:88
+msgid "Style"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:59
+#: src/widgets/class-clever-team-member.php:157
+#: src/widgets/class-clever-testimonial.php:135
+msgid "Style 1"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:60
+#: src/widgets/class-clever-team-member.php:158
+#: src/widgets/class-clever-testimonial.php:136
+msgid "Style 2"
+msgstr ""
+
+#: src/widgets/class-clever-team-member.php:159
+#: src/widgets/class-clever-testimonial.php:137
+msgid "Style 3"
+msgstr ""
+
+#: src/widgets/class-clever-team-member.php:160
+msgid "Style 4"
+msgstr ""
+
+#: src/widgets/class-clever-services.php:198
+msgid "Style of service."
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:139
+msgid "style of testimonial."
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:286
+msgid "Style-1"
+msgstr ""
+
+#: src/widgets/class-clever-product-list-categories.php:82
+msgid "Sub categories"
+msgstr ""
+
+#: src/widgets/class-clever-product-categories-nav.php:192
+msgid "Sub Category"
+msgstr ""
+
+#: src/widgets/class-clever-product-list-categories.php:364
+msgid "Sub Category item"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:119
+msgid "Subscriptions"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:79
+msgid "Support Video and Youtube only."
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:107
+#: src/widgets/class-clever-slider.php:263
+#: src/widgets/class-clever-slider.php:373
+#: src/widgets/class-clever-slider.php:908
+msgid "Swing"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:109
+#: src/widgets/class-clever-edd-tabs.php:110
+#: src/widgets/class-clever-edd-tabs.php:111
+msgid "Tab Content"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:100
+#: src/widgets/class-clever-edd-tabs.php:101
+msgid "Tab Title"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:89
+#: src/widgets/class-clever-edd-tabs.php:178
+msgid "Tabs"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:45
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:49
+msgid "Tabs Filter"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:132
+msgid "Tabs Items"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:112
+#: src/widgets/class-clever-slider.php:268
+#: src/widgets/class-clever-slider.php:378
+#: src/widgets/class-clever-slider.php:913
+msgid "Tada"
+msgstr ""
+
+#: src/widgets/class-clever-product-list-tags.php:65
+msgid "Tags"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:46
+msgid "Target ID"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:91
+msgid "Template"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:62
+msgid "Templates"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:98
+msgid "Testimonial 1"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:101
+msgid "Testimonial 2"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:104
+msgid "Testimonial 3"
+msgstr ""
+
+#: src/widgets/class-clever-testimonial.php:83
+msgid "Testimonial Content"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:177
+#: src/widgets/class-clever-pricing-table.php:254
+msgid "Text"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:212
+#: src/widgets/class-clever-multi-banner .php:335
+#: src/widgets/class-clever-product-category-banner.php:176
+#: src/widgets/class-clever-services.php:128
+#: src/widgets/class-clever-slider.php:545
+msgid "Text Align"
+msgstr ""
+
+#: src/widgets/class-clever-hide-this.php:180
+#: src/widgets/class-clever-scroll-to.php:673
+#: src/widgets/class-clever-scroll-to.php:736
+#: src/widgets/class-clever-services.php:681
+#: src/widgets/class-clever-services.php:709
+#: src/widgets/class-clever-slider.php:943
+#: src/widgets/class-clever-slider.php:979
+#: src/widgets/class-clever-slider.php:1054
+#: src/widgets/class-clever-slider.php:1082
+msgid "Text Color"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:256
+msgid "Text display inside badge"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:179
+msgid "Text display inside button"
+msgstr ""
+
+#: src/widgets/class-clever-hide-this.php:94
+#: src/widgets/class-clever-hide-this.php:143
+msgid "Text Editor"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:688
+#: src/widgets/class-clever-scroll-to.php:751
+msgid "Text Hover Color"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:57
+msgid "Text Typing"
+msgstr ""
+
+#: src/widgets/class-clever-count-down.php:142
+msgid "Text Typography"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:64
+msgid "This is auto typing 1"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:67
+msgid "This is auto typing 2"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:70
+msgid "This is auto typing 3"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:877
+msgid "This is Description"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:49
+msgid "This is features"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:161
+msgid "This is features 1"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:164
+msgid "This is features 2"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:167
+msgid "This is features 3"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:54
+msgid "This text is fixed, not has effect"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:92
+#: src/widgets/class-clever-pricing-table.php:117
+msgid "This text is heading content"
+msgstr ""
+
+#: src/widgets/class-clever-services.php:456
+msgid "Thumb/Icon"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:69
+#: src/widgets/class-clever-services.php:52
+msgid "Thumbnail"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:119
+msgid "Tile"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:117
+msgid "Time elapsed"
+msgstr ""
+
+#: src/widgets/class-clever-count-down.php:49
+msgid "Time Ended"
+msgstr ""
+
+#: src/widgets/class-clever-instagram.php:112
+msgid "Time layout"
+msgstr ""
+
+#: src/widgets/class-clever-time-line.php:70
+msgid "Time Line Content"
+msgstr ""
+
+#: src/widgets/class-clever-posts.php:244
+#: src/widgets/class-clever-services.php:332
+#: src/widgets/class-clever-testimonial.php:239
+msgid "Time(ms) to next slider."
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:100
+#: src/widgets/class-clever-banner.php:287
+#: src/widgets/class-clever-edd-tabs.php:98
+#: src/widgets/class-clever-edd-tabs.php:252
+#: src/widgets/class-clever-image-comparison.php:84
+#: src/widgets/class-clever-image-comparison.php:136
+#: src/widgets/class-clever-instagram.php:50
+#: src/widgets/class-clever-multi-banner .php:70
+#: src/widgets/class-clever-multi-banner .php:363
+#: src/widgets/class-clever-pricing-table.php:47
+#: src/widgets/class-clever-pricing-table.php:89
+#: src/widgets/class-clever-product-advanced.php:51
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:48
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:52
+#: src/widgets/class-clever-product-carousel.php:61
+#: src/widgets/class-clever-product-carousel.php:65
+#: src/widgets/class-clever-product-categories-nav.php:49
+#: src/widgets/class-clever-product-categories-nav.php:82
+#: src/widgets/class-clever-product-category-banner.php:65
+#: src/widgets/class-clever-product-category-banner.php:237
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:48
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:52
+#: src/widgets/class-clever-product-deal.php:48
+#: src/widgets/class-clever-product-deal.php:52
+#: src/widgets/class-clever-product-grid-tabs.php:48
+#: src/widgets/class-clever-product-grid-tabs.php:52
+#: src/widgets/class-clever-product-list-categories.php:51
+#: src/widgets/class-clever-product-list-categories.php:55
+#: src/widgets/class-clever-product-list-tags.php:48
+#: src/widgets/class-clever-product-list-tags.php:52
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:117
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:265
+#: src/widgets/class-clever-progress-bar.php:48
+#: src/widgets/class-clever-progress-bar.php:110
+#: src/widgets/class-clever-services.php:63
+#: src/widgets/class-clever-services.php:553
+#: src/widgets/class-clever-slider.php:924
+#: src/widgets/class-clever-team-member.php:49
+#: src/widgets/class-clever-time-line.php:54
+#: src/widgets/class-clever-time-line.php:310
+#: src/widgets/class-clever-time-line.php:388
+#: src/widgets/class-clever-video-light-box.php:52
+#: src/widgets/class-clever-video-light-box.php:167
+#: src/widgets/class-clever-widget-base.php:116
+msgid "Title"
+msgstr ""
+
+#: src/widgets/class-clever-services.php:549
+#: src/widgets/class-clever-slider.php:289
+msgid "Title & Description"
+msgstr ""
+
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:225
+#: src/widgets/class-clever-product-carousel.php:228
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:186
+#: src/widgets/class-clever-product-deal.php:248
+#: src/widgets/class-clever-product-grid-tabs.php:206
+#: src/widgets/class-clever-product-list-categories.php:238
+#: src/widgets/class-clever-product-list-tags.php:184
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:285
+msgid "Title Background"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:291
+#: src/widgets/class-clever-banner.php:435
+#: src/widgets/class-clever-multi-banner .php:367
+#: src/widgets/class-clever-multi-banner .php:471
+#: src/widgets/class-clever-pricing-table.php:361
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:210
+#: src/widgets/class-clever-product-carousel.php:213
+#: src/widgets/class-clever-product-category-banner.php:241
+#: src/widgets/class-clever-product-category-banner.php:363
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:171
+#: src/widgets/class-clever-product-deal.php:233
+#: src/widgets/class-clever-product-grid-tabs.php:191
+#: src/widgets/class-clever-product-list-categories.php:223
+#: src/widgets/class-clever-product-list-tags.php:169
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:270
+#: src/widgets/class-clever-time-line.php:323
+#: src/widgets/class-clever-time-line.php:401
+msgid "Title Color"
+msgstr ""
+
+#: src/widgets/class-clever-product-deal-and-asset-tabs.php:65
+msgid "Title deal"
+msgstr ""
+
+#: src/widgets/class-clever-product-category-banner.php:66
+msgid "Title for Category."
+msgstr ""
+
+#: src/widgets/class-clever-progress-bar.php:51
+msgid "Title for process bar."
+msgstr ""
+
+#: src/widgets/class-clever-progress-bar.php:55
+msgid "Title HTML Tag"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:292
+msgid "Title Padding"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:324
+msgid "Tooltips"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:366
+msgid "Tooltips Background"
+msgstr ""
+
+#: src/widgets/class-clever-scroll-to.php:336
+msgid "Tooltips Text Color"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:239
+#: src/widgets/class-clever-instagram.php:258
+#: src/widgets/class-clever-multi-banner .php:274
+#: src/widgets/class-clever-multi-banner .php:323
+#: src/widgets/class-clever-product-advanced.php:305
+#: src/widgets/class-clever-product-carousel-with-category-tabs.php:190
+#: src/widgets/class-clever-product-carousel.php:196
+#: src/widgets/class-clever-product-category-banner.php:164
+#: src/widgets/class-clever-product-deal.php:213
+#: src/widgets/class-clever-product-list-tags.php:149
+#: src/widgets/class-clever-progress-bar.php:85
+#: src/widgets/class-clever-services.php:155
+#: src/widgets/class-clever-slider.php:514
+msgid "Top"
+msgstr ""
+
+#: src/templates/template-product-advanced.php:208
+#: src/templates/template-product-advanced.php:243
+#: src/templates/template-product-advanced.php:243
+#: src/templates/template-product-deal-and-asset-tabs.php:194
+#: src/templates/template-product-deal-and-asset-tabs.php:226
+#: src/templates/template-product-deal-and-asset-tabs.php:226
+#: src/templates/template-product-grid-tabs.php:162
+#: src/templates/template-product-grid-tabs.php:196
+#: src/templates/template-product-grid-tabs.php:196
+#: src/widgets/class-clever-widget-base.php:90
+#: src/widgets/class-clever-widget-base.php:99
+msgid "Top Rate"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:277
+#: src/widgets/class-clever-slider.php:387
+msgid "Transition Duration(ms)"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:872
+msgid "Transition Speed (ms)"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:161
+msgid "Type"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:77
+msgid "Typing speed"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:170
+#: src/widgets/class-clever-button.php:91 src/widgets/class-clever-multi-banner
+#: .php:130 src/widgets/class-clever-pricing-table.php:243
+#: src/widgets/class-clever-product-category-banner.php:131
+#: src/widgets/class-clever-services.php:94
+#: src/widgets/class-clever-slider.php:313
+msgid "Underline"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:57
+msgid "Up"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:51
+#: src/widgets/class-clever-image-comparison.php:72
+#: src/widgets/class-clever-image-comparison.php:124
+#: src/widgets/class-clever-multi-banner .php:55
+#: src/widgets/class-clever-product-category-banner.php:55
+msgid "Upload Image"
+msgstr ""
+
+#: src/widgets/class-clever-pricing-table.php:200
+#: src/widgets/class-clever-services.php:102
+msgid "URL"
+msgstr ""
+
+#: src/widgets/class-clever-services.php:104
+msgid "Url of page service want assign when click"
+msgstr ""
+
+#: src/class-cafe-settings-page.php:94
+msgid "Version"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:166
+#: src/widgets/class-clever-image-comparison.php:61
+msgid "Vertical"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:234
+#: src/widgets/class-clever-multi-banner .php:319
+#: src/widgets/class-clever-product-category-banner.php:160
+#: src/widgets/class-clever-services.php:150
+msgid "Vertical Align"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:509
+msgid "Vertical Position"
+msgstr ""
+
+#: src/widgets/class-clever-video-light-box.php:48
+msgid "Video Emb URL"
+msgstr ""
+
+#: src/widgets/class-clever-video-light-box.php:74
+msgid "Video Height"
+msgstr ""
+
+#: src/widgets/class-clever-video-light-box.php:77
+msgid "Video height in desktop"
+msgstr ""
+
+#: src/widgets/class-clever-video-light-box.php:64
+msgid "Video thumb"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:78
+msgid "Video url"
+msgstr ""
+
+#: src/widgets/class-clever-video-light-box.php:68
+msgid "Video Width"
+msgstr ""
+
+#: src/widgets/class-clever-video-light-box.php:71
+msgid "Video Width in desktop"
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:152
+msgid "View"
+msgstr ""
+
+#: src/widgets/class-clever-product-list-categories.php:432
+msgid "View More"
+msgstr ""
+
+#: src/widgets/class-clever-product-list-categories.php:152
+msgid "View more text"
+msgstr ""
+
+#: src/widgets/class-clever-banner.php:101
+#: src/widgets/class-clever-banner.php:102
+#: src/widgets/class-clever-multi-banner .php:71
+#: src/widgets/class-clever-multi-banner .php:72
+msgid "What is the title of this banner."
+msgstr ""
+
+#: src/widgets/class-clever-hide-this.php:101
+msgid "Who Can See This Content?"
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:327
+msgid "Whole Slide"
+msgstr ""
+
+#: src/class-clever-widgets-manager.php:247
+#: src/widgets/class-clever-image-360-view.php:58
+#: src/widgets/class-clever-scroll-to.php:287
+#: src/widgets/class-clever-team-member.php:231
+#: src/widgets/class-clever-time-line.php:473
+#: src/widgets/class-clever-time-line.php:541
+msgid "Width"
+msgstr ""
+
+#: src/widgets/class-clever-count-down.php:101
+msgid "Width for each item."
+msgstr ""
+
+#: src/widgets/class-clever-edd-tabs.php:120
+msgid "Wishlist Items"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:113
+#: src/widgets/class-clever-slider.php:269
+#: src/widgets/class-clever-slider.php:379
+#: src/widgets/class-clever-slider.php:914
+msgid "Wobble"
+msgstr ""
+
+#: src/widgets/class-clever-product-list-categories.php:143
+msgid "Work with case number sub categories more than Maximum sub cat"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:253
+msgid "Wrap Border"
+msgstr ""
+
+#: src/widgets/class-clever-product-with-banner-and-tabs.php:246
+msgid "Wrapper"
+msgstr ""
+
+#: src/widgets/class-clever-auto-typing.php:136
+#: src/widgets/class-clever-banner.php:90
+#: src/widgets/class-clever-button.php:78
+#: src/widgets/class-clever-contact-form-7.php:67
+#: src/widgets/class-clever-count-down.php:82
+#: src/widgets/class-clever-icon.php:82
+#: src/widgets/class-clever-image-360-view.php:78
+#: src/widgets/class-clever-posts.php:249
+#: src/widgets/class-clever-product-category-banner.php:145
+#: src/widgets/class-clever-revolution-slider.php:56
+#: src/widgets/class-clever-single-product.php:58
+#: src/widgets/class-clever-testimonial.php:265
+#: src/widgets/class-clever-video-light-box.php:83
+msgid "You may add a custom HTML class to style element later."
+msgstr ""
+
+#: src/widgets/class-clever-slider.php:141
+msgid "Zoom Direction"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:104
+#: src/widgets/class-clever-slider.php:260
+#: src/widgets/class-clever-slider.php:370
+#: src/widgets/class-clever-slider.php:905
+msgid "Zoom In"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:114
+#: src/widgets/class-clever-slider.php:270
+#: src/widgets/class-clever-slider.php:380
+#: src/widgets/class-clever-slider.php:915
+msgid "Zoom In Down"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:115
+#: src/widgets/class-clever-slider.php:271
+#: src/widgets/class-clever-slider.php:381
+#: src/widgets/class-clever-slider.php:916
+msgid "Zoom In Left"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:116
+#: src/widgets/class-clever-slider.php:272
+#: src/widgets/class-clever-slider.php:382
+#: src/widgets/class-clever-slider.php:917
+msgid "Zoom In Right"
+msgstr ""
+
+#: src/widgets/class-clever-single-scroll-to.php:117
+#: src/widgets/class-clever-slider.php:273
+#: src/widgets/class-clever-slider.php:383
+#: src/widgets/class-clever-slider.php:918
+msgid "Zoom In Up"
+msgstr ""

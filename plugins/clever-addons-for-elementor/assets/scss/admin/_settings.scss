@@ -1,0 +1,159 @@
+.elementor_page_cafe_plugin_settings .notice {
+    margin: 20px;
+    display: none;
+    &.updated {
+        display: block;
+    }
+}
+
+.elementor_page_cafe_plugin_settings #wpcontent {
+    padding-left: 0;
+}
+
+.cafe-plugin-settings {
+    background-color: #f1f1f1;
+    display: table;
+    margin: 0;
+    vertical-align: top;
+
+    p {
+        &.submit {
+            background-color: #fff;
+            padding-left: 18px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        &.description {
+            color: #999;
+        }
+    }
+
+    span.description {
+        color: #999;
+    }
+
+    table {
+        margin: 0;
+        padding: 18px 18px 0;
+        width: 100%;
+
+        &.active-tab {
+            background-color: #fff;
+        }
+
+        caption {
+            border-bottom: 1px solid #ddd;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 18px 18px 0;
+            padding-bottom: 10px;
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        thead {
+            width: 100%;
+        }
+
+        tr {
+            display: block;
+            padding-bottom: 20px;
+            width: 100%;
+
+            th {
+                display: block;
+                padding: 10px 5px 10px 0;
+                width: 100%;
+            }
+
+            td {
+                display: block;
+                padding: 0;
+                text-align: left;
+
+                label {
+                    font-weight: bold;
+
+                    span.description {
+                        font-weight: normal;
+                    }
+                }
+
+                input {
+                    &[type="text"],
+                    &[type="email"],
+                    &[type="number"] {
+                        width: 50%;
+                        min-width: 320px;
+                        padding: 5px 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    .nav-bar {
+        background-color: #f1f1f1;
+        display: table-cell;
+        min-width: 180px;
+        vertical-align: top;
+
+        .branding {
+            border-right: 1px solid #ddd;
+            padding-top: 20px;
+            text-align: center;
+
+            .plugin-name {
+                font-size: 32px;
+                margin: 0;
+                padding: 0;
+                line-height: 1;
+            }
+
+            .plugin-version {
+                span {
+                    background-color: #23282d;
+                    border-radius: 2px;
+                    color: #fff;
+                    padding: 2px 5px;
+                }
+            }
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                font-weight: bold;
+                margin: 0;
+
+                &:first-child {
+                    border-top: 0;
+                }
+
+                a {
+                    border-top: 1px solid #ddd;
+                    border-right: 1px solid #ddd;
+                    display: block;
+                    padding: 12px;
+                    text-decoration: none;
+
+                    &.active-item {
+                        border-right: 0;
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .content-tabs {
+        background-color: #fff;
+        display: table-cell;
+        min-height: 100%;
+        width: 100%;
+        vertical-align: top;
+    }
+}

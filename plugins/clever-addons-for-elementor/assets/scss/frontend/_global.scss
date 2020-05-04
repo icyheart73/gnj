@@ -1,0 +1,53 @@
+/* Global scss*/
+/* Infinity Scroll */
+.scroller-status {
+  display: none;
+  margin: 45px auto 45px auto !important;
+
+  .infinite-scroll-last, .infinite-scroll-error {
+    cursor: pointer;
+    padding: 8px 60px;
+    text-align: center;
+  }
+
+  .infinite-scroll-request {
+    text-align: center;
+
+    .pagination-loading {
+      display: inline-block;
+      cursor: pointer;
+      padding: 8px 60px;
+
+      .loading {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        &:after {
+          position: unset;
+          margin-left: 8px;
+          width: 20px;
+          height: 20px;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+.view-more-button {
+  text-align: center;
+  margin: 45px auto 45px auto;
+
+  span {
+    display: inline-block;
+    cursor: pointer;
+    padding: 8px 60px;
+    background: $black_text;
+    color: $white_text;
+  }
+
+}
