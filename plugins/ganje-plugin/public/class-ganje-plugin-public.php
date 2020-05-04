@@ -66,6 +66,11 @@ class Ganje_Plugin_Public {
 
         require_once GNJ_PATH . '/public/public-class/view-product-meta.php';
 
+        require_once GNJ_PATH . '/public/public-class/question-answer/view-product-qa.php';
+        require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-discussion.php';
+        require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-question.php';
+        require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-answer.php';
+
     }
 
 	/**
