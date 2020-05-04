@@ -30,6 +30,7 @@ class Ganje_Plugin_Public {
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
 	private $plugin_name;
+    private $setting;
 
 	/**
 	 * The version of this plugin.
@@ -51,6 +52,7 @@ class Ganje_Plugin_Public {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+        $this->get_Settings();
         $this->load_dependencies();
 
 	}
@@ -66,11 +68,20 @@ class Ganje_Plugin_Public {
 
         require_once GNJ_PATH . '/public/public-class/view-product-meta.php';
 
-        require_once GNJ_PATH . '/public/public-class/question-answer/view-product-qa.php';
-        require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-discussion.php';
-        require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-question.php';
-        require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-answer.php';
+        if ( $this->setting['product_qa'] == 'on' ) {
 
+            require_once GNJ_PATH . '/public/public-class/question-answer/view-product-qa.php';
+            require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-discussion.php';
+            require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-question.php';
+            require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-answer.php';
+
+        }
+
+    }
+
+    public function get_Settings(){
+        global $GanjeSetting;
+        $this->setting = $GanjeSetting;
     }
 
 	/**

@@ -1,7 +1,5 @@
 <?php
 
-use CleverAddonsForElementor\Widgets\GanjeProductListPrice;
-
 class Ganjge_product_list_price{
 
     public function __construct() {

@@ -39,6 +39,7 @@ class Ganje_Plugin {
 	 */
 	protected $loader;
 
+
 	private static $instance = null;
 
 	/**
@@ -76,6 +77,8 @@ class Ganje_Plugin {
 		}
 		$this->plugin_name = 'ganje-plugin';
 
+        $this->get_Settings();
+
 		$this->load_dependencies();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
@@ -90,6 +93,12 @@ class Ganje_Plugin {
 		}
 		return self::$instance;
 	}
+
+    public function get_Settings(){
+
+        global $GanjeSetting;
+        $GanjeSetting = get_option( 'option_tree' );
+    }
 
 	/**
 	 * Load the required dependencies for this plugin.
