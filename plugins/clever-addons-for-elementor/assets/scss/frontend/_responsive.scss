@@ -1,0 +1,89 @@
+@media (max-width:992px) {
+	//
+	.cafe-head-product-filter{
+		align-items: flex-start;
+		flex-wrap: wrap;
+		.cafe-deal-action-link{
+			width: 100%;
+		}
+	}
+	.cafe-head-product-filter.has-tabs {
+		position: relative;
+		.cafe-title{
+			width: 100%;
+			display: block;
+			position: relative;
+			&:before {
+				content: '\c272';
+				font-family: cleversoft;
+				font-size: 18px;
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				z-index: 1;
+				-webkit-transform: translateY(-50%);
+				transform: translateY(-50%);
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				border: 1px solid #ccc;
+				border-radius: 30px;
+			}
+			&.active {
+				&:before {
+					-webkit-transform: translateY(-50%) rotate(180deg);
+					transform: translateY(-50%) rotate(180deg);
+				}
+
+			}
+		}
+
+		
+
+		.cafe-ajax-load {
+			display: none;
+			width: 100%;
+			background: #fff;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			z-index: 1;
+			padding-top: 15px;
+
+			li {
+				width: 100%;
+			}
+
+		}
+
+	}
+	.cafe-module-1{
+		.cafe-head-product-filter{
+			&:before{
+				content: none;
+			}
+		}
+	}
+	.cafe-product-banner-and-tabs.style-1{
+		flex-wrap: wrap;
+	}
+	.cafe-product-banner-and-tabs.style-1 .cafe-head-product-filter .cafe-ajax-load {
+		display: none;
+	}
+	.cafe-product-banner-and-tabs.style-1 .cafe-head-product-filter .cafe-ajax-load .shop-now-button{
+		position: unset;
+	}
+}
+
+@media (max-width:768px) {
+}
+
+@media (max-width:576px) {
+	.cafe-products-wrap.cafe-deal-wrap{
+		flex-direction: column;
+		&>*{
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,118 @@
+.cafe-wrap-progress-bar {
+    display: flex;
+    align-items: center;
+    .base-bg, & {
+        width: 100%;
+        position: relative;
+        padding: 0;
+    }
+    .base-bg {
+        height: 100%;
+        background: $border_color;
+        display: inline-flex;
+    }
+    &.default {
+        height: 5px;
+        .cafe-progress-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: inherit;
+        }
+        &.top, &.bottom {
+            .percent-count {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        &.top {
+            .percent-count {
+                bottom: 100%;
+            }
+        }
+        &.bottom {
+            .percent-count {
+                top: 100%;
+            }
+        }
+    }
+    &.grouped {
+        .percent-count {
+            width: 100%;
+            display: inline-block;
+        }
+        &.top, &.bottom {
+            flex-wrap: wrap;
+            .cafe-grouped-content {
+                width: 100%;
+            }
+        }
+        &.top, &.stuck-left {
+            .cafe-grouped-content {
+                order: -1;
+            }
+        }
+        &.stuck-left .cafe-grouped-content {
+            margin-right: 10px;
+        }
+        &.stuck-right .cafe-grouped-content {
+            margin-left: 10px;
+            .percent-count {
+                margin: 0
+            }
+        }
+    }
+    .percent-count {
+        display: flex;
+        span {
+            display: inline;
+            line-height: 1;
+        }
+    }
+    &.inner {
+        .percent-count, .cafe-progress-dot {
+            position: static;
+            transform: none;
+        }
+        .cafe-progress-dot {
+            width: 100% !important;
+            height: 100% !important;
+        }
+        .percent-count {
+            display: block;
+            margin: 0 auto;
+        }
+        .cafe-progress-bar {
+            text-align: center;
+            overflow: hidden;
+        }
+    }
+    &.stuck-left {
+        .percent-count {
+            order: -1;
+            margin-right: 20px;
+        }
+    }
+    &.stuck-right {
+        .percent-count {
+            margin-left: 20px;
+        }
+    }
+}
+
+.cafe-progress-bar {
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    background: $black_transparent_6;
+    transition: linear;
+    width: 0;
+}

@@ -1,0 +1,114 @@
+.cafe-services {
+    &.cafe-carousel{
+        &>.cafe-row{
+            display: block;
+        }
+    }
+    .cafe-service-title a{
+        color: inherit;
+        line-height: inherit;
+    }
+    .cafe-service-item{
+        margin-bottom: 30px;
+    }
+    .cafe-wrap-service {
+        display: flex;
+        width: 100%;
+    }
+    .cafe-wrap-media {
+        font-size: 36px;
+        text-align: center;
+    }
+    .cafe-wrap-service-content {
+        flex-grow: 1;
+    }
+    &.left-position {
+        .cafe-wrap-media {
+            margin-right: 15px;
+        }
+    }
+    &.right-position {
+        .cafe-wrap-service-content {
+            order: -1
+        }
+        .cafe-wrap-media {
+            margin-left: 15px;
+        }
+    }
+    &.center-position {
+        .cafe-service-item {
+            flex-direction: column;
+        }
+    }
+    &.boxed{
+        .cafe-service-title{
+            color: rgba(255,255,255,0.4);
+            font-size: 100px;
+            line-height: 1;
+            margin-bottom: -30px;
+        }
+        .cafe-wrap-service{
+            position: relative;
+            display: inline-block;
+        }
+        .cafe-wrap-media{
+            position: relative;
+            &:after, &:before{
+                content: '';
+                display: block;
+                background: $black_transparent_2;
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                transition: all 300ms;
+            }
+            &:after{
+                opacity: 0;
+            }
+            &:before{
+                opacity: 1;
+            }
+            img{
+                width: 100%;
+            }
+        }
+        .cafe-wrap-service-content{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: inherit;
+            justify-content: center;
+            flex-direction: column;
+            text-align: inherit;
+            position: absolute;
+            left: 0;
+            top:0;
+            &>*{
+                text-align: inherit;
+                width: 100%;
+            }
+        }
+        .cafe-service-des{
+            font-size: 48px;
+        }
+        .cafe-button{
+            color: $white_text;
+            i{
+                font-size: 80%;
+            }
+        }
+        .cafe-service-item:hover{
+            .cafe-wrap-media{
+                position: relative;
+                &:after{
+                    opacity: 1;
+                }
+                &:before{
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

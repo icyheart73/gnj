@@ -1,0 +1,26 @@
+.cafe-fullpage-scrolling-sections {
+    .section-item {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+.cafe-fullpage-navbar {
+    position: fixed;
+    height: 100px;
+    top: calc(50vh - 50px);
+    &.cafe-fullpage-navbar-right {
+        right: 1em;
+    }
+    &.cafe-fullpage-navbar-left {
+        left: 1em;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            margin: 0;
+            padding: 0;
+            line-height: 1;           
+        }
+    }
+}
