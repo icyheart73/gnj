@@ -39,6 +39,7 @@ class Ganje_Plugin_Public {
 	 * @var      string    $version    The current version of this plugin.
 	 */
 	private $version;
+    private $setting;
 
 	/**
 	 * Initialize the class and set its properties.
@@ -49,11 +50,14 @@ class Ganje_Plugin_Public {
 	 */
 	public function __construct( $plugin_name, $version ) {
 
+        $this->get_Settings();
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
         $this->load_dependencies();
 
-	}
+
+
+    }
 
     private function load_dependencies() {
         /**
@@ -70,6 +74,12 @@ class Ganje_Plugin_Public {
         require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-discussion.php';
         require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-question.php';
         require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-answer.php';
+        require_once GNJ_PATH . '/public/public-class/view-product-addons.php';
+
+        if( $this->setting['free_price'] == 'on') {
+
+            require_once GNJ_PATH . '/public/public-class/ganje-single-product-free-price.php';
+        }
 
     }
 
@@ -118,5 +128,9 @@ class Ganje_Plugin_Public {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/ganje-plugin-public.js', array( 'jquery' ), $this->version, false );
 
 	}
+
+    public function get_Settings(){
+        $this->setting = get_option( 'option_tree' );
+    }
 
 }

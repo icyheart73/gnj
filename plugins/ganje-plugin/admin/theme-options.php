@@ -17,7 +17,11 @@ $custom_settings = array(
 		array(
 			'id'          => 'woocommerce',
 			'title'       => 'ووکامرس'
-		)
+		),
+        array(
+            'id'          => 'single_product',
+            'title'       =>'صفحه محصول'
+        )
 	),
 	'settings'        => array(
         array(
@@ -54,6 +58,33 @@ $custom_settings = array(
             'type'         => 'on-off',
             'section'      => 'woocommerce',
         ),
+        array(
+            'id'           => 'free_price',
+            'label'        => 'فعالسازی برچسب دلخواه برای محصولات رایگان',
+            'desc'         => 'اگر می خواهید برای محصولاتی که رایگان هستند به جای قیمت ، برچسب دلخواهی را نمایش دهید این گزینه را روشن کنید. دقت کنید که قیمت 0 به معنای رایگان بودن محصول می باشد ',
+            'std'          => 'on',
+            'type'         => 'on-off',
+            'section'      => 'single_product',
+        ),
+        array(
+            'id'           => 'free_price_text',
+            'label'        => 'برچسب دلخواه مورد نظرتان را وارد کنید.',
+            'desc'         => sprintf('میتوانید از کد HTML در این قسمت استفاده کنید. مثلا میتوانید متن را به صفحه دلخواه لینک کنید و یا آیکون دلخواهی به جای متن نمایش دهید. برای اطلاعات بیشتر روی لینک زیر کلیک کنید %1$s', '<br><a href="#" target="_blank" > نمایش آموزش در سایت گنجه </a>' ),
+            'std'          => '<a href="#" target="_blank" > رایگان </a>',
+            'type'         => 'textarea-simple',
+            'section'      => 'single_product',
+            'rows'         => '4',
+            'condition'    => 'free_price:is(on)'
+        ),
+        array(
+            'id'           => 'product_count',
+            'label'        => 'فعالسازی نمایش موجودی',
+            'desc'         => '',
+            'std'          => 'on',
+            'type'         => 'on-off',
+            'section'      => 'single_product',
+        ),
+
 	)
 );
 
