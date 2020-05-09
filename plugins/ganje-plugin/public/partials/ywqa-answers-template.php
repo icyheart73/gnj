@@ -32,16 +32,16 @@ $ywqa = Ganje_Product_QA::get_instance();
 
 		<div id="submit_answer">
 			<form id="submit_answer_form" method="POST">
-				<input type="hidden" name="ywqa_product_id" value="<?php echo $question->product_id; ?>">
-				<input type="hidden" name="ywqa_question_id" value="<?php echo $question->ID; ?>">
+				<input type="hidden" name="gnj_product_id" value="<?php echo $question->product_id; ?>">
+				<input type="hidden" name="gnj_question_id" value="<?php echo $question->ID; ?>">
 				<input type="hidden" name="add_new_answer" value="1">
 				<?php wp_nonce_field( 'submit_answer_' . $question->ID, 'send_answer' ); ?>
 
 				<div>
 						<textarea placeholder="Type your answer here" class="ywqa-send-answer-text"
-						          id="ywqa_send_answer_text"
-						          name="ywqa_send_answer_text"></textarea>
-					<input id="ywqa-send-answer" type="submit" class="ywqa_submit_answer"
+						          id="gnj_send_answer_text"
+						          name="gnj_send_answer_text"></textarea>
+					<input id="ywqa-send-answer" type="submit" class="gnj_submit_answer"
 					       value="<?php _e( "Answer", 'yith-woocommerce-questions-and-answers' ); ?>"
 					       title="<?php _e( "Answer now to the question", 'yith-woocommerce-questions-and-answers' ); ?>">
 				</div>
@@ -49,7 +49,7 @@ $ywqa = Ganje_Product_QA::get_instance();
 		</div>
 </div>
 
-<div id="ywqa_answer_list">
+<div id="gnj_answer_list">
 
 	<?php if ( $question_count = $question->has_answers() ) : ?>
 		<span

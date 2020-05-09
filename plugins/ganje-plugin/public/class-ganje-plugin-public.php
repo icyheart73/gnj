@@ -71,6 +71,7 @@ class Ganje_Plugin_Public {
         if ( $this->setting['product_qa'] == 'on' ) {
 
             require_once GNJ_PATH . '/public/public-class/question-answer/view-product-qa.php';
+            require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-fronted.php';
             require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-discussion.php';
             require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-question.php';
             require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-answer.php';

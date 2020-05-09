@@ -2,3 +2,18 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+.post-type-ganje_qa .wp-list-table #qora {
+    width: 85px;
+}
+.post-type-ganje_qa .wp-list-table td .answer, .post-type-ganje_qa .wp-list-table td .question {
+    padding: 6px 12px;
+    background-color: #c6e4ff;
+    color: #2d5fbd;
+    border: 1px solid #97b9f7;
+    border-radius: 4px;
+}
+.post-type-ganje_qa .wp-list-table td .answer {
+    background-color: #9fffe4;
+    color: #0f9174;
+    border: 1px solid #4de6c4;
+}

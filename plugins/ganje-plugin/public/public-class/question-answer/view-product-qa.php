@@ -26,14 +26,10 @@ class Ganje_Product_QA{
 
         add_action ( 'init', array( $this, 'on_plugin_init' ) );
 
-        // Add to admin_init function
-        add_filter ( 'manage_edit-question_answer_columns', array( $this, 'add_custom_columns_title' ) );
 
-        // Add to admin_init function
-        add_action ( 'manage_question_answer_posts_custom_column', array(
-            $this,
-            'add_custom_columns_content'
-        ), 10, 2 );
+        add_filter( 'manage_ganje_qa_posts_columns', array( $this, 'gnj_filter_posts_columns') );
+        add_action( 'manage_ganje_qa_posts_custom_column', array( $this, 'gnj_realestate_column'), 10, 2 );
+
 
         /**
          * Add metabox to question and answer post type
@@ -59,20 +55,81 @@ class Ganje_Product_QA{
 
 
     }
-    /**
-     * Add custom columns to custom post type table
-     *
-     * @param $defaults current columns
-     *
-     * @return array new columns
-     */
-    public function add_custom_columns_title( $defaults ) {
 
-        $columns = array_slice ( $defaults, 0, 1 );
 
-        $columns["image_type"] = '';
 
-        return apply_filters ( 'yith_questions_answers_custom_column_title', array_merge ( $columns, array_slice ( $defaults, 1 ) ) );
+    public function gnj_realestate_column( $column, $post_id ) {
+
+        $discussion = $this->get_discussion( $post_id );
+        if ( null == $discussion ) {
+            return;
+        }
+
+        switch ( $column ) {
+            case 'qora' :
+
+                $discussion = $this->get_discussion( $post_id );
+                if ( $discussion instanceof YWQA_Question ) {
+                    echo '<span class="question">سوال</span>';
+                } else {
+                    if ( $discussion instanceof YWQA_Answer ) {
+                        echo '<span class="answer">جواب</span>';
+                    }
+                }
+                break;
+
+            case 'actions' :
+                if ( strcmp( $discussion->product_id, '0' ) != 0 ) {
+                    $product = wc_get_product( $discussion->product_id );
+                } else {
+                    $product = '';
+                }
+
+                if ( ! $product ) {
+                    echo 'محصولی پیدا نشد.';
+
+                    return;
+                }
+
+                $product_title     = $product->get_title();
+                $product_edit_link = get_permalink( $discussion->product_id );
+
+                echo sprintf( '<span class="for-product">%s</span><a class="view-product" target="_blank" href="%s" title="%s">%s</a>',
+                    'نام محصول : ',
+                    $product_edit_link,
+                    $product_title,
+                    $product_title );
+
+                if ( $discussion instanceof YWQA_Answer ) {
+                    $question       = $discussion->get_question();
+                    $question_title = wc_trim_string(wp_strip_all_tags($question->content));
+
+
+                    $question_edit_link = get_edit_post_link( $question->ID );
+
+                    echo " <br>" . sprintf( '<span class="response-to">%s</span><a class="response-to" href="%s" title="%s">%s</a>',
+                            'در جواب به سوال : ',
+                            $question_edit_link,
+                            $question_title,
+                            $question_title );
+                }
+                break;
+
+            default:
+        }
+
+    }
+
+
+
+    public function gnj_filter_posts_columns( $columns ) {
+        $columns = array(
+            'cb' => $columns['cb'],
+            'qora' => '',
+            'title' => 'عنوان',
+            'actions' => '',
+        );
+        return $columns;
     }
 
     public function submit_answer_callback() {
@@ -86,7 +143,7 @@ class Ganje_Product_QA{
 
         $answer         = new YWQA_Answer( $args );
         $answer->status = "publish";
-        $result         = $answer->save ();
+        $result         = $answer->save();
         if ( ! $result ) {
             wp_send_json ( array(
                 "code" => - 1
@@ -116,41 +173,53 @@ class Ganje_Product_QA{
         echo '<style>.add-new-h2{ display: none; }</style>';
     }
 
-    public function get_questions_count( $product_id ) {
+    public function get_questions_count( $product_id, $only_answered = false ) {
         global $wpdb;
 
-        $query = $wpdb->prepare ( "select count(que.ID)
+        $answered_query = '';
+        if ( $only_answered ) {
+            $answered_query = " and que.ID in (select distinct(post_parent) from {$wpdb->prefix}posts where post_status = 'publish') ";
+        }
+
+        $query = $wpdb->prepare( "select count(que.ID)
 				from {$wpdb->prefix}posts as que left join {$wpdb->prefix}posts as pro
 				on que.post_parent = pro.ID
 				where que.post_status = 'publish'
 				and que.post_type = %s
 				and pro.post_type = 'product'
-				and pro.ID = %d",
+				and pro.ID = %d" . $answered_query,
             'ganje_qa',
             $product_id
         );
 
-        $items = $wpdb->get_row ( $query, ARRAY_N );
+        $items = $wpdb->get_row( $query, ARRAY_N );
 
         return $items[0];
     }
 
     /**
-     * Show the reviews for a specific product
+     * Show questions by product
      *
-     * @param $product_id product id for whose should be shown the reviews
+     * @param int    $product_id
+     * @param string $items
+     * @param int    $page
+     * @param bool   $only_answered
+     *
+     * @return int
+     * @author Lorenzo Giuffrida
+     * @since  1.0.0
      */
-    public function show_questions( $product_id, $items = 'auto', $only_answered = false ) {
+    public function show_questions( $product_id ) {
 
-        $questions = $this->get_questions ( $product_id, $items, $only_answered );
+        $questions = $this->get_questions( $product_id );
 
         foreach ( $questions as $question ) {
-
-            $this->show_question ( $question );
+            $this->show_question( $question );
         }
 
-        return count ( $questions );
+        return count( $questions );
     }
+
 
     /**
      * Show the reviews for a specific product
@@ -196,42 +265,24 @@ class Ganje_Product_QA{
      *
      * @param $product_id the product id requested
      */
-    public function get_questions( $product_id, $items = 'auto', $only_answered = false ) {
+    public function get_questions( $product_id ) {
         global $wpdb;
 
-        if ( 'auto' === $items ) {
-            $items = 0;
-        }
-
-        $query_limit = '';
-        if ( $items > 0 ) {
-            $query_limit = sprintf ( " limit 0,%d ", $items );
-        }
-
-        $order_by_query = " order by que.post_date DESC ";
-
-        $answered_query = '';
-        if ( $only_answered ) {
-            $answered_query = " and que.ID in (select distinct(post_parent) from {$wpdb->prefix}posts) ";
-        }
-
-        $query = $wpdb->prepare ( "select que.ID
-				from {$wpdb->prefix}posts as que left join {$wpdb->prefix}posts as pro
-				on que.post_parent = pro.ID
-				where que.post_status = 'publish'
-				and que.post_type = %s
-				and pro.post_type = 'product'
-				and pro.ID = %d" . $answered_query . $order_by_query . $query_limit,
+        $query = $wpdb->prepare( "select ID
+				from {$wpdb->posts}
+				where post_status = 'publish' and
+				      post_type = %s and
+				      post_parent = %d " . " order by post_date DESC ",
             'ganje_qa',
             $product_id
         );
 
-        $post_ids = $wpdb->get_results ( $query, ARRAY_A );
+        $post_ids = $wpdb->get_results( $query, ARRAY_A );
 
         $questions = array();
 
         foreach ( $post_ids as $item ) {
-            $questions[] = new YWQA_Question( $item["ID"] );
+            $questions[] = new Gnj_Question( $item["ID"] );
         }
 
         return $questions;
@@ -244,7 +295,7 @@ class Ganje_Product_QA{
      */
     public function show_question( $question, $classes = '' ) {
 
-        wc_get_template ( 'ywqa-question-template.php', array(
+        wc_get_template ( 'gnj-single-question.php', array(
             'question' => $question,
             'classes'  => $classes
         ), '', GNJ_PATH.'/public/partials/' );
@@ -313,41 +364,91 @@ class Ganje_Product_QA{
          */
         if ( isset( $_POST["select_product"] ) ) {
 
-            update_post_meta ( $post_id, '_ywqa_product_id', $_POST["select_product"] );
-            update_post_meta ( $post_id, '_ywqa_type', "question" );
+            update_post_meta ( $post_id, '_gnj_product_id', $_POST["select_product"] );
+            update_post_meta ( $post_id, '_gnj_type', "question" );
         }
     }
 
     // Add the Events Meta Boxes
-    function add_plugin_metabox() {
-        add_meta_box ( 'ywqa_metabox', 'Questions & Answers', array(
-            $this,
-            'display_plugin_metabox'
-        ), 'question_answer', 'normal', 'default' );
+    public function add_plugin_metabox() {
+        add_meta_box ( 'gnj_metabox', 'پرسش و پاسخ ها', array( $this, 'display_plugin_metabox' ), 'ganje_qa', 'normal', 'default' );
     }
-    /**
-     * show content for custom columns
-     *
-     * @param $column_name column shown
-     * @param $post_ID     post to use
-     */
-    public function add_custom_columns_content( $column_name, $post_ID ) {
 
-        switch ( $column_name ) {
-            case 'image_type' :
+    public function display_plugin_metabox() {
+        //  Display different metabox content when it's a new question or answer
+        if ( isset( $_GET["post"] ) ) {
+            $discussion = $this->get_discussion ( $_GET["post"] );
 
-                $discussion = $this->get_discussion ( $post_ID );
-                if ( $discussion instanceof YWQA_Question ) {
-                    echo '<span class="dashicons dashicons-admin-comments"></span>';
-                } else if ( $discussion instanceof YWQA_Answer ) {
-                    echo '<span class="dashicons dashicons-admin-page"></span>';
-                }
-                break;
+            if ( $discussion instanceof YWQA_Question ) {
+                ?>
+                <div id="question-content-div">
+                    <label>نام محصول : </label>
+                    <a target="_blank"
+                       href="<?php echo get_permalink ( $discussion->product_id ); ?>"><?php echo wc_get_product ( $discussion->product_id )->get_title (); ?></a>
+                    <input type="hidden" id="product_id" name="product_id"
+                           value="<?php echo $discussion->product_id ?>">
+                    <input type="hidden" id="discussion_type" name="discussion_type" value="edit-question">
+                    <textarea id="respond-to-question" name="respond-to-question" placeholder="پاسخ خود را وارد کنید ..."
+                              rows="5"></textarea>
+                    <input id="submit-answer" class="button button-primary button-large" type="submit"
+                           value="ارسال پاسخ">
+                </div>
+                <?php
 
-            default:
-                do_action ( "yith_questions_answers_custom_column_content", $column_name, $post_ID );
+            } else if ( $discussion instanceof YWQA_Answer ) {
+                $question = $discussion->get_question ();
+                ?>
+                <input type="hidden" id="discussion_type" name="discussion_type" value="edit-answer">
+                <fieldset>
+                    <label><?php _e ( "Product: ", 'yith-woocommerce-questions-and-answers' ); ?></label>
+                    <a target="_blank"
+                       href="<?php echo get_permalink ( $discussion->product_id ); ?>"><?php echo wc_get_product ( $discussion->product_id )->get_title (); ?></a>
+                </fieldset>
+                <fieldset>
+                    <label><?php _e ( "Question: ", 'yith-woocommerce-questions-and-answers' ); ?></label>
+                    <span><?php echo $question->content; ?></span>
+                </fieldset>
+                <?php
+            }
+        } else {
+            //  it's a new question, let it choose the product to be related to
+            global $wpdb;
+
+            $products = $wpdb->get_results ( "select ID, post_title
+				from {$wpdb->prefix}posts
+				where post_type = 'product'
+				order by post_title" );
+
+            ?>
+            <input type="hidden" id="discussion_type" name="discussion_type" value="new-question">
+            <table class="form-table">
+                <tbody>
+                <tr valign="top" class="titledesc">
+                    <th scope="row">
+                        <label for="product"><?php _e ( 'Select product', 'yith-woocommerce-questions-and-answers' ); ?></label>
+                    </th>
+                    <td class="forminp yith-choosen">
+
+                        <select id="select_product" name="select_product" class="chosen-select"
+                                style="width: 80%" placeholder="Select product">
+                            <option value="-1"></option>
+                            <?php
+
+                            foreach ( $products as $product ) {
+                                ?>
+                                <option
+                                    value="<?php echo $product->ID; ?>"><?php echo $product->post_title; ?></option>
+                                <?php
+                            }
+                            ?>
+                        </select>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <?php
         }
-
     }
     /**
      * Retrieve the instance of the correct object based on the content type of
@@ -359,7 +460,7 @@ class Ganje_Product_QA{
      */
     public function get_discussion( $post_id ) {
 
-        $discussion_type = get_post_meta ( $post_id, '_ywqa_type', true );
+        $discussion_type = get_post_meta ( $post_id, '_gnj_type', true );
 
         if ( "question" === $discussion_type ) {
             return new YWQA_Question( $post_id );
@@ -404,26 +505,15 @@ class Ganje_Product_QA{
      * Show the question or answer template file
      */
     public function show_question_answer_template() {
+        global $product;
 
-        wc_get_template ( 'ywqa-questions-template.php', array(
-            'max_items'     => 10,
-            'only_answered' => 1,
-        ), '', GNJ_PATH.'/public/partials/' );
-
-        if ( isset( $_GET["reply-to-question"] ) ) {
-            $question = new YWQA_Question( $_GET["reply-to-question"] );
-            wc_get_template ( 'ywqa-answers-template.php', array( 'question' => $question ), '', GNJ_PATH.'/public/partials/' );
-        } else if ( isset( $_GET["show-all-questions"] ) ) {
-            wc_get_template ( 'ywqa-questions-template.php', array(
-                'max_items'     => - 1,
-                'only_answered' => 0,
-            ), '', GNJ_PATH.'/public/partials/' );
-        } else {
-            wc_get_template ( 'ywqa-questions-template.php', array(
-                'max_items'     => 10,
-                'only_answered' => 1,
-            ), '', GNJ_PATH.'/public/partials/' );
-        }
+        wc_get_template( 'gnj-base.php',
+            array(
+                'max_items'     => -1 ,
+                'only_answered' => 0 ,
+                'product_id'    => $product_id = $product->get_id(),
+            ),
+            '', GNJ_PATH.'/public/partials/' );
     }
 
     /**
@@ -446,26 +536,26 @@ class Ganje_Product_QA{
 
         // Set UI labels for Custom Post Type
         $labels = array(
-            'name'               => _x ( 'Questions & Answers', 'Post Type General Name', 'yith-woocommerce-questions-and-answers' ),
-            'singular_name'      => _x ( 'Question', 'Post Type Singular Name', 'yith-woocommerce-questions-and-answers' ),
-            'menu_name'          => __ ( 'Questions & Answers', 'yith-woocommerce-questions-and-answers' ),
+            'name'               => 'پرسش و پاسخ',
+            'singular_name'      => 'پرسش',
+            'menu_name'          => 'پرسش و پاسخ',
             'parent_item_colon'  => __ ( 'Parent discussion', 'yith-woocommerce-questions-and-answers' ),
-            'all_items'          => __ ( 'All discussion', 'yith-woocommerce-questions-and-answers' ),
-            'view_item'          => __ ( 'View discussions', 'yith-woocommerce-questions-and-answers' ),
-            'add_new_item'       => __ ( 'Add new question', 'yith-woocommerce-questions-and-answers' ),
-            'add_new'            => __ ( 'Add new', 'yith-woocommerce-questions-and-answers' ),
-            'edit_item'          => __ ( 'Edit discussion', 'yith-woocommerce-questions-and-answers' ),
-            'update_item'        => __ ( 'Update discussion', 'yith-woocommerce-questions-and-answers' ),
-            'search_items'       => __ ( 'Search discussion', 'yith-woocommerce-questions-and-answers' ),
-            'not_found'          => __ ( 'Not found', 'yith-woocommerce-questions-and-answers' ),
-            'not_found_in_trash' => __ ( 'Not found in the bin', 'yith-woocommerce-questions-and-answers' ),
+            'all_items'          => 'همه پرسش و پاسخ ها',
+            'view_item'          => 'نمایش پرسش و پاسخ ها',
+            'add_new_item'       => 'افزودن پرسش جدید',
+            'add_new'            => 'افزودن جدید',
+            'edit_item'          => 'ویرایش',
+            'update_item'        => 'بروزرسانی',
+            'search_items'       => 'جستجو',
+            'not_found'          => 'چیزی پیدا نشد',
+            'not_found_in_trash' => 'چیزی پیدا نشد',
         );
 
         // Set other options for Custom Post Type
 
         $args = array(
-            'label'               => __ ( 'Questions & Answers', 'yith-woocommerce-questions-and-answers' ),
-            'description'         => __ ( 'YITH Questions and Answers', 'yith-woocommerce-questions-and-answers' ),
+            'label'               => 'پرسش و پاسخ',
+            'description'         => 'پرسش و پاسخ های محصولات',
             'labels'              => $labels,
             // Features this CPT supports in Post Editor
             'supports'            => array(
@@ -502,31 +592,28 @@ class Ganje_Product_QA{
             return false;
         }
 
-        if ( ! isset( $_POST["ywqa_product_id"] ) ) {
+        if ( ! isset( $_POST["gnj_product_id"] ) ) {
             return false;
         }
 
-        if ( ! isset( $_POST["ywqa_ask_question_text"] ) || empty( $_POST["ywqa_ask_question_text"] ) ) {
+        if ( ! isset( $_POST["gnj_ask_question_text"] ) || empty( $_POST["gnj_ask_question_text"] ) ) {
             return false;
         }
 
-        if (
-            ! isset( $_POST['ask_question'] )
-            || ! wp_verify_nonce ( $_POST['ask_question'], 'ask_question_' . $_POST["ywqa_product_id"] )
-        ) {
+        if (! isset( $_POST['ask_question'] ) || ! wp_verify_nonce ( $_POST['ask_question'], 'ask_question_' . $_POST["gnj_product_id"] )) {
 
-            _e ( "Please retry submitting your question or answer.", 'yith-woocommerce-questions-and-answers' );
+            echo 'متاسفانه در ثبت سوال مشکلی بوجود آمده است. لطفا مجدد امتحان کنید.';
             exit;
         }
 
-        $product_id = intval ( $_POST['ywqa_product_id'] );
+        $product_id = intval ( $_POST['gnj_product_id'] );
         if ( ! $product_id ) {
-            _e ( "No product ID selected, the question will not be created.", 'yith-woocommerce-questions-and-answers' );
+            echo 'متاسفانه در ثبت سوال مشکلی بوجود آمده است. لطفا مجدد امتحان کنید.';
             exit;
         }
 
         $args = array(
-            'content'    => sanitize_text_field ( $_POST["ywqa_ask_question_text"] ),
+            'content'    => sanitize_text_field ( $_POST["gnj_ask_question_text"] ),
             'author_id'  => get_current_user_id (),
             'product_id' => $product_id,
             'parent_id'  => $product_id
@@ -546,10 +633,7 @@ class Ganje_Product_QA{
     public function create_question( $args ) {
 
         $question = new YWQA_Question( $args );
-        $question = apply_filters ( "yith_questions_answers_before_new_question", $question );
-        $question->save ();
-        do_action ( "yith_questions_answers_after_new_question", $question );
-
+        $question->save();
         return $question;
     }
 
@@ -563,21 +647,21 @@ class Ganje_Product_QA{
             return false;
         }
 
-        if ( ! isset( $_POST["ywqa_product_id"] ) ) {
+        if ( ! isset( $_POST["gnj_product_id"] ) ) {
             return false;
         }
 
-        if ( ! isset( $_POST["ywqa_question_id"] ) ) {
+        if ( ! isset( $_POST["gnj_question_id"] ) ) {
             return false;
         }
 
-        if ( ! isset( $_POST["ywqa_send_answer_text"] ) || empty( $_POST["ywqa_send_answer_text"] ) ) {
+        if ( ! isset( $_POST["gnj_send_answer_text"] ) || empty( $_POST["gnj_send_answer_text"] ) ) {
             return false;
         }
 
         if (
             ! isset( $_POST['send_answer'] )
-            || ! wp_verify_nonce ( $_POST['send_answer'], 'submit_answer_' . $_POST["ywqa_question_id"] )
+            || ! wp_verify_nonce ( $_POST['send_answer'], 'submit_answer_' . $_POST["gnj_question_id"] )
         ) {
 
             _e ( "Please retry submitting your question or answer.", 'yith-woocommerce-questions-and-answers' );
@@ -585,10 +669,10 @@ class Ganje_Product_QA{
         }
 
         $args = array(
-            'content'    => sanitize_text_field ( $_POST["ywqa_send_answer_text"] ),
+            'content'    => sanitize_text_field ( $_POST["gnj_send_answer_text"] ),
             'author_id'  => get_current_user_id (),
-            'product_id' => $_POST["ywqa_product_id"],
-            'parent_id'  => $_POST["ywqa_question_id"]
+            'product_id' => $_POST["gnj_product_id"],
+            'parent_id'  => $_POST["gnj_question_id"]
         );
 
         $this->create_answer ( $args );
