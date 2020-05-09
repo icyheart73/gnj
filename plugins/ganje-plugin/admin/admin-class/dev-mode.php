@@ -19,29 +19,8 @@ function wpse_91693_render()
     do_action('devmode' ,10 );
     print '</div>';
 }
-
-add_action( 'devmode', 'testvar');
-
-
-// Get Woocommerce variation price based on product ID
-function testvar(){
-    $product = new WC_Product_Variable(159);
-    $variations = $product->get_available_variations();
-    var_dump($variations['display_price']);
-    $var_data = [];
-    foreach ($variations as $variation) {
-        foreach ($variation['attributes'] as $var) {
-            echo $var;
-            echo '<hr>';
-        }
-
-        echo '<img src="'.$variation['image']['url'].'" />';
-        echo '<hr>';
-        echo $variation['display_regular_price'];
-        echo '<hr>';
-        echo $variation['display_price'];
-        echo '<hr>';
-        echo '<hr>';
-        echo '<hr>';
-    }
+add_action('devmode', 'test');
+function test(){
+    global $GanjeSetting;
+    var_dump($GanjeSetting);
 }

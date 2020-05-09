@@ -45,7 +45,7 @@ if ( ! class_exists( 'YWQA_Answer' ) ) {
 				return null;
 			}
 
-			return new YWQA_Question( $this->parent_id );
+			return new Gnj_Question( $this->parent_id );
 		}
 	}
 }

@@ -30,6 +30,7 @@ class Ganje_Plugin_Public {
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
 	private $plugin_name;
+    private $setting;
 
 	/**
 	 * The version of this plugin.
@@ -39,7 +40,6 @@ class Ganje_Plugin_Public {
 	 * @var      string    $version    The current version of this plugin.
 	 */
 	private $version;
-    private $setting;
 
 	/**
 	 * Initialize the class and set its properties.
@@ -50,14 +50,12 @@ class Ganje_Plugin_Public {
 	 */
 	public function __construct( $plugin_name, $version ) {
 
-        $this->get_Settings();
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+        $this->get_Settings();
         $this->load_dependencies();
 
-
-
-    }
+	}
 
     private function load_dependencies() {
         /**
@@ -80,7 +78,21 @@ class Ganje_Plugin_Public {
 
             require_once GNJ_PATH . '/public/public-class/ganje-single-product-free-price.php';
         }
+        if ( $this->setting['product_qa'] == 'on' ) {
 
+            require_once GNJ_PATH . '/public/public-class/question-answer/view-product-qa.php';
+            require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-fronted.php';
+            require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-discussion.php';
+            require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-question.php';
+            require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-answer.php';
+
+        }
+
+    }
+
+    public function get_Settings(){
+        global $GanjeSetting;
+        $this->setting = $GanjeSetting;
     }
 
 	/**
@@ -128,9 +140,5 @@ class Ganje_Plugin_Public {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/ganje-plugin-public.js', array( 'jquery' ), $this->version, false );
 
 	}
-
-    public function get_Settings(){
-        $this->setting = get_option( 'option_tree' );
-    }
 
 }

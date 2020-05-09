@@ -20,7 +20,7 @@ if ( ! class_exists( 'YWQA_Question' ) ) {
 	 * @author     Your Inspiration Themes
 	 *
 	 */
-	class YWQA_Question extends YWQA_Discussion {
+	class Gnj_Question extends YWQA_Discussion {
 
 		/**
 		 * Initialize a question object
@@ -71,7 +71,7 @@ if ( ! class_exists( 'YWQA_Question' ) ) {
 				$params = array(
                     "content" => $item["post_content"],
 					"author_id"  => $item["post_author"],
-					"product_id" => get_post_meta( $item["ID"], '_ywqa_product_id', true ),
+					"product_id" => get_post_meta( $item["ID"], '_gnj_product_id', true ),
 					"ID"         => $item["ID"],
 					"parent_id"  => $item["post_parent"],
 					"date"       => $item["post_date"]

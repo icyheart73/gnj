@@ -36,11 +36,11 @@ class Ganje_PB_Wc_Persian {
         if( $this->setting['download_checkout'] == 'on') {
             add_filter( 'woocommerce_checkout_fields', array( $this, 'remove_extra_field_physical' ) );
         }
-
     }
 
     public function get_Settings(){
-        $this->setting = get_option( 'option_tree' );
+        global $GanjeSetting;
+        $this->setting = $GanjeSetting;
     }
 
     public function persian_number( $price ) {

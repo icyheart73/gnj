@@ -58,11 +58,6 @@ if ( ! class_exists ( 'YWQA_Discussion' ) ) {
         public $type = '';
 
         /**
-         * @var string status of the post
-         */
-        public $status = 'publish';
-
-        /**
          * Create a new item
          *
          * @param null $args
@@ -114,7 +109,7 @@ if ( ! class_exists ( 'YWQA_Discussion' ) ) {
                 "date"       => $post->post_date,
                 "author_id"  => $post->post_author,
                 "content"    => $post->post_content,
-                "product_id" => get_post_meta ( $post->ID, '_ywqa_product_id', true ),
+                "product_id" => get_post_meta ( $post->ID, '_gnj_product_id', true ),
                 "ID"         => $post->ID,
                 "parent_id"  => $post->post_parent,
             );
@@ -133,7 +128,7 @@ if ( ! class_exists ( 'YWQA_Discussion' ) ) {
                 'post_author'  => $this->author_id,
                 'post_title'   => wc_trim_string(wp_strip_all_tags($this->content), 50),
                 'post_content' => $this->content,
-                'post_status'  => $this->status,
+                'post_status'  => 'Pending',
                 'post_type'    => 'ganje_qa',
                 'post_parent'  => $this->parent_id,
             );
@@ -146,10 +141,8 @@ if ( ! class_exists ( 'YWQA_Discussion' ) ) {
                 wp_update_post ( $args );
             }
 
-            update_post_meta ( $this->ID, '_ywqa_product_id', $this->product_id );
-            update_post_meta ( $this->ID, '_ywqa_type', $this->type );
-
-            do_action ( 'ywqa_after_discussion_save', $this->ID );
+            update_post_meta ( $this->ID, '_gnj_product_id', $this->product_id );
+            update_post_meta ( $this->ID, '_gnj_type', $this->type );
 
             return $this->ID;
         }
