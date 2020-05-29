@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit; // Exit if accessed directly
+
 class Ganje_Product_Meta {
     private static $instance = null;
     public $settings = array();
@@ -40,10 +42,6 @@ class Ganje_Product_Meta {
 
     public function product_intro_video()
     {
-
-        var_dump(is_product());
-       var_dump( $this->settings);
-
 
 
             if($this->settings['type_video']=='direct_link'){?>

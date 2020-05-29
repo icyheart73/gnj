@@ -25,7 +25,7 @@ final class CleverPosts extends CleverWidgetBase
      */
     function get_title()
     {
-        return 'پست تیمچه';
+        return 'پست گنجه';
     }
 
     /**

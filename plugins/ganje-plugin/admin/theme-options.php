@@ -21,8 +21,17 @@ $custom_settings = array(
         array(
             'id'          => 'single_product',
             'title'       =>'صفحه محصول'
+        ),
+        array(
+            'id'          => 'sharing_product',
+            'title'       =>'اشتراک گذاری'
+        ),
+        array(
+            'id'          => 'calling_order',
+            'title'       =>'سفارش تلفنی'
         )
 	),
+
 	'settings'        => array(
         array(
             'id'           => 'empty_price',
@@ -86,13 +95,100 @@ $custom_settings = array(
         ),
         array(
             'id'           => 'product_count',
-            'label'        => 'فعالسازی نمایش موجودی',
+            'label'        => 'فعالسازی نمایش تعداد فروش',
             'desc'         => '',
             'std'          => 'on',
             'type'         => 'on-off',
             'section'      => 'single_product',
         ),
-
+        array(
+            'id'           => 'related_product',
+            'label'        => 'فعالسازی نمایش محصولات مرتبط',
+            'desc'         => ' ',
+            'std'          => 'on',
+            'type'         => 'on-off',
+            'section'      => 'single_product',
+        ),
+        array(
+            'id'          => 'related_product_count',
+            'label'       => 'تعداد محصولات مرتبط',
+            'desc'        => '',
+            'type'        => 'numeric-slider',
+            'section'     => 'single_product',
+            'min_max_step'=> '4,16,1',
+            'condition'    => 'related_product:is(on)'
+        ),
+        array(
+            'id'           => 'product_instock',
+            'label'        => 'عدم نمایش محصولات ناموجود',
+            'desc'         => '',
+            'std'          => 'on',
+            'type'         => 'on-off',
+            'section'      => 'single_product',
+            'condition'    => 'related_product:is(on)'
+        ),
+        array(
+            'id'          => 'related_option',
+            'label'       =>  'مرتبط بر اساس',
+            'desc'        =>  '',
+            'type'        => 'checkbox',
+            'section'     => 'single_product',
+            'condition'    => 'related_product:is(on)',
+            'choices'     => array(
+                array(
+                    'value'       => 'category',
+                    'label'       => 'دسته بندی',
+                ),
+                array(
+                    'value'       => 'tag',
+                    'label'       =>  'برچسب',
+                )
+            )
+        ),
+        array(
+            'id'           => 'share_product',
+            'label'        => 'فعال سازی اشتراک گذاری محصول',
+            'desc'         => ' ',
+            'std'          => 'on',
+            'type'         => 'on-off',
+            'section'      => 'sharing_product',
+        ),
+        array(
+            'id'           => 'share_email_product',
+            'label'        => 'فعال سازی اشتراک گذاری محصول با ایمیل',
+            'desc'         => ' ',
+            'std'          => 'on',
+            'type'         => 'on-off',
+            'section'      => 'sharing_product',
+            'condition'    => 'share_product:is(on)',
+        ),
+        array(
+            'id'           => 'share_sms_product',
+            'label'        => 'فعال سازی اشتراک گذاری محصول با پیامک',
+            'desc'         => ' ',
+            'std'          => 'on',
+            'type'         => 'on-off',
+            'section'      => 'sharing_product',
+            'condition'    => 'share_product:is(on)',
+        ),
+//////////////////////////////////calling order
+        array(
+            'id'           => 'calling_order_status',
+            'label'        => 'فعال سازی سفارش تلفنی',
+            'desc'         => ' ',
+            'std'          => 'on',
+            'type'         => 'on-off',
+            'section'      => 'calling_order',
+        ),
+        array(
+            'id'           => 'calling_button_label',
+            'label'        => 'برچسب دکمه',
+            'desc'         => 'برچسب دلخواه مورد نظرتان برای دکمه تماس تلفنی را وارد کنید.',
+            'type'         => 'text',
+            'section'      => 'calling_order',
+            'rows'         => '1',
+            'condition'    => 'calling_order_status:is(on)'
+        ),
 	)
 );
 

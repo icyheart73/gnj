@@ -68,7 +68,7 @@ if (class_exists('WooCommerce')):
             $this->add_control('title', [
                 'label'		    => 'عنوان',
                 'type'		    => Controls_Manager::TEXT,
-                'default'       => 'محصولات تیمچه',
+                'default'       => 'محصولات گنجه',
             ]);
 
             $this->end_controls_section();

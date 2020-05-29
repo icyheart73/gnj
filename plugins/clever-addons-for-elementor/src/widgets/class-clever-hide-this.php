@@ -38,7 +38,7 @@ final class CleverHideThis extends CleverWidgetBase
 	 */
     public function get_title()
     {
-        return 'مخفی کننده تیمچه';
+        return 'مخفی کننده گنجه';
     }
 
     /**

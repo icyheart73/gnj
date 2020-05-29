@@ -25,7 +25,7 @@ final class CleverVideoLightBox extends CleverWidgetBase
      */
     function get_title()
     {
-        return 'ویدئو پلیر تیمچه';
+        return 'ویدئو پلیر گنجه';
     }
 
     /**

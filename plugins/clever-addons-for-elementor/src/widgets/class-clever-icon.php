@@ -25,7 +25,7 @@ final class CleverIcon extends CleverWidgetBase
      */
     function get_title()
     {
-        return 'آیکون تیمچه';
+        return 'آیکون گنجه';
     }
 
     /**
