@@ -39,7 +39,8 @@ add_action('plugins_loaded','run_ganje_plugin',99);
  */
 define( 'GANJE_PLUGIN_VERSION', '1.0.0' );
 // Plugin Path
-define( 'GNJ_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
+define( 'GNJ_PATH', __DIR__ );
+
 // Plugin URL
 define( 'GNJ_URL', untrailingslashit( plugin_dir_url( __FILE__ ) ) );
 

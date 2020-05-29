@@ -1,17 +1,9 @@
 <?php
-/*
- * This file belongs to the YIT Framework.
- *
- * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
- * that is bundled with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://www.gnu.org/licenses/gpl-3.0.txt
- */
 if ( ! defined ( 'ABSPATH' ) ) {
     exit( 'Direct access forbidden.' );
 }
 
-if ( ! class_exists ( 'YWQA_Discussion' ) ) {
+if ( ! class_exists ( 'Ganje_Discussion' ) ) {
     /**
      *
      * @class      class.ywqa-discussion.php
@@ -20,7 +12,7 @@ if ( ! class_exists ( 'YWQA_Discussion' ) ) {
      * @author     Your Inspiration Themes
      *
      */
-    class YWQA_Discussion {
+    class Ganje_Discussion {
 
         /**
          * @var int Id of the question or answer
@@ -88,7 +80,7 @@ if ( ! class_exists ( 'YWQA_Discussion' ) ) {
                 return $user_info->display_name;
             }
 
-            return __ ( "Anonymous", 'yith-woocommerce-questions-and-answers' );
+            return 'ناشناس';
         }
 
         /**
@@ -113,6 +105,27 @@ if ( ! class_exists ( 'YWQA_Discussion' ) ) {
                 "ID"         => $post->ID,
                 "parent_id"  => $post->post_parent,
             );
+        }
+
+        /**
+         * Retrieve document content with nofollow links
+         *
+         */
+        public function get_nofollow_content () {
+            /**
+             * Adds rel nofollow string to all HTML A elements in content.
+             */
+            $text = stripslashes ( $this->content );
+            $text = preg_replace_callback ( '|<a (.+?)>|i', array ( $this, 'nofollow_callback' ), $text );
+
+            return $text;
+        }
+
+        public function nofollow_callback ( $matches ) {
+            $text = $matches[ 1 ];
+            $text = str_replace ( array ( ' rel="nofollow"', " rel='nofollow'" ), '', $text );
+
+            return "<a $text rel=\"nofollow\">";
         }
 
         /**

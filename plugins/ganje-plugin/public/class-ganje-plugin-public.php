@@ -58,7 +58,7 @@ class Ganje_Plugin_Public {
 	}
 
     private function load_dependencies() {
-        /**
+	    /**
          * Required: include OptionTree.
          */
         if ( ! class_exists( 'Persian_Woocommerce_Core' ) ) {
@@ -68,10 +68,8 @@ class Ganje_Plugin_Public {
 
         require_once GNJ_PATH . '/public/public-class/view-product-meta.php';
 
-        require_once GNJ_PATH . '/public/public-class/question-answer/view-product-qa.php';
-        require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-discussion.php';
-        require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-question.php';
-        require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-answer.php';
+        require_once GNJ_PATH . '/public/function-helper.php';
+
         require_once GNJ_PATH . '/public/public-class/view-product-addons.php';
 
         if( $this->setting['free_price'] == 'on') {
@@ -81,11 +79,17 @@ class Ganje_Plugin_Public {
         if ( $this->setting['product_qa'] == 'on' ) {
 
             require_once GNJ_PATH . '/public/public-class/question-answer/view-product-qa.php';
-            require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-fronted.php';
             require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-discussion.php';
             require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-question.php';
             require_once GNJ_PATH . '/public/public-class/question-answer/class-ganje-answer.php';
 
+        }
+
+        if( class_exists( 'WoocommerceIR_SMS_Helper' ) && $this->setting['otp'] == 'on' ) {
+
+            echo 'sdsds';
+
+            require_once GNJ_PATH . '/public/public-class/otp/otp.php';
         }
 
     }

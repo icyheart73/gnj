@@ -21,6 +21,10 @@ $custom_settings = array(
         array(
             'id'          => 'single_product',
             'title'       =>'صفحه محصول'
+        ),
+        array(
+            'id'          => 'otp_tab',
+            'title'       => 'ورود با موبایل'
         )
 	),
 	'settings'        => array(
@@ -32,16 +36,16 @@ $custom_settings = array(
             'type'         => 'on-off',
             'section'      => 'woocommerce',
         ),
-            array(
-                'id'           => 'empty_price_text',
-                'label'        => 'متن دلخواه مورد نظرتان را وارد کنید.',
-                'desc'         => sprintf('میتوانید از کد HTML در این قسمت استفاده کنید. مثلا میتوانید متن را به صفحه دلخواه لینک کنید و یا آیکون دلخواهی به جای متن نمایش دهید. برای اطلاعات بیشتر روی لینک زیر کلیک کنید %1$s', '<br><a href="#" target="_blank" > نمایش آموزش در سایت گنجه </a>' ),
-                'std'          => '<a href="#" target="_blank" > تماس بگیرید </a>',
-                'type'         => 'textarea-simple',
-                'section'      => 'woocommerce',
-                'rows'         => '4',
-                'condition'    => 'empty_price:is(on)'
-            ),
+        array(
+            'id'           => 'empty_price_text',
+            'label'        => 'متن دلخواه مورد نظرتان را وارد کنید.',
+            'desc'         => sprintf('میتوانید از کد HTML در این قسمت استفاده کنید. مثلا میتوانید متن را به صفحه دلخواه لینک کنید و یا آیکون دلخواهی به جای متن نمایش دهید. برای اطلاعات بیشتر روی لینک زیر کلیک کنید %1$s', '<br><a href="#" target="_blank" > نمایش آموزش در سایت گنجه </a>' ),
+            'std'          => '<a href="#" target="_blank" > تماس بگیرید </a>',
+            'type'         => 'textarea-simple',
+            'section'      => 'woocommerce',
+            'rows'         => '4',
+            'condition'    => 'empty_price:is(on)'
+        ),
         array(
             'id'           => 'persian_price',
             'label'        => 'نمایش اعداد فارسی در قیمت ها',
@@ -66,6 +70,7 @@ $custom_settings = array(
             'type'         => 'on-off',
             'section'      => 'woocommerce',
         ),
+        /* end section woocommerce */
         array(
             'id'           => 'free_price',
             'label'        => 'فعالسازی برچسب دلخواه برای محصولات رایگان',
@@ -91,6 +96,23 @@ $custom_settings = array(
             'std'          => 'on',
             'type'         => 'on-off',
             'section'      => 'single_product',
+        ),
+        /* end section single_product */
+        array(
+            'id'           => 'otp',
+            'label'        => 'فعال سازی ورود و ثبت نام با موبایل',
+            'desc'         => 'با فعال کردن این گزینه ، در فرم ثبت نام و لاگین ، به حای ایمیل ، فیلد شماره موبایل نمایش داده میشود و کاربر میتواند با استفاده از شماره تلفن همراه ثبت نام کند.',
+            'std'          => 'on',
+            'type'         => 'on-off',
+            'section'      => 'otp_tab',
+        ),
+        array(
+            'id'           => 'otp_verification',
+            'label'        => 'فعال کردن تایید شماره موبایل',
+            'desc'         => 'اگر این گزینه فعال باشد به شماره تلفن کاربر کد یکبار مصرف ارسال شده و کاربر با وارد کردن آن کد در سایت ، صحت شماره خود را تایید میکند.',
+            'std'          => 'on',
+            'type'         => 'on-off',
+            'section'      => 'otp_tab',
         ),
 
 	)

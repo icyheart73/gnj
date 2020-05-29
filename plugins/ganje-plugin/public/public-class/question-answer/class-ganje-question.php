@@ -1,26 +1,10 @@
 <?php
-/*
- * This file belongs to the YIT Framework.
- *
- * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
- * that is bundled with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://www.gnu.org/licenses/gpl-3.0.txt
- */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Direct access forbidden.' );
 }
 
-if ( ! class_exists( 'YWQA_Question' ) ) {
-	/**
-	 *
-	 * @class   class.ywqa-question.php
-	 * @package    Yithemes
-	 * @since      Version 1.0.0
-	 * @author     Your Inspiration Themes
-	 *
-	 */
-	class Gnj_Question extends YWQA_Discussion {
+if ( ! class_exists( 'Gnj_Question' ) ) {
+	class Gnj_Question extends Ganje_Discussion {
 
 		/**
 		 * Initialize a question object
@@ -46,6 +30,21 @@ if ( ! class_exists( 'YWQA_Question' ) ) {
 
 			return $items[0];
 		}
+
+        public function get_answers_count() {
+            global $wpdb;
+
+            $query = $wpdb->prepare( "select count(ID)
+				from {$wpdb->prefix}posts
+				where post_status = 'publish' and post_type = %s and post_parent = %s",
+                'ganje_qa',
+                $this->ID
+            );
+
+            $items = $wpdb->get_row( $query, ARRAY_N );
+
+            return $items[0];
+        }
 
 		public function get_answers( $count = - 1 ) {
 
@@ -77,7 +76,7 @@ if ( ! class_exists( 'YWQA_Question' ) ) {
 					"date"       => $item["post_date"]
 				);
 
-				$answers[] = new YWQA_Answer( $params );
+				$answers[] = new Ganje_Answer( $params );
 			}
 
 			return $answers;

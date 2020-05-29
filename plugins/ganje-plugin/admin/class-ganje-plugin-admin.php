@@ -30,6 +30,7 @@ class Ganje_Plugin_Admin {
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
 	private $plugin_name;
+    private $setting;
 
 	/**
 	 * The version of this plugin.
@@ -51,7 +52,7 @@ class Ganje_Plugin_Admin {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-
+        $this->get_Settings();
 		$this->load_dependencies();
 
 	}
@@ -72,7 +73,16 @@ class Ganje_Plugin_Admin {
         require_once GNJ_PATH . '/admin/admin-class/dev-mode.php';
 
         if (class_exists('WooCommerce'))
-        require_once GNJ_PATH . '/admin/product-list-price.php';
+        require_once GNJ_PATH . '/admin/admin-class/product-list-price.php';
+
+        if( $this->setting['otp'] === "on" ){
+            require_once GNJ_PATH . '/admin/admin-class/otp-admin.php';
+        }
+    }
+
+    public function get_Settings(){
+        global $GanjeSetting;
+        $this->setting = $GanjeSetting;
     }
 
 	public function disable_ui_option(){

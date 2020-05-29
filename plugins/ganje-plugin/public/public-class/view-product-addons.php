@@ -7,11 +7,8 @@ class Ganje_Product_Addons {
 
     public function __construct() {
         $this->get_Settings();
-        var_dump($this->setting);
-        if($this->setting['product_count']) {
+        if($this->setting['product_count'])
             add_action('woocommerce_product_meta_end', array($this, 'view_product_info'));
-            echo 'const';
-        }
     }
 
     public function get_Settings(){
@@ -28,7 +25,6 @@ class Ganje_Product_Addons {
     public function view_product_info()
     {
         global $post;
-        echo $post->ID;
         $count = get_post_meta($post->ID,'total_sales', true);
         $text = sprintf( ' بیش از %s نفر از خریداران این محصول را پیشنهاد داده‌اند', $count);
         ?>
