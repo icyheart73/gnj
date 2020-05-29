@@ -27,7 +27,7 @@ if (class_exists('WooCommerce')):
          */
         function get_title()
         {
-            return 'تب اسلایدر تیمچه';
+            return 'تب اسلایدر گنجه';
         }
 
         /**
@@ -51,7 +51,7 @@ if (class_exists('WooCommerce')):
                 $this->add_control('title', [
                     'label'		    => 'عنوان',
                     'type'		    => Controls_Manager::TEXT,
-                    'default'       => 'تیمچه',
+                    'default'       => 'گنجه',
                 ]);
 
             $this->end_controls_section();

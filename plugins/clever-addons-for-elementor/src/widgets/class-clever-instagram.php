@@ -25,7 +25,7 @@ final class CleverInstagram extends CleverWidgetBase
      */
     function get_title()
     {
-        return 'اینستاگرام تیمچه';
+        return 'اینستاگرام گنجه';
     }
 
     /**
@@ -49,7 +49,7 @@ final class CleverInstagram extends CleverWidgetBase
         $this->add_control('title', [
             'label'		    => 'عنوان',
             'type'		    => Controls_Manager::TEXT,
-            'default'       => 'اینستاگرام تیمچه',
+            'default'       => 'اینستاگرام گنجه',
         ]);
         $this->add_control('username', [
             'label'         => 'username@',

@@ -71,6 +71,7 @@ class Ganje_Plugin_Public {
         require_once GNJ_PATH . '/public/function-helper.php';
 
         require_once GNJ_PATH . '/public/public-class/view-product-addons.php';
+        require_once GNJ_PATH . '/public/public-class/ganje-sharing-product.php';
 
         if( $this->setting['free_price'] == 'on') {
 
