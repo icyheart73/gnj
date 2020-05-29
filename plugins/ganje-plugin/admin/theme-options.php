@@ -25,8 +25,18 @@ $custom_settings = array(
         array(
             'id'          => 'otp_tab',
             'title'       => 'ورود با موبایل'
+        ),
+        array(
+            'id'          => 'sharing_product',
+            'title'       =>'اشتراک گذاری'
+        ),
+        array(
+            'id'          => 'calling_order',
+            'title'       =>'سفارش تلفنی'
         )
+
 	),
+
 
 	'settings'        => array(
         array(
