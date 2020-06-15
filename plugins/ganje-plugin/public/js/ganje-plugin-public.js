@@ -1,32 +1,162 @@
-(function( $ ) {
-	'use strict';
+/**
+ * Define jQuery
+ */
+jQuery(function ($) {
 
-	/**
-	 * All of the code for your public-facing JavaScript source
-	 * should reside in this file.
-	 *
-	 * Note: It has been assumed you will write jQuery code here, so the
-	 * $ function reference has been prepared for usage within the scope
-	 * of this function.
-	 *
-	 * This enables you to define handlers, for when the DOM is ready:
-	 *
-	 * $(function() {
-	 *
-	 * });
-	 *
-	 * When the window is loaded:
-	 *
-	 * $( window ).load(function() {
-	 *
-	 * });
-	 *
-	 * ...and/or other possibilities.
-	 *
-	 * Ideally, it is not considered best practise to attach more than a
-	 * single DOM-ready or window-load handler for a particular page.
-	 * Although scripts in the WordPress core, Plugins and Themes may be
-	 * practising this, we should strive to set a better example in our own work.
-	 */
+    var documentOnReady = {
+        // Initialize
+        init: function () {
+            documentOnReady.calling_order_popup();
+        },
 
-})( jQuery );
+
+        /**
+         * Default options
+         */
+        calling_order_popup: function () {
+
+            $('#ganje-custom-order-button').on('click', function (event) {
+                event.preventDefault();
+                Swal.showLoading()
+
+                let prodictSelectedId,
+                    productVariantId = $('.variations_form').find('input[name="variation_id"]').val(),
+                    productId = $(this).attr('data-value-product-id'),
+                    productQty = $('.quantity').find('input[name="quantity"]').val(),
+                    dataOut = {};
+
+                // Проверяем ID товара, для вариаций свой, для простых свой.
+                if (0 !== productVariantId && typeof productVariantId !== 'undefined') {
+                    prodictSelectedId = productVariantId;
+                } else {
+                    prodictSelectedId = productId;
+                }
+
+                // Собираем данные для отправки.
+                let data = {
+                    id: prodictSelectedId,
+                    action: 'ganje_ajax_product_form',
+                    nonce: gnj_scripts.nonce,
+                    qty: productQty
+                };
+
+                // Отправляем запрос.
+                let request = $.ajax({
+                        url: gnj_scripts.url,
+                        data: data,
+                        type: 'POST',
+                        dataType: 'text',
+                        success: function (data) {
+                            Swal.fire({
+                                title: 'Are you sure?',
+                                text: "You won't be able to revert this!",
+                                icon: 'info',
+                                html: data,
+                                showCancelButton: true,
+                                confirmButtonColor: '#3085d6',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: 'Yes, delete it!'
+                            }).then((result) => {
+                                if (result.value) {
+                                    var serialized = $('.place_calling_order_form').serialize();
+                                    let request = $.ajax({
+                                            url: gnj_scripts.url,
+                                            data: serialized,
+                                            type: 'POST',
+                                            dataType: 'text',
+                                            success: function (data) {
+                                                Swal.fire(
+                                                    'Good job!',
+                                                    'You clicked the button!',
+                                                    'success'
+                                                )
+                                            },
+                                            error: function (data) {
+                                                Swal.fire(
+                                                    'Good job!',
+                                                    'You clicked the button!',
+                                                    'error'
+                                                )
+                                            },
+
+                                        }
+                                    );
+                                }
+                            })
+                        },
+
+                    }
+                );
+
+                return false;
+            });
+        },
+
+    }
+
+    $(document).ready(documentOnReady.init);
+
+});
+
+jQuery(document).ready(function ($) {
+    var BUTTON = "#mylist_btn_",
+        uriAjax = gnj_scripts.url,
+        boxList = gnj_scripts.boxList,
+        loading_icon = gnj_scripts.loading_icon,
+        button = gnj_scripts.button,
+        nonce = gnj_scripts.nonce,
+        buttonHtml = "";
+
+    function createBtn() {
+        0 < $(".js-item-mylist").length &&
+        $.get(button, function (source) {
+
+            (buttonHtml = source),
+                $(".js-item-mylist").each(function () {
+                    var itemId = BUTTON + $(this).data("id"),
+                        nameVar = "myListButton" + $(this).data("id"),
+                        data = eval(nameVar);
+                    renderTemplate(itemId, source, data);
+                });
+
+        });
+
+    }
+    function showLoading(t) {
+        (data = $.parseJSON('{"showLoading": {"icon": "' + loading_icon + '"}}')), renderTemplate(t, buttonHtml, data);
+    }
+    function renderTemplate(t, a, n) {
+        var e = Handlebars.compile(a)(n);
+        $(t).html(e);
+    }
+    "undefined" != typeof myListData &&
+    $.get(boxList, function (t) {
+        renderTemplate("#myList_list", t, myListData);
+    }),
+
+        createBtn(),
+
+        $("body").on("click", ".js-gd-add-mylist", function () {
+            var t = $(this).data("postid"),
+                a = $(this).data("userid"),
+                n = BUTTON + t;
+            showLoading(n),
+                $.ajax({ type: "POST", dataType: "json", url: uriAjax, data: { action: "gd_add_mylist", itemId: t, userId: a, nonce: nonce } }).done(function (t) {
+                    renderTemplate(n, buttonHtml, t);
+                });
+        }),
+        $("body").on("click", ".js-gd-remove-mylist", function () {
+            var a = $(this).data("postid"),
+                t = $(this).data("userid"),
+                n = $(this).data("styletarget"),
+                e = BUTTON + a;
+            showLoading(e),
+                $.ajax({ type: "POST", dataType: "json", url: uriAjax, data: { action: "gd_remove_mylist", itemId: a, userId: t, nonce: nonce } }).done(function (t) {
+                    "mylist" === n
+                        ? $("#mylist-" + a)
+                            .closest(".gd-mylist-box")
+                            .fadeOut(500)
+                        : renderTemplate(e, buttonHtml, t);
+                });
+        });
+});

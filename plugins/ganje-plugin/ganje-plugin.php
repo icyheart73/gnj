@@ -50,7 +50,7 @@ define( 'GNJ_URL', untrailingslashit( plugin_dir_url( __FILE__ ) ) );
  */
 function activate_ganje_plugin() {
 	require_once GNJ_PATH . '/includes/class-ganje-plugin-activator.php';
-	Ganje_Plugin_Activator::activate();
+	new Ganje_Plugin_Activator;
 }
 
 /**
