@@ -12,6 +12,9 @@ class Ganje_Product_Addons {
 
         if (isset($this->setting['related_product']) && $this->setting['related_product']=='on') {
 
+
+
+
                 add_filter( 'woocommerce_output_related_products_args',array($this,'bbloomer_change_number_related_products'), 9999 );
 
                 if (isset($this->setting['related_option']['0'])) {
@@ -41,8 +44,8 @@ class Ganje_Product_Addons {
         {
             remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
         }
-
-
+        if(isset($this->setting['product_instock']) && $this->setting['product_instock']=='on')
+        add_filter( 'woocommerce_related_products', array($this,'instock_filter_related_products'), 10, 1 );
     }
 
     public function get_Settings(){
@@ -56,6 +59,18 @@ class Ganje_Product_Addons {
             self::$instance = new Ganje_Product_Addons();
         }
         return self::$instance;
+    }
+
+    function instock_filter_related_products( $related_product_ids ) {
+
+        foreach( $related_product_ids as $key => $value ) {
+            $relatedProduct = wc_get_product( $value );
+            if( ! $relatedProduct->is_in_stock() ) {
+                unset( $related_product_ids["$key"] );
+            }
+        }
+
+        return $related_product_ids;
     }
 
     public function view_product_info()
@@ -76,15 +91,7 @@ class Ganje_Product_Addons {
 
 
             $args['posts_per_page'] = intval($this->setting['related_product_count']);
-            $args['meta_key'] = '_stock_status';
-
-           /* $args['meta_query']['key'] = '_stock_status';
-            $args['meta_query']['value'] = 'instock';
-            $args['meta_query']['compare'] = 'NOT IN';*/
-         //   echo 'stock';
-
-            return $args;
-
+         return $args;
 
         }
 

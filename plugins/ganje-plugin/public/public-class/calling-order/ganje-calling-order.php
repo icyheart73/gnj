@@ -1,48 +1,59 @@
 <?php
 
-define( 'Ganje_PLUGIN_DIR', __DIR__ );
-define( 'Ganje_PLUGIN_URI', plugin_dir_url( __FILE__ ) );
-define( 'Ganje_PLUGIN_FILE', plugin_basename( __FILE__ ) );
-
-define( 'Ganje_PLUGIN_VER', $plugin_data['ver'] );
-
-define( 'Ganje_PLUGIN_NAME', $plugin_data['name'] );
 
 
-class Gnaje_Calling_Order{
+class Gnaje_Calling_Order
+{
+    /**
+     * Added AWOOC_Front_End.
+     *
+     * @since 2.0.0
+     * @var object AWOOC_Front_End $front_end
+     */
+    public $front_end;
 
     private static $instance = null;
     private $setting;
 
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->get_Settings();
         $this->load_dependencies();
 
     }
 
-    public function get_Settings() {
+    public function get_Settings()
+    {
         global $GanjeSetting;
         $this->setting = $GanjeSetting;
     }
 
-    public static function getInstance() {
-        if (self::$instance == null)  {
+    public static function getInstance()
+    {
+        if (self::$instance == null) {
             self::$instance = new Gnaje_Calling_Order();
         }
         return self::$instance;
     }
 
-    private function load_dependencies() {
+    private function load_dependencies()
+    {
+        /**
+         * Front end
+         */
+        require GNJ_PATH . '/public/public-class/calling-order/includes/ganje-template-functions.php';
+        require GNJ_PATH . '/public/public-class/calling-order/includes/class-ganje-front-end.php';
+        $this->front_end = new Ganje_Front_End();
+        if(is_admin()) {
+            require GNJ_PATH . '/public/public-class/calling-order/includes/class-ganje-admin-meta-box.php';
+        }
 
         /**
-         * Hiding field to CF7
+         * Ajax
          */
-        require Ganje_PLUGIN_DIR . '/admin/admin-class/added-cf7-field.php';
-        /**
-         * Created form for firs install
-         */
-        require Ganje_PLUGIN_DIR . '/includes/admin/class-ganje-install-form.php';
+        require GNJ_PATH . '/public/public-class/calling-order/includes/class-ganje-ajax.php';
+
     }
 }
 Gnaje_Calling_Order::getInstance();
