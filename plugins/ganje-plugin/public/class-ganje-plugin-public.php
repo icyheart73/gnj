@@ -88,8 +88,6 @@ class Ganje_Plugin_Public {
 
         if( class_exists( 'WoocommerceIR_SMS_Helper' ) && $this->setting['otp'] == 'on' ) {
 
-            echo 'sdsds';
-
             require_once GNJ_PATH . '/public/public-class/otp/otp.php';
         }
 

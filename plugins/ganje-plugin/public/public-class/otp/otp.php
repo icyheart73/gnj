@@ -19,11 +19,15 @@ class Ganje_Otp {
      */
     public function includes(){
 
+        require_once GNJ_PATH.'/public/public-class/otp/class-gnj-exception.php';
+
         if($this->is_request('frontend')){
 
             require_once GNJ_PATH.'/public/public-class/otp/otp-fronted.php';
         }
 
+        require_once GNJ_PATH.'/public/public-class/otp/class-gnj-verification.php';
+        require_once GNJ_PATH.'/public/public-class/otp/class-gnj-otp-handler.php';
     }
 
 

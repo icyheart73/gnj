@@ -30,7 +30,7 @@ class OTP_Frontend{
         if( $this->setting['otp_verification'] === "on" ){
             add_action( 'woocommerce_register_form_start', array( $this, 'wc_register_phone_input' ) );
             add_action( 'woocommerce_edit_account_form_start', array( $this, 'wc_myaccount_edit_phone_input' ) );
-            add_filter(  'xoo_ml_get_phone_forms', array( $this, 'add_wc_register_form_for_phone' ) );
+            add_filter(  'gnj_get_phone_forms', array( $this, 'add_wc_register_form_for_phone' ) );
         }
 
     }

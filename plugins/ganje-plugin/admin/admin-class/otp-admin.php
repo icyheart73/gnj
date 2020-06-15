@@ -21,12 +21,12 @@ class Gnj_Otp_Admin{
         add_action( 'edit_user_profile', array( $this, 'edit_profile_page' ) );
         add_action( 'edit_user_profile_update', array( $this, 'save_customer_meta_fields' ) );
         add_action( 'user_profile_update_errors', array( $this, 'verify_user_fields' ), 10, 3 );
-        add_filter( 'xoo_el_user_profile_fields', array( $this, 'remove_phone_fields' ) );
+        add_filter( 'gnj_user_profile_fields', array( $this, 'remove_phone_fields' ) );
     }
 
 
     public function remove_phone_fields( $fields ){
-        unset( $fields['xoo-ml-reg-phone'], $fields['xoo-ml-reg-phone-cc']  );
+        unset( $fields['gnj-reg-phone'], $fields['gnj-reg-phone-cc']  );
         return $fields;
     }
 
@@ -35,7 +35,7 @@ class Gnj_Otp_Admin{
         if( isset( $_POST['gnj-user-reg-phone'] ) && $_POST['gnj-user-reg-phone'] ){
             $user_by_phone = gnj_get_user_by_phone( $_POST['gnj-user-reg-phone'], $_POST['gnj-user-reg-phone-cc'] );
             if( $user_by_phone && $user_by_phone->ID !== $user->ID  ){
-                $wp_error->add( 'user-already-exists', sprintf( __( 'User: #%1s is already registered with %2s phone number', 'mobile-login-woocommerce' ), $user->ID, esc_attr( $_POST['xoo-ml-user-reg-phone'] ) ) );
+                $wp_error->add( 'user-already-exists', sprintf( __( 'User: #%1s is already registered with %2s phone number', 'mobile-login-woocommerce' ), $user->ID, esc_attr( $_POST['gnj-user-reg-phone'] ) ) );
             }
         }
     }
