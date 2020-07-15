@@ -72,3 +72,31 @@ if ( version_compare( get_bloginfo( 'version' ), '4.7.3', '>=' ) && ( is_admin()
  * Note: Do not add any custom code here. Please use a custom plugin so that your customizations aren't lost during updates.
  * https://github.com/woocommerce/theme-customisations
  */
+
+/**
+ * Register a custom post type called "book".
+ *
+ * @see get_post_type_labels() for label keys.
+ */
+function set_product_cookie(){
+    if(is_product()) {
+        if (isset($_COOKIE['ProductCookie'])) {
+
+            setcookie('ProductCookie', '', time() - 3600);
+
+        }
+
+            global $post;
+            $value = get_the_terms($post->ID, 'product_cat');
+            $i = 0;
+            foreach ($value as $item) {
+                $cookieCat[$i] = $item->name;
+                $i++;
+            }
+            $cookieCat = implode(',', $cookieCat);
+            setcookie("ProductCookie", $cookieCat, time() + (86400 * 30), COOKIEPATH, COOKIE_DOMAIN);
+        }
+
+
+}
+

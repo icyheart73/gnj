@@ -9,18 +9,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-if ( class_exists( 'WC_Courier_Method' ) ) {
+if ( class_exists( 'WC_Tipax_Method' ) ) {
 	return;
 } // Stop if the class already exists
 
-class WC_Courier_Method extends PWS_Shipping_Method {
+class WC_Tipax_Method extends PWS_Shipping_Method {
 
 	public function __construct( $instance_id = 0 ) {
 
-		$this->id                 = 'WC_Courier_Method';
+		$this->id                 = 'WC_Tipax_Method';
 		$this->instance_id        = absint( $instance_id );
-		$this->method_title       = __( 'پیک موتوری' );
-		$this->method_description = __( 'ارسال با استفاده از پیک موتوری' );
+		$this->method_title       = __( 'تیپاکس' );
+		$this->method_description = __( 'ارسال کالا با استفاده از تیپاکس' );
 
 		parent::__construct();
 
@@ -40,7 +40,7 @@ class WC_Courier_Method extends PWS_Shipping_Method {
 		$this->per_cost    = intval( $this->get_option( 'per_cost' ) );
 		$this->destination = $this->get_option( 'destination', [] );
 
-		add_action( 'woocommerce_update_options_shipping_' . $this->id, [ $this, 'process_admin_options' ] );
+		add_action( 'woocommerce_update_options_shipping_' . $this->id, array( $this, 'process_admin_options' ) );
 	}
 
 	public function init_form_fields() {
@@ -51,7 +51,7 @@ class WC_Courier_Method extends PWS_Shipping_Method {
 			'base_cost' => [
 				'title'       => 'هزینه پایه',
 				'type'        => 'price',
-				'description' => 'مبلغ حمل و نقل به روش پیک موتوری را به ' . $currency_symbol . ' وارد نمائید.',
+				'description' => 'مبلغ حمل و نقل به روش تیپاکس را به ' . $currency_symbol . ' وارد نمائید.',
 				'default'     => 0
 			],
 			'per_cost'  => [
@@ -60,7 +60,7 @@ class WC_Courier_Method extends PWS_Shipping_Method {
 				'description' => 'در صورتی که قصد دارید به ازای هر کیلوگرم هزینه اضافی دریافت شود هزینه را به ' . $currency_symbol . ' وارد نمائید.',
 				'default'     => 0,
 				'desc_tip'    => true,
-			]
+			],
 		];
 
 		if ( PWS_Tapin::is_enable() ) {
@@ -78,10 +78,10 @@ class WC_Courier_Method extends PWS_Shipping_Method {
 			}
 
 			$this->instance_form_fields['destination'] = [
-				'title'       => 'مقصد پیک موتوری',
+				'title'       => 'مقصد تیپاکس',
 				'type'        => 'multiselect',
 				'options'     => $options,
-				'description' => 'تعیین کنید پیک موتوری برای کدام شهرها فعال باشد.',
+				'description' => 'تعیین کنید تیپاکس برای کدام شهرها فعال باشد.',
 				'default'     => [],
 				'desc_tip'    => true,
 			];
@@ -101,15 +101,14 @@ class WC_Courier_Method extends PWS_Shipping_Method {
 			return parent::is_available( $package );
 		}
 
-		$term_id = $package['destination']['district'] ?? $package['destination']['city'];
-		$terms   = PWS()->get_terms_option( $term_id );
+		$terms = PWS()->get_terms_option( $this->get_destination( $package ) );
 
 		if ( $terms === false || is_wp_error( $terms ) ) {
 			return false;
 		} else {
 
 			foreach ( (array) $terms as $term ) {
-				if ( $term['courier_on'] == 0 ) {
+				if ( $term['tipax_on'] == 0 ) {
 					return false;
 				}
 			}
@@ -125,13 +124,12 @@ class WC_Courier_Method extends PWS_Shipping_Method {
 			return true;
 		}
 
-		$cost    = $this->base_cost;
-		$term_id = $package['destination']['district'] ?? $package['destination']['city'];
-		$terms   = PWS()->get_terms_option( $term_id );
+		$cost  = $this->base_cost;
+		$terms = PWS()->get_terms_option( $this->get_destination( $package ) );
 
 		foreach ( $terms as $term ) {
-			if ( $term['courier_cost'] != "" ) {
-				$cost = $term['courier_cost'];
+			if ( $term['tipax_cost'] != "" ) {
+				$cost = $term['tipax_cost'];
 				break;
 			}
 		}

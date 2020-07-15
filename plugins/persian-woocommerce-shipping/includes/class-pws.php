@@ -24,8 +24,8 @@ class PWS_Core {
 	/**
 	 * Ensures only one instance of PWS_Core is loaded or can be loaded.
 	 *
-	 * @see PWS()
 	 * @return PWS_Core
+	 * @see PWS()
 	 */
 	public static function instance() {
 
@@ -57,7 +57,6 @@ class PWS_Core {
 	protected function init_hooks() {
 		// Actions
 		add_action( 'init', [ $this, 'state_city_taxonomy' ], 0 );
-		add_action( 'admin_menu', [ $this, 'state_city_admin_menu' ] );
 		add_action( 'wp_ajax_mahdiy_load_cities', [ PWS_Ajax::class, 'load_cities_callback' ] );
 		add_action( 'wp_ajax_nopriv_mahdiy_load_cities', [ PWS_Ajax::class, 'load_cities_callback' ] );
 		add_action( 'wp_ajax_mahdiy_load_districts', [ PWS_Ajax::class, 'load_districts_callback' ] );
@@ -100,7 +99,6 @@ class PWS_Core {
 			$this,
 			'my_account_my_address_formatted_address'
 		], 10, 3 );
-		add_filter( 'persian_woo_sms_content_replace', [ $this, 'persian_woo_sms_content_replace' ], 10, 6 );
 		add_filter( 'woocommerce_admin_billing_fields', [ $this, 'admin_billing_fields' ] );
 		// @todo uncomment after pull request accepted
 		//add_filter( 'woocommerce_admin_shipping_fields', [ $this,'admin_shipping_fields'] );
@@ -167,19 +165,15 @@ class PWS_Core {
 		update_option( "pws_install_cities", 1 );
 	}
 
-	public function state_city_admin_menu() {
-		$title = 'شهر های حمل و نقل';
-
-		add_submenu_page( 'woocommerce', $title, $title, 'manage_woocommerce', 'edit-tags.php?taxonomy=state_city&post_type=shop_order' );
-	}
-
 	public function load_shipping_init() {
 		require_once PWS_DIR . '/methods/pws-method.php';
-		require_once PWS_DIR . '/methods/courier-method.php';
-		require_once PWS_DIR . '/methods/custom-method.php';
-		require_once PWS_DIR . '/methods/forehand-method.php';
-		require_once PWS_DIR . '/methods/tipax-method.php';
+		require_once PWS_DIR . '/methods/pws-courier-method.php';
+		require_once PWS_DIR . '/methods/pws-tipax-method.php';
+		require_once PWS_DIR . '/methods/pws-sefareshi-method.php';
+		require_once PWS_DIR . '/methods/pws-pishtaz-method.php';
 		require_once PWS_DIR . '/methods/tapin-method.php';
+		require_once PWS_DIR . '/methods/tapin-sefareshi-method.php';
+		require_once PWS_DIR . '/methods/tapin-pishtaz-method.php';
 	}
 
 	public function process_shop_order_meta( $order_id, $post ) {
@@ -613,7 +607,7 @@ class PWS_Core {
 			}
 
 			for ( $i = 0; $i < count( $packages ); $i ++ ) {
-				$packages[ $i ]['destination']['district'] = intval( $data[ $type . '_district' ] ) != 0 ? $data[ $type . '_district' ] : null;
+				$packages[ $i ]['destination']['district'] = $data[ $type . '_district' ] ?? null;
 			}
 		}
 
@@ -693,17 +687,6 @@ class PWS_Core {
 		$args['district'] = get_user_meta( $customer_id, $name . '_district', true );
 
 		return $args;
-	}
-
-	public function persian_woo_sms_content_replace( $content, $find, $replace, $order_id, $order, $product_ids ) {
-
-		$city                = get_term( $replace[6] );
-		$pws_tag['{b_city}'] = is_wp_error( $city ) || is_null( $city ) ? $replace[6] : $city->name;
-
-		$city                 = get_term( $replace[15] );
-		$pws_tag['{sh_city}'] = is_wp_error( $city ) || is_null( $city ) ? $replace[15] : $city->name;
-
-		return strtr( $content, $pws_tag );
 	}
 
 	public function admin_billing_fields( $fields ) {
@@ -1116,17 +1099,38 @@ class PWS_Core {
 		return $options;
 	}
 
-	public function get_options( $option_name, $default = null ) {
+	public static function get_option( string $option_name, $default = null ) {
 
-		if ( ! function_exists( 'PW' ) ) {
-			return $default;
+		list( $section, $option ) = explode( '.', $option_name );
+
+		$options = get_option( 'pws_' . $section, [] );
+
+		if ( isset( $options[ $option ] ) ) {
+			return $options[ $option ];
 		}
 
-		return PW()->get_options( $option_name, $default );
+		return $default;
+	}
+
+	public static function set_option( string $option_name, $value ) {
+
+		list( $section, $option ) = explode( '.', $option_name );
+
+		$options = get_option( 'pws_' . $section, [] );
+
+		$options[ $option ] = $value;
+
+		update_option( 'pws_' . $section, $options );
 	}
 
 	public function log( ...$params ) {
 		$log = '';
+
+		if ( defined( 'WC_LOG_DIR' ) ) {
+			$log_file = WC_LOG_DIR . 'pws.log';
+		} else {
+			$log_file = WP_CONTENT_DIR . '/pws.log';
+		}
 
 		foreach ( $params as $message ) {
 			if ( is_array( $message ) || is_object( $message ) ) {
@@ -1138,7 +1142,7 @@ class PWS_Core {
 			}
 		}
 
-		file_put_contents( WP_CONTENT_DIR . '/pws.log', $log, FILE_APPEND );
+		file_put_contents( $log_file, $log, FILE_APPEND );
 	}
 
 	public static function pws_sort_state( $a, $b ) {

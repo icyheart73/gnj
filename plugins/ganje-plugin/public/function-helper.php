@@ -140,14 +140,13 @@ function gnj_get_user_phone($user_id, $code_or_phone = '')
 }
 
 //Add notice
-function gnj_add_notice($message, $notice_type = 'error')
-{
+function gnj_add_notice( $message, $notice_type = 'error' ){
 
     $classes = $notice_type === 'error' ? 'xoo-ml-notice-error' : 'xoo-ml-notice-success';
 
-    $html = '<div class="' . $classes . '">' . $message . '</div>';
+    $html = '<div class="'.$classes.'">'.$message.'</div>';
 
-    return apply_filters('gnj_notice_html', $html, $message, $notice_type);
+    return apply_filters('gnj_notice_html',$html,$message,$notice_type);
 }
 
 /*
@@ -321,15 +320,20 @@ function getUserIP()
         $_SERVER['REMOTE_ADDR'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
         $_SERVER['HTTP_CLIENT_IP'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
     }
-    $client = @$_SERVER['HTTP_CLIENT_IP'];
+    $client  = @$_SERVER['HTTP_CLIENT_IP'];
     $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
-    $remote = $_SERVER['REMOTE_ADDR'];
+    $remote  = $_SERVER['REMOTE_ADDR'];
 
-    if (filter_var($client, FILTER_VALIDATE_IP)) {
+    if(filter_var($client, FILTER_VALIDATE_IP))
+    {
         $ip = $client;
-    } elseif (filter_var($forward, FILTER_VALIDATE_IP)) {
+    }
+    elseif(filter_var($forward, FILTER_VALIDATE_IP))
+    {
         $ip = $forward;
-    } else {
+    }
+    else
+    {
         $ip = $remote;
     }
 
@@ -901,3 +905,28 @@ function gnj_remove_premium_query_arg( $link ) {
     $reset           = array( 'orderby', 'onsale_filter', 'instock_filter', 'product_tag', 'product_cat' );
     return remove_query_arg( $reset, $link );
 }
+
+function gnj_invoice_init() {
+    $labels = array(
+        'name'                  => 'Invoice',
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => false,
+        'publicly_queryable' => true,
+        'show_ui'            => false,
+        'show_in_menu'       => false,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'invoice' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'supports'           => array('title'),
+        'exclude_from_search' => true,
+        'show_in_rest' => false,
+    );
+
+    register_post_type( 'invoice', $args );
+}
+add_action( 'init','gnj_invoice_init' );

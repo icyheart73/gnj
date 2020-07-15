@@ -34,7 +34,7 @@ class Ganje_PB_Wc_Persian {
         }
 
         if( $this->setting['download_checkout'] == 'on') {
-            add_filter( 'woocommerce_checkout_fields', array( $this, 'remove_extra_field_physical' ) );
+            //add_filter( 'woocommerce_checkout_fields', array( $this, 'remove_extra_field_physical' ) );
         }
     }
 

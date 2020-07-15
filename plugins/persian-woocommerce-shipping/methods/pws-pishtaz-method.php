@@ -9,11 +9,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-if ( class_exists( 'WC_Custom_Method' ) ) {
+if ( class_exists( 'WC_Forehand_Method' ) ) {
 	return;
 } // Stop if the class already exists
 
-class WC_Custom_Method extends PWS_Shipping_Method {
+class WC_Forehand_Method extends PWS_Shipping_Method {
 
 	const INSURANCE = 8000;
 
@@ -23,10 +23,10 @@ class WC_Custom_Method extends PWS_Shipping_Method {
 
 	public function __construct( $instance_id = 0 ) {
 
-		$this->id                 = 'WC_Custom_Method';
+		$this->id                 = 'WC_Forehand_Method';
 		$this->instance_id        = absint( $instance_id );
-		$this->method_title       = __( 'پست سفارشی' );
-		$this->method_description = __( 'ارسال کالا با استفاده از پست سفارشی' );
+		$this->method_title       = __( 'پست پیشتاز' );
+		$this->method_description = __( 'ارسال کالا با استفاده از پست پیشتاز' );
 
 		parent::__construct();
 	}
@@ -48,13 +48,13 @@ class WC_Custom_Method extends PWS_Shipping_Method {
 			'extra_cost'         => [
 				'title'       => 'هزینه های اضافی',
 				'type'        => 'text',
-				'description' => 'هزینه های اضافی علاوه بر نرخ پستی را می توانید وارد نمائید، (مثل: هزینه های بسته بندی و...) مبلغ ثابت را به ریال وارد نمائید',
+				'description' => 'هزینه های اضافی علاوه بر نرخ پستی را می توانید وارد نمائید، (مثل: هزینه های بسته بندی و ... ) مبلغ ثابت را به ریال وارد نمائید',
 				'default'     => 0,
 				'desc_tip'    => true,
 			],
 			'extra_cost_percent' => [
 				'title'       => 'هزینه های اضافی به درصد',
-				'type'        => 'number',
+				'type'        => 'text',
 				'description' => 'هزینه های اضافی علاوه بر نرخ پستی را می توانید به درصد وارد نمائید (مثال: برای 2%، عدد 2 را وارد نمائید)',
 				'default'     => 0,
 				'desc_tip'    => true,
@@ -75,13 +75,12 @@ class WC_Custom_Method extends PWS_Shipping_Method {
 			return true;
 		}
 
-		$cost    = "";
-		$term_id = $package['destination']['district'] ?? $package['destination']['city'];
-		$terms   = PWS()->get_terms_option( $term_id );
+		$cost  = "";
+		$terms = PWS()->get_terms_option( $this->get_destination( $package ) );
 
 		foreach ( (array) $terms as $term ) {
-			if ( $term['custom_cost'] != "" ) {
-				$cost = $term['custom_cost'];
+			if ( $term['forehand_cost'] != "" ) {
+				$cost = $term['forehand_cost'];
 				break;
 			}
 		}
@@ -98,19 +97,19 @@ class WC_Custom_Method extends PWS_Shipping_Method {
 		$weight = $this->cart_weight;
 
 		// Rate Table
-		$rate_price['500']['in']     = 36800;
-		$rate_price['500']['beside'] = 49000;
-		$rate_price['500']['out']    = 53000;
+		$rate_price['500']['in']     = 57500;
+		$rate_price['500']['beside'] = 78000;
+		$rate_price['500']['out']    = 84000;
 
-		$rate_price['1000']['in']     = 48300;
-		$rate_price['1000']['beside'] = 67600;
-		$rate_price['1000']['out']    = 72800;
+		$rate_price['1000']['in']     = 74000;
+		$rate_price['1000']['beside'] = 100000;
+		$rate_price['1000']['out']    = 112000;
 
-		$rate_price['2000']['in']     = 69000;
-		$rate_price['2000']['beside'] = 88000;
-		$rate_price['2000']['out']    = 95000;
+		$rate_price['2000']['in']     = 98000;
+		$rate_price['2000']['beside'] = 127000;
+		$rate_price['2000']['out']    = 140000;
 
-		$rate_price['9999'] = 10000;
+		$rate_price['9999'] = 25000;
 
 		$weight_indicator = '9999';
 

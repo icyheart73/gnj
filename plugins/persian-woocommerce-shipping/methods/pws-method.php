@@ -150,4 +150,13 @@ class PWS_Shipping_Method extends WC_Shipping_Method {
 
 		return $this->add_rate( $rate );
 	}
+
+	protected function get_destination( array $package ) {
+
+		if ( ! isset( $package['destination']['district'] ) || ! is_numeric( $package['destination']['district'] ) ) {
+			return $package['destination']['city'];
+		}
+
+		return $package['destination']['district'];
+	}
 }

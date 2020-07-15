@@ -17,8 +17,8 @@ class PWS_Tapin extends PWS_Core {
 	/**
 	 * Ensures only one instance of PWS_Tapin is loaded or can be loaded.
 	 *
-	 * @see PWS()
 	 * @return PWS_Tapin
+	 * @see PWS()
 	 */
 	public static function instance() {
 
@@ -34,7 +34,8 @@ class PWS_Tapin extends PWS_Core {
 		self::$methods = [
 			'WC_Courier_Method',
 			'WC_Tipax_Method',
-			'WC_Tapin_Method',
+			'Tapin_Sefareshi_Method',
+			'Tapin_Pishtaz_Method',
 		];
 
 		add_filter( 'wooi_ticket_header_path', function() {
@@ -116,16 +117,19 @@ class PWS_Tapin extends PWS_Core {
 
 		foreach ( $order->get_shipping_methods() as $shipping_item ) {
 
-			if ( $shipping_item->get_method_id() == 'WC_Tapin_Method' ) {
+			if ( in_array( $shipping_item->get_method_id(), [ 'Tapin_Pishtaz_Method', 'Tapin_Sefareshi_Method' ] ) ) {
 
 				$instance_id = $shipping_item->get_instance_id();
 
-				$data = get_option( "woocommerce_WC_Tapin_Method_{$instance_id}_settings" );
+				$data = get_option( "woocommerce_{$shipping_item->get_method_id()}_{$instance_id}_settings" );
 
-				update_post_meta( $order_id, "tapin_method", $data );
+				$packaging_cost = intval( $data['extra_cost'] ?? 0 );
+
+				if ( $shipping_item->get_total() && $packaging_cost ) {
+					update_post_meta( $order_id, 'packaging_cost', $packaging_cost );
+				}
 			}
 		}
-
 	}
 
 	public function checkout_process() {
@@ -195,7 +199,7 @@ class PWS_Tapin extends PWS_Core {
 		}
 	}
 
-	function localisation_address_formats( $formats ) {
+	public function localisation_address_formats( $formats ) {
 
 		$formats['IR'] = "{company}\n{first_name} {last_name}\n{country}\n{state}\n{city}\n{address_1}\n{address_2}\n{postcode}";
 
@@ -212,17 +216,6 @@ class PWS_Tapin extends PWS_Core {
 		}
 
 		return $replace;
-	}
-
-	public function persian_woo_sms_content_replace( $content, $find, $replace, $order_id, $order, $product_ids ) {
-
-		$city                = self::get_city( $replace[6] );
-		$pws_tag['{b_city}'] = is_null( $city ) ? $replace[6] : $city;
-
-		$city                 = self::get_city( $replace[15] );
-		$pws_tag['{sh_city}'] = is_null( $city ) ? $replace[15] : $city;
-
-		return strtr( $content, $pws_tag );
 	}
 
 	public function admin_footer() {
@@ -249,9 +242,7 @@ class PWS_Tapin extends PWS_Core {
 	}
 
 	public static function is_enable() {
-		$options = get_option( 'PW_Options' );
-
-		return isset( $options['pws_tapin_enable'] ) && $options['pws_tapin_enable'] == 'yes';
+		return self::get_option( 'tapin.enable', false ) == 1;
 	}
 
 	public static function request( $path, $data = [], $absolute_url = null ) {
@@ -279,7 +270,7 @@ class PWS_Tapin extends PWS_Core {
 			CURLOPT_HTTPHEADER     => [
 				"Content-type: application/json",
 				"Accept: application/json",
-				"Authorization: " . PWS()->get_options( 'pws_tapin_token' )
+				"Authorization: " . PWS()->get_option( 'tapin.token' )
 			],
 		] );
 
@@ -308,7 +299,7 @@ class PWS_Tapin extends PWS_Core {
 
 		$zone = get_transient( 'pws_tapin_zone' );
 
-		if ( $zone === false ) {
+		if ( $zone === false || count( (array) $zone ) == 0 ) {
 
 			$response = wp_remote_get( 'https://public.api.tapin.ir/api/v1/public/state/tree/' );
 
@@ -353,7 +344,7 @@ class PWS_Tapin extends PWS_Core {
 
 		$states = get_transient( 'pws_tapin_states' );
 
-		if ( $states === false ) {
+		if ( $states === false || count( (array) $states ) == 0 ) {
 
 			$zone = self::zone();
 
@@ -375,7 +366,7 @@ class PWS_Tapin extends PWS_Core {
 
 		$cities = get_transient( 'pws_tapin_cities_' . $state_id );
 
-		if ( $cities === false ) {
+		if ( $cities === false || count( (array) $cities ) == 0 ) {
 
 			$zone = self::zone();
 
@@ -414,10 +405,10 @@ class PWS_Tapin extends PWS_Core {
 
 		$shop = get_transient( 'pws_tapin_shop' );
 
-		if ( $shop === false ) {
+		if ( $shop === false || count( (array) $shop ) == 0 ) {
 
 			$shop = self::request( 'v2/public/shop/detail', [
-				'shop_id' => PWS()->get_options( 'pws_tapin_shop_id' )
+				'shop_id' => PWS()->get_option( 'tapin.shop_id' )
 			] );
 
 			if ( is_wp_error( $shop ) ) {
@@ -440,6 +431,26 @@ class PWS_Tapin extends PWS_Core {
 		$data['rate_type'] = self::$gateway;
 
 		return self::request( '', $data, $url );
+	}
+
+	public static function get_cart_weight() {
+
+		$weight = floatval( PWS()->get_option( 'tapin.package_weight', 500 ) );
+
+		foreach ( WC()->cart->get_cart() as $cart_item ) {
+
+			if ( $cart_item['data']->is_virtual() ) {
+				continue;
+			}
+
+			if ( $cart_item['data']->has_weight() ) {
+				$weight += wc_get_weight( $cart_item['data']->get_weight() * $cart_item['quantity'], 'g' );
+			} else {
+				$weight += floatval( PWS()->get_option( 'tapin.product_weight', 500 ) ) * $cart_item['quantity'];
+			}
+		}
+
+		return $weight;
 	}
 
 	public static function set_gateway( string $gateway ) {

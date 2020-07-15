@@ -241,10 +241,14 @@ final class CleverHideThis extends CleverWidgetBase
      *
      * @param    array    $settings    Item's settings.
      *
-     * @return    bool
+     * @return void
      */
     private function isViewableBy($viewers)
     {
+
+        if($viewers === "") {
+            return;
+        }
         $valid_roles = [];
         $roles = wp_roles()->roles;
 
