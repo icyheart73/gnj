@@ -3,7 +3,7 @@ Contributors: mahdiy
 Tags: woocommerce,shipping,persian woocommerce,persian
 Donate link: http://donate.woocommerce.ir/persian-woocommerce-shipping/
 Requires at least: 5.0
-Tested up to: 5.4
+Tested up to: 5.4.1
 Requires PHP: 7.0
 Stable tag: trunk
 License: GPLv2 or later
@@ -16,7 +16,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 = امکانات =
 * دارای چهار روش ارسال: پیشتاز، سفارشی، تیپاکس و پیک موتوری
-* قابلیت اتصال به پیشخوان مجازی پست
+* قابلیت اتصال به پیشخوان مجازی پست (تاپین)
+* ارسال پیامک وضعیت سفارشات به مشتریان (ملی پیامک)
 * ابزارهای کاربردی برای مدیریت حمل و نقل
 * قابلیت افزودن بی نهایت استان، شهر و محله
 * قابلیت شخصی سازی کامل قیمت ها برای هر آدرس
@@ -26,6 +27,22 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * سازگار با تمامی افزونه های فاکتور و برچسب ساز
 * سازگار با افزونه چند فروشندگی دکان
 * و ...
+
+= تاپین =
+تاپین یک پیشخوان مجازی پست است. شما بصورت رایگان می توانید پیشخوان وردپرس خود را با استفاده از تاپین به پیشخوان مجازی پست تبدیل کنید. از امکانات کلیدی تاپین می توان به موارد زیر اشاره کرد:
+* محاسبه دقیق هزینه پست سفارشی و پیشتاز
+* ثبت بسته پستی از پنل وردپرس داخل سامانه پست
+* دریافت بارکد پستی بصورت خودکار
+* صدور برچسب پستی استاندارد
+* جمع آوری بسته ها از محل فروشگاه
+* بروزرسانی خودکار وضعیت سفارشات داخل پنل ووکامرس
+
+= ملی پیامک =
+با استفاده از پنل پیامکی [ملی پیامک](https://www.melipayamak.com/price/) می توانید مشتریان خود را از آخرین وضعیت مرسوله خود با خبر کنید. از امکانات کلیدی ملی پیامک در افزونه حمل و نقل می توان به موارد زیر اشاره کرد:
+* ارسال پیامک سریع با خطوط خدماتی
+* نصب و پیکربندی آسان بدون نیاز به دانش فنی
+* ارسال پیامک وضعیت سفارشات
+* ارسال پیامک بارکد پستی مرسوله
 
 = سازگاری =
 * Woocommerce 3.9.*, 4.*
@@ -63,6 +80,38 @@ Ask your questions in [Persian Woocommerce Shipping](http://mahdiy.ir/plugins/pe
 5. Custom settings for every state, city or district.
 
 == Changelog ==
+= 2.2.3 =
+* Fix: PHP Warning in admin menu
+* Fix: PHP Warning in use courier and tipax
+* FIX: PHP Warning in calculate order weight
+= 2.2.2 =
+* Fix: Migrate disabled settings to new structure
+* Fix: Tapin - Change order status loop
+* Improve: Load order status just in admin
+= 2.2.1 =
+* Fix: Check class exists in settings init
+* Fix: Remove unused admin hook (status_colors)
+* Fix: Dismiss notifications
+= 2.2.0 =
+* Fix: Tapin - Calculate packaging cost in COD
+* Fix: Tapin - Limit sefareshi post weight to 5000g
+* Fix: Add new order status to report page
+* Improve: Tapin - Separate post method
+* Improve: Tapin - Add custom order weight
+* Improve: Tapin - Select shipping state city
+* Improve: Tapin - Submit order from detail page
+* Improve: Tapin - Post ticket UX
+* Improve: Formatted order post barcode
+* Improve: Menu design & new settings panel
+* Tweak: Add quick sms panel for order status and specific events
+* Tweak: Add notice system to help user
+* Tweak: Add version system to automatic update data
+= 2.1.7 =
+* Fix: Tapin - Set ready to ship status for order
+* Fix: Tapin - Calculate post rate
+* Fix: Tapin - Load state and city list
+* Fix: Tapin - Add support for IRHT & IRHR currency
+* Fix: Tapin - Set min price 5000T for products
 = 2.1.6 =
 * Fix: Tapin - Postcode in post ticket
 * Fix: Tapin - Validate package weight
@@ -174,6 +223,8 @@ Ask your questions in [Persian Woocommerce Shipping](http://mahdiy.ir/plugins/pe
 * Start, First version of plugin
 
 == Upgrade Notice ==
+= 2.2.1 =
+* این نسخه دارای تغییرات بنیادی است. لطفا قبل از بروزرسانی از پایگاه داده خود بکاپ تهیه کنید.
 = 2.0.0 =
 * این نسخه دارای تغییرات بنیادی است. لطفا قبل از بروزرسانی از پایگاه داده خود بکاپ تهیه کنید.
 = 1.2.1 =

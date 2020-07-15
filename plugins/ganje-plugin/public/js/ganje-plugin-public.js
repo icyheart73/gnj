@@ -7,6 +7,7 @@ jQuery(function ($) {
         // Initialize
         init: function () {
             documentOnReady.calling_order_popup();
+            documentOnReady.review_form_popup();
         },
 
 
@@ -92,6 +93,83 @@ jQuery(function ($) {
             });
         },
 
+
+        review_form_popup: function () {
+            var form_html = $('#review_form');
+            var rangeSlider = function () {
+                var slider = $('.range-slider'),
+                    range = $('.range-slider__range'),
+                    value = $('.range-slider__value');
+
+                slider.each(function () {
+
+                    value.each(function () {
+                        var value = $(this).prev().attr('value');
+                        if (value === '1')
+                            value = 'بد';
+                        if (value === '2')
+                            value = 'متوسط';
+                        if (value === '3')
+                            value = 'خوب';
+                        if (value === '4')
+                            value = 'خیلی خوب';
+                        if (value === '5')
+                            value = 'عالی';
+                        $(this).html(value);
+                    });
+
+                    range.on('input', function () {
+                        if ($(this).val() === '1') {
+                            $(this).next(value).html('بد');
+                        }
+                        if ($(this).val() === '2') {
+                            $(this).next(value).html('متوسط');
+                        }
+                        if ($(this).val() === '3') {
+                            $(this).next(value).html('خوب');
+                        }
+                        if ($(this).val() === '4') {
+                            $(this).next(value).html('خیلی خوب');
+                        }
+                        if ($(this).val() === '5') {
+                            $(this).next(value).html('عالی');
+                        }
+                    });
+                });
+            };
+
+            $('#triger-comment-form').click(function (e) {
+                e.preventDefault();
+                Swal.fire({
+                    scrollbarPadding: false,
+                    title: '<strong>HTML <u>example</u></strong>',
+                    html:form_html.html(),
+                    showConfirmButton : false
+                })
+                rangeSlider();
+
+                $('.rev-class').on('keydown keyup focusout',function () {
+
+                    if($(this).val() === '') {
+                        $(this).next().toggle();
+                    }
+
+                });
+                $('.js-icon-form-addn').click(function () {
+                    var neg_val = $(this).prev().val();
+                    $(this).prev().val(' ');
+                    $(this).after('<input class="rev-class" type="text" name="negative-rev[]" value="'+neg_val+'">');
+
+                })
+                $('.js-icon-form-addp').click(function () {
+                    var pos_val = $(this).prev().val();
+                    $(this).prev().val(' ');
+                    $(this).after(' <input class="rev-class" type="text" name="positive-rev[]" value="'+pos_val+'">');
+
+                })
+            })
+        }
+
     }
 
     $(document).ready(documentOnReady.init);
@@ -122,13 +200,16 @@ jQuery(document).ready(function ($) {
         });
 
     }
+
     function showLoading(t) {
         (data = $.parseJSON('{"showLoading": {"icon": "' + loading_icon + '"}}')), renderTemplate(t, buttonHtml, data);
     }
+
     function renderTemplate(t, a, n) {
         var e = Handlebars.compile(a)(n);
         $(t).html(e);
     }
+
     "undefined" != typeof myListData &&
     $.get(boxList, function (t) {
         renderTemplate("#myList_list", t, myListData);
@@ -141,7 +222,12 @@ jQuery(document).ready(function ($) {
                 a = $(this).data("userid"),
                 n = BUTTON + t;
             showLoading(n),
-                $.ajax({ type: "POST", dataType: "json", url: uriAjax, data: { action: "gd_add_mylist", itemId: t, userId: a, nonce: nonce } }).done(function (t) {
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    url: uriAjax,
+                    data: {action: "gd_add_mylist", itemId: t, userId: a, nonce: nonce}
+                }).done(function (t) {
                     renderTemplate(n, buttonHtml, t);
                 });
         }),
@@ -151,7 +237,12 @@ jQuery(document).ready(function ($) {
                 n = $(this).data("styletarget"),
                 e = BUTTON + a;
             showLoading(e),
-                $.ajax({ type: "POST", dataType: "json", url: uriAjax, data: { action: "gd_remove_mylist", itemId: a, userId: t, nonce: nonce } }).done(function (t) {
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    url: uriAjax,
+                    data: {action: "gd_remove_mylist", itemId: a, userId: t, nonce: nonce}
+                }).done(function (t) {
                     "mylist" === n
                         ? $("#mylist-" + a)
                             .closest(".gd-mylist-box")

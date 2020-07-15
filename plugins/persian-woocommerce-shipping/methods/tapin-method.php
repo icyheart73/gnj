@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-if ( class_exists( 'WC_Tapin_Method' ) ) {
+if ( class_exists( 'PWS_Tapin_Method' ) ) {
 	return;
 } // Stop if the class already exists
 
@@ -18,25 +18,15 @@ if ( class_exists( 'WC_Tapin_Method' ) ) {
  *
  * @author mahdiy
  *
- *
  */
-class WC_Tapin_Method extends PWS_Shipping_Method {
+class PWS_Tapin_Method extends PWS_Shipping_Method {
 
-	public function __construct( $instance_id = 0 ) {
-
-		$this->id                 = 'WC_Tapin_Method';
-		$this->instance_id        = absint( $instance_id );
-		$this->method_title       = __( 'پست تاپین' );
-		$this->method_description = 'پیشخوان مجازی تاپین - ارسال کالا با استفاده از پست پیشتاز و سفارشی';
-
-		parent::__construct();
-	}
+	protected $post_type = null;
 
 	public function init() {
 
 		parent::init();
 
-		$this->post_type  = $this->get_option( 'post_type', 1 );
 		$this->extra_cost = $this->get_option( 'extra_cost', 0 );
 		$this->fixed_cost = $this->get_option( 'fixed_cost' );
 
@@ -48,15 +38,6 @@ class WC_Tapin_Method extends PWS_Shipping_Method {
 		$currency_symbol = get_woocommerce_currency_symbol();
 
 		$this->instance_form_fields += [
-			'post_type'  => [
-				'title'   => 'نوع پست',
-				'type'    => 'select',
-				'default' => 1,
-				'options' => [
-					0 => 'سفارشی',
-					1 => 'پیشتاز',
-				],
-			],
 			'extra_cost' => [
 				'title'       => 'هزینه های اضافی',
 				'type'        => 'text',
@@ -86,25 +67,6 @@ class WC_Tapin_Method extends PWS_Shipping_Method {
 			return false;
 		}
 
-		$weight = PWS()->get_options( 'pws_package_weight', 500 );
-
-		foreach ( WC()->cart->get_cart() as $cart_item ) {
-
-			if ( $cart_item['data']->is_virtual() ) {
-				continue;
-			}
-
-			if ( $cart_item['data']->has_weight() ) {
-				$weight += wc_get_weight( (float) $cart_item['data']->get_weight() * $cart_item['quantity'], 'g' );
-			} else {
-				$weight += PWS()->get_options( 'pws_product_weight', 500 ) * $cart_item['quantity'];
-			}
-		}
-
-		if ( $weight > 30000 ) {
-			return false;
-		}
-
 		return parent::is_available( $package );
 	}
 
@@ -114,13 +76,13 @@ class WC_Tapin_Method extends PWS_Shipping_Method {
 			return true;
 		}
 
-		if ( ! empty( $this->fixed_cost ) ) {
+		if ( $this->fixed_cost !== '' ) {
 
 			$shipping_total = $this->fixed_cost;
 
 		} else {
 
-			$weight = PWS()->get_options( 'pws_package_weight', 500 );
+			$weight = PWS_Tapin::get_cart_weight();
 
 			$price = 0;
 
@@ -128,12 +90,6 @@ class WC_Tapin_Method extends PWS_Shipping_Method {
 
 				if ( $cart_item['data']->is_virtual() ) {
 					continue;
-				}
-
-				if ( $cart_item['data']->has_weight() ) {
-					$weight += wc_get_weight( (float) $cart_item['data']->get_weight() * $cart_item['quantity'], 'g' );
-				} else {
-					$weight += PWS()->get_options( 'pws_product_weight', 500 ) * $cart_item['quantity'];
 				}
 
 				$price += $cart_item['data']->get_price() * $cart_item['quantity'];
@@ -149,21 +105,29 @@ class WC_Tapin_Method extends PWS_Shipping_Method {
 				$pay_type = 1;
 			}
 
-			$shop = PWS_Tapin::shop();
-
 			if ( get_woocommerce_currency() == 'IRT' ) {
 				$price *= 10;
 			}
 
+			if ( get_woocommerce_currency() == 'IRHR' ) {
+				$price *= 1000;
+			}
+
+			if ( get_woocommerce_currency() == 'IRHT' ) {
+				$price *= 10000;
+			}
+
+			$shop = PWS_Tapin::shop();
+
 			$data = [
-				"price"         => $price,
-				"weight"        => ceil( $weight ),
-				"order_type"    => $this->post_type,
-				"pay_type"      => $pay_type,
-				"to_province"   => intval( $destination['state'] ),
-				"from_province" => intval( $shop->province_code ?? 1 ),
-				"to_city"       => intval( $destination['city'] ),
-				"from_city"     => intval( $shop->city_code ?? 1 ),
+				'price'         => $price,
+				'weight'        => ceil( $weight ),
+				'order_type'    => $this->post_type,
+				'pay_type'      => $pay_type,
+				'to_province'   => intval( $destination['state'] ),
+				'from_province' => intval( $shop->province_code ?? 1 ),
+				'to_city'       => intval( $destination['city'] ),
+				'from_city'     => intval( $shop->city_code ?? 1 ),
 			];
 
 			// Cache price for one hour
@@ -179,7 +143,7 @@ class WC_Tapin_Method extends PWS_Shipping_Method {
 
 			if ( ! isset( $total[ $sign ] ) ) {
 
-				PWS_Tapin::set_gateway( PW()->get_options( 'pws_tapin_gateway' ) );
+				PWS_Tapin::set_gateway( PWS()->get_option( 'tapin.gateway' ) );
 
 				$response = PWS_Tapin::price( $data );
 
@@ -202,8 +166,10 @@ class WC_Tapin_Method extends PWS_Shipping_Method {
 			$shipping_total = ceil( $shipping_total / 1000 ) * 1000;
 
 			$shipping_total = PWS()->convert_currency( $shipping_total );
+
+			$shipping_total += $this->extra_cost;
 		}
 
-		$this->add_rate_cost( $shipping_total + $this->extra_cost, $package );
+		$this->add_rate_cost( $shipping_total, $package );
 	}
 }

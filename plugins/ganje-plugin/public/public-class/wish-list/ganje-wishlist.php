@@ -390,7 +390,7 @@ class Ganje_wishlist
         echo('</script>');
         echo('</div>');
         echo('<div id="mylist_btn_' . $item_id . '"></div>');
-        echo 'asdasdasdas';
+
     }
 }
 

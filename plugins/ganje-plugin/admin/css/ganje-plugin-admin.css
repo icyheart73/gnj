@@ -17,3 +17,10 @@
     color: #0f9174;
     border: 1px solid #4de6c4;
 }
+.gnj-column1 img {
+    width: 24px;
+    opacity: .9;
+}
+.gnj-rtl {
+    direction: rtl;
+}

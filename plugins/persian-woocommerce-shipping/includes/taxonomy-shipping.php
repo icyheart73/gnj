@@ -5,6 +5,10 @@
  * E-Mail    : M@hdiY.IR
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+} // Exit if accessed directly
+
 class PWS_state_city_taxonomy {
 
 	public function __construct() {
@@ -17,7 +21,7 @@ class PWS_state_city_taxonomy {
 			add_action( 'created_state_city', [ $this, 'flush_cache' ], 10 );
 		}
 		
-		add_action( 'admin_menu', array( $this, 'admin_menu' ), 10 );
+		add_action( 'admin_menu', array( $this, 'admin_menu' ), 30 );
 		add_action( 'edited_state_city', array( $this, 'save_state_city' ), 10, 2 );
 		add_action( 'create_state_city', array( $this, 'save_state_city' ), 10, 2 );
 		add_action( 'state_city_add_form_fields', array( $this, 'state_city_add_form_fields' ), 10, 2 );
@@ -49,10 +53,10 @@ class PWS_state_city_taxonomy {
 
 	public function admin_menu() {
 
-		add_submenu_page( '', '', '', 'manage_woocommerce', 'pabit_edit_state', array(
+		add_submenu_page( '', '', '', 'manage_woocommerce', 'pabit_edit_state', [
 			$this,
 			'pabit_edit_state_callback'
-		) );
+		] );
 
 	}
 

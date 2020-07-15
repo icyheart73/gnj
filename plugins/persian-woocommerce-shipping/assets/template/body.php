@@ -12,21 +12,11 @@
             <td rowspan="4">
 				<?php
 
-				$tapin_method = $order->get_meta( 'tapin_method' );
-
-				if ( is_array( $tapin_method ) ) {
-
-					$types = array(
-						0 => 'سفارشی',
-						1 => 'پیشتاز',
-					);
-
-					$shipping_method = $types[ $tapin_method['post_type'] ];
-				}
+				$shipping_method = PWS_Order::get_shipping_method( $order, true );
 
 				?>
                 <table id="data">
-                    <tr <?php echo wooi_show_item( ! is_array( $tapin_method ) ); ?>>
+                    <tr <?php echo wooi_show_item( $shipping_method ); ?>>
                         <td><b>شیوه ارسال</b></td>
                         <td><?php echo $order->get_shipping_method(); ?></td>
                     </tr>
@@ -36,10 +26,18 @@
 							<?php echo $order->get_payment_method() == 'cod' ? 'پرداخت هنگام دریافت' : 'پرداخت آنلاین'; ?>
                         </td>
                     </tr>
-                    <tr <?php wooi_show_item( $order->get_payment_method() == 'cod' ); ?>>
+                    <tr>
                         <td colspan="2">
                             <b>
-                                مبلغ قابل پرداخت از گیرنده دریافت شود.
+								<?php
+
+								if ( $order->get_payment_method() == 'cod' ) {
+									echo 'مبلغ قابل پرداخت از گیرنده دریافت شود.';
+								} else {
+									echo 'تمامی هزینه ها بصورت آنلاین پرداخت شده است.';
+								}
+
+								?>
                             </b>
                         </td>
                     </tr>
@@ -49,14 +47,13 @@
                     </tr>
                 </table>
                 <br>
-                <div <?php echo wooi_show_item( is_array( $tapin_method ) ); ?>>
+                <div <?php echo wooi_show_item( $shipping_method ); ?>>
                     <table style="height: 55mm; width: 100%; margin: 0 auto; font-size: 10px;">
                         <tr style="height: 18mm;text-align: center;">
                             <td colspan="2">
                                 <img src="<?php echo plugin_dir_url( PWS_FILE ); ?>assets/images/logo.png" alt=""
                                      style="height: 10mm;"><br>
-                                خدمات تجارت الکترونیک<br>
-                                نوع ارسال: <?php echo $shipping_method; ?>
+                                خدمات تجارت الکترونیک
                             </td>
                         </tr>
                         <tr style="height: 4mm;">
@@ -66,24 +63,14 @@
                                 ◀ <?php echo $order->get_shipping_state(); ?> <?php echo $order->get_shipping_city(); ?></td>
                         </tr>
                         <tr style="height: 4mm;">
-                            <td>خدمات ◀ <?php echo number_format( intval( PWS_Tapin::shop()->total_price ) ); ?> ریال
-                            </td>
-                            <td>وزن ◀ <?php echo number_format( intval( $order->get_meta( 'tapin_weight' ) ) ); ?> گرم
+                            <td>نوع ارسال ◀ <?php echo $shipping_method; ?></td>
+                            <td>وزن ◀ <?php echo number_format( intval( PWS_Order::get_order_weight( $order ) ) ); ?>
+                                گرم
                             </td>
                         </tr>
                         <tr style="height: 4mm;">
                             <td>تاریخ ◀ <?php echo date_i18n( 'Y-m-d', $order->get_meta( 'tapin_send_time' ) ); ?></td>
                             <td>زمان ◀ <?php echo date_i18n( 'H:i:s', $order->get_meta( 'tapin_send_time' ) ); ?></td>
-                        </tr>
-                        <tr style="height: 4mm;">
-                            <td>کرایه پستی
-                                ◀ <?php echo number_format( intval( $order->get_meta( 'tapin_send_price' ) ) ); ?>
-                                ریال
-                            </td>
-                            <td>مالیات ارزش افزوده پستی
-                                ◀ <?php echo number_format( intval( $order->get_meta( 'tapin_send_price_tax' ) ) ); ?>
-                                ریال
-                            </td>
                         </tr>
                         <tr style="height: 8mm;">
                             <td colspan="2" class="post_barcode" style="text-align: center;padding-top: 2px;">
@@ -137,7 +124,7 @@
                 <div style="text-align: center;">
                     <img src="<?php echo $logo; ?>" alt="<?php echo PW()->get_options( 'wooi_store_name' ); ?>"
                          style="height: 50px">
-                    <span <?php echo wooi_show_item( is_array( $tapin_method ) ); ?>>
+                    <span <?php echo wooi_show_item( $shipping_method ); ?>>
                         <img src="<?php echo plugin_dir_url( PWS_FILE ); ?>assets/images/tapin.jpg"
                              alt="<?php echo PW()->get_options( 'wooi_store_name' ); ?>"
                              style="height: 50px">

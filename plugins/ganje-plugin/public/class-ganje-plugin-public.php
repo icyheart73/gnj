@@ -56,6 +56,7 @@ class Ganje_Plugin_Public
         }
 
         require_once GNJ_PATH . '/public/public-class/view-product-meta.php';
+        require_once GNJ_PATH . '/public/public-class/ganje-comment-form.php';
 
         require_once GNJ_PATH . '/public/function-helper.php';
 
@@ -82,6 +83,7 @@ class Ganje_Plugin_Public
 
         require_once GNJ_PATH . '/public/public-class/calling-order/ganje-calling-order.php';
         require_once GNJ_PATH . '/public/public-class/wish-list/ganje-wishlist.php';
+        require_once GNJ_PATH . '/public/public-class/checkout-map/checkout-map.php';
 
     }
 

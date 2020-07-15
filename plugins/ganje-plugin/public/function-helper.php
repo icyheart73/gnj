@@ -339,3 +339,28 @@ function getUserIP()
 
     return $ip;
 }
+
+function gnj_invoice_init() {
+    $labels = array(
+        'name'                  => 'Invoice',
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => false,
+        'publicly_queryable' => true,
+        'show_ui'            => false,
+        'show_in_menu'       => false,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'invoice' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'supports'           => array('title'),
+        'exclude_from_search' => true,
+        'show_in_rest' => false,
+    );
+
+    register_post_type( 'invoice', $args );
+}
+add_action( 'init','gnj_invoice_init' );

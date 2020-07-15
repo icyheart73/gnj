@@ -36,7 +36,6 @@ var swiper = new Swiper('.ibenzz_slider', {
         var conf_slider 	= {};
         conf_slider.slidesPerView = column_count;
         conf_slider.slidesPerColumn = row_count;
-        alert(row_count);
         conf_slider.spaceBetween = 30;
         conf_slider.pagination = {el: '.swiper-pagination',clickable: true,};
         conf_slider.navigation = {nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev',};

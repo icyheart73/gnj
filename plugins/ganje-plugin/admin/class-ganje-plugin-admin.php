@@ -71,7 +71,7 @@ class Ganje_Plugin_Admin {
         }
 
         require_once GNJ_PATH . '/admin/admin-class/dev-mode.php';
-
+        require_once GNJ_PATH . '/admin/admin-class/order-invoice.php';
         if (class_exists('WooCommerce'))
         require_once GNJ_PATH . '/admin/admin-class/product-list-price.php';
 
