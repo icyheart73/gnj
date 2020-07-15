@@ -33,6 +33,10 @@ $custom_settings = array(
         array(
             'id'          => 'calling_order',
             'title'       =>'سفارش تلفنی'
+        ),
+        array(
+            'id'          => 'ajax_filter',
+            'title'       =>'فیلتر محصول ایجکس'
         )
 
 	),
@@ -213,7 +217,24 @@ $custom_settings = array(
             'type'         => 'on-off',
             'section'      => 'otp_tab',
         ),
-
+        /* Ajax Filter */
+        array(
+            'id'           => 'enable_ajax_filter',
+            'label'        => 'فعال سازی فیلتر ایجیکس',
+            'desc'         => '',
+            'std'          => 'on',
+            'type'         => 'on-off',
+            'section'      => 'ajax_filter',
+        ),
+        array(
+            'id'           => 'remove_outofstock_filter',
+            'label'        => 'عدم نمایش محصولات ناموجود بعد از فعال سازی یک فیلتر',
+            'desc'         => 'اگر این گزینه فعال باشد به شماره تلفن کاربر کد یکبار مصرف ارسال شده و کاربر با وارد کردن آن کد در سایت ، صحت شماره خود را تایید میکند.',
+            'std'          => 'on',
+            'type'         => 'on-off',
+            'section'      => 'ajax_filter',
+            'condition'    => 'enable_ajax_filter:is(on)'
+        ),
 	)
 );
 

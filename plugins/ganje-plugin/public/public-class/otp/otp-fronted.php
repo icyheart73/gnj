@@ -19,12 +19,10 @@ class OTP_Frontend{
 
     public function __construct(){
 
-        echo '111';
         $this->get_Settings();
 
         if( $this->setting['otp'] === "on" ){
             add_action( 'woocommerce_login_form_end', array( $this, 'wc_login_with_otp_form' ) );
-            echo 'eeeee';
         }
 
         if( $this->setting['otp_verification'] === "on" ){

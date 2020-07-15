@@ -83,6 +83,10 @@ class Ganje_Plugin_Public
         require_once GNJ_PATH . '/public/public-class/calling-order/ganje-calling-order.php';
         require_once GNJ_PATH . '/public/public-class/wish-list/ganje-wishlist.php';
 
+        /* Ajax Filter */
+        if ($this->setting['enable_ajax_filter'] == 'on')
+            require_once GNJ_PATH . '/public/public-class/ajax-filter/ajax-filter.php';
+
     }
 
     public function enqueue_styles()
@@ -110,6 +114,12 @@ class Ganje_Plugin_Public
                 'boxList' => GNJ_URL . '/public/public-class/wish-list/view/box-list.html',
                 'button' => GNJ_URL . '/public/public-class/wish-list/view/button.html',
                 'loading_icon' => 'dfgdfgfdg',
+                'notices' 				=> array(
+                    'empty_phone' 	=> gnj_add_notice( __( 'Please enter a phone number', 'mobile-login-woocommerce' ), 'error' ),
+                    'empty_email' 	=> gnj_add_notice( __( 'Email address cannot be empty.', 'mobile-login-woocommerce' ), 'error' ),
+                    'empty_password'=> gnj_add_notice( __( 'Please enter a password.', 'mobile-login-woocommerce' ), 'error' ),
+                    'invalid_phone' => gnj_add_notice( __( 'Please enter a valid phone number without any special characters & country code.', 'mobile-login-woocommerce' ), 'error' ),
+                ),
             )
         );
 
