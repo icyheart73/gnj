@@ -313,15 +313,9 @@ if ( ! class_exists( 'Storefront' ) ) :
 			 * Styles
 			 */
 			wp_enqueue_style( 'storefront-style', get_template_directory_uri() . '/style.css', '', $storefront_version );
-			wp_style_add_data( 'storefront-style', 'rtl', 'replace' );
 
-			wp_enqueue_style( 'storefront-icons', get_template_directory_uri() . '/assets/css/base/icons.css', '', $storefront_version );
-			wp_style_add_data( 'storefront-icons', 'rtl', 'replace' );
+			wp_enqueue_style( 'font-awesome-light', get_template_directory_uri() . '/assets/css/fonticon/icons.css', '', $storefront_version );
 
-			/**
-			 * Fonts
-			 */
-			wp_enqueue_style( 'storefront-fonts', $this->google_fonts(), array(), null );
 
 			/**
 			 * Scripts
