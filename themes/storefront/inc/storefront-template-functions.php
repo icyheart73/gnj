@@ -148,7 +148,7 @@ if ( ! function_exists( 'storefront_credit' ) ) {
 			$separator = '<span role="separator" aria-hidden="true"></span>';
 			$links_output = get_the_privacy_policy_link( '', ( ! empty( $links_output ) ? $separator : '' ) ) . $links_output;
 		}
-		
+
 		$links_output = apply_filters( 'storefront_credit_links_output', $links_output );
 		?>
 		<div class="site-info">
@@ -163,24 +163,6 @@ if ( ! function_exists( 'storefront_credit' ) ) {
 	}
 }
 
-if ( ! function_exists( 'storefront_header_widget_region' ) ) {
-	/**
-	 * Display header widget region
-	 *
-	 * @since  1.0.0
-	 */
-	function storefront_header_widget_region() {
-		if ( is_active_sidebar( 'header-1' ) ) {
-			?>
-		<div class="header-widget-region" role="complementary">
-			<div class="col-full">
-				<?php dynamic_sidebar( 'header-1' ); ?>
-			</div>
-		</div>
-			<?php
-		}
-	}
-}
 
 if ( ! function_exists( 'storefront_site_branding' ) ) {
 	/**
