@@ -89,8 +89,8 @@ $settings['title-desc'] = 'لورم اپیسوم متنی ساختگی بر یا
         <div class="gnje-widget-arrow">
             <?php
             if ($settings['show_nav']) { ?>
-                <div class="swiper-gnj-next"></div>
-                <div class="swiper-gnj-prev"></div>
+                <div class="swiper-gnj-prev"><i class="fal fa-arrow-right"></i></i></div>
+                <div class="swiper-gnj-next"><i class="fal fa-arrow-left"></i></div>
             <?php } ?>
         </div>
     </div>

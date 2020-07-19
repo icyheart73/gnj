@@ -316,10 +316,6 @@ if ( ! class_exists( 'Storefront' ) ) :
 
 			wp_enqueue_style( 'font-awesome-light', get_template_directory_uri() . '/assets/css/fonticon/icons.css', '', $storefront_version );
 
-			/**
-			 * Fonts
-			 */
-			wp_enqueue_style( 'storefront-fonts', $this->google_fonts(), array(), null );
 
 			/**
 			 * Scripts
