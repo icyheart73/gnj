@@ -10,7 +10,6 @@
         <div class="modal-body pr-0">
             <div class="btn-group-share-row">
                 <div class="btn-group-share-col">
-                    <?php// include 'sharing-button-socials.php'; ?>
                 </div>
             </div>
 
