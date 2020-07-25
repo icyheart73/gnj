@@ -25,4 +25,14 @@ function change_ot_social_links_description( $field_label, $field_id)
     return $field_label;
 }
 
+function general_admin_notice(){
+    global $pagenow;
+    if ( $pagenow == 'themes.php' ) {
+            echo '<div class="notice pws_notice notice-success is-dismissible gnj-notice">
+          <p> برای دیدن آموزش های پیکربندی قالب<a href="https://www.google.com/"> اینجا </a> کلیک کنید.</p>
+         </div>';
+    }
+}
+add_action('admin_notices', 'general_admin_notice');
+
 
