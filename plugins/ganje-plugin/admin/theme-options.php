@@ -14,6 +14,14 @@ $saved_settings = get_option( 'option_tree_settings', array() );
  */
 $custom_settings = array(
 	'sections'        => array(
+        array(
+            'id'          => 'general',
+            'title'       => 'عمومی'
+        ),
+        array(
+            'id'          => 'header',
+            'title'       => 'هدر'
+        ),
 		array(
 			'id'          => 'woocommerce',
 			'title'       => 'ووکامرس'
@@ -43,6 +51,43 @@ $custom_settings = array(
 
 
 	'settings'        => array(
+	    // general Start
+        array(
+            'id'          => 'gnj_logo',
+            'label'       => 'آپلود لوگو',
+            'desc'        => 'تصویر لوگو خود را آپلود کنید.',
+            'type'        => 'upload',
+            'std'          => '',
+            'section'     => 'general',
+        ) ,
+        //general End
+        //Header Start
+        array(
+            'id'          => 'header_style',
+            'label'       => 'سبک هدر',
+            'desc'        => 'سبک هدر مورد نظرتون رو انتخاب کنید.',
+            'type'        => 'radio-image',
+            'section'     => 'header',
+            'std'          => 'header-style-1',
+            'choices'     => array(
+                array(
+                    'value'       => 'header-style-1',
+                    'label'       => 'header-style-1',
+                    'src'     => OT_URL . '/assets/images/layout/header-style-1.jpg'
+                ),
+                array(
+                    'value'       => 'header-style-2',
+                    'label'       => 'header-style-2',
+                    'src'     => OT_URL . '/assets/images/layout/header-style-1.jpg'
+                ),
+                array(
+                    'value'       => 'header-style-3',
+                    'label'       => 'header-style-3',
+                    'src'     => OT_URL . '/assets/images/layout/header-style-1.jpg'
+                )
+            )
+        ) ,
+        //Header End
         array(
             'id'           => 'empty_price',
             'label'        => 'فعالسازی متن دلخواه برای محصولات بدون قیمت',

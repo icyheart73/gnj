@@ -4792,6 +4792,7 @@ ul.gnje-scrollto-nav-icons-list.lines li.active .gnje-scrollto-nav-item-link {
     border-radius: 40px;
     box-shadow: 0 0 15px rgba(51, 51, 51, 0.2);
     font-size: 16px;
+    cursor: pointer;
 }
 
 .gnje-widget-arrow .swiper-gnj-next.swiper-button-disabled, .gnje-widget-arrow .swiper-gnj-prev.swiper-button-disabled {
@@ -4804,8 +4805,8 @@ ul.gnje-scrollto-nav-icons-list.lines li.active .gnje-scrollto-nav-item-link {
 }
 
 .gnje-product-slider .product-slider .product {
-    box-shadow: 0 0 15px rgba(51, 51, 51, 0.25);
-    border-radius: 15px 15px 15px 0;
+    box-shadow: 0 0 15px rgba(67, 80, 98, 0.15);
+    border-radius: 10px 10px 10px 0;
     overflow: hidden;
 }
 .gnje-countdown .countdown-times {

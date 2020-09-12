@@ -41,20 +41,6 @@
 .hidden{
     display: none;
 }
-*, *:before, *:after {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: sans-serif;
-    padding: 60px 20px;
-    direction: rtl;
-}
-@media (min-width: 600px) {
-    body {
-        padding: 60px;
-    }
-}
 
 .range-slider {
     margin: 60px 0 0 0%;

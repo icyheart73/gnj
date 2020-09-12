@@ -78,6 +78,8 @@ class Ganje_Plugin_Admin {
         if( $this->setting['otp'] === "on" ){
             require_once GNJ_PATH . '/admin/admin-class/otp-admin.php';
         }
+
+        require_once GNJ_PATH . '/admin/admin-class/mega-menu.php';
     }
 
     public function get_Settings(){
@@ -113,8 +115,7 @@ class Ganje_Plugin_Admin {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/ganje-plugin-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/ganje-plugin-admin.css', array(), '1.0.1' , 'all' );
 
 	}
 
