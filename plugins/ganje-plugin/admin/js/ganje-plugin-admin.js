@@ -11,6 +11,13 @@ jQuery(function ($) {
 		alert('invoice label clicked');
 	});
 
-})
+	$('.field-custom.description.description-wide.iconbox i').click(function () {
+		var val = $(this).attr("class");
+		$('.field-custom.description.description-wide.iconbox i.active').removeClass('active')
+		$(this).addClass('active')
+		var input_id = $(this).parent().attr('data-inputid')
+		$('#'+input_id).val(val);
+	})
 
+})
 

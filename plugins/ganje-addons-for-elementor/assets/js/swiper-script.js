@@ -40,7 +40,6 @@ var swiper = new Swiper('.ibenzz_slider', {
         conf_slider.pagination = {el: '.swiper-pagination',clickable: true,};
         conf_slider.navigation = {nextEl: '.swiper-gnj-next', prevEl: '.swiper-gnj-prev',};
         conf_slider.breakpoints = brkpnt;
-        console.log(conf_slider);
         if(slider_autoplay)
            conf_slider.autoplay = { delay : 5000 , disableOnInteraction : false};
          //Initialize
