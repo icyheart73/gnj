@@ -115,92 +115,89 @@ if ( function_exists( 'zoo_product_hover_effect' ) ) {
 $product_query = new WP_Query( $settings['wc_attr'] );
 
 ?>
-<div class="<?php echo esc_attr( $gnje_wrap_class ) ?> " data-gnje-config='<?php echo esc_attr( $gnje_json_config ) ?>'>
 
-    <div class="gnje-head-product-filter <?php echo esc_attr( $settings['title'] ? 'has-border' : '' ); ?>">
-        <?php if ( isset( $settings['title'] ) && $settings['title'] != '' ) :
-            printf( '<h3 %s>%s</h3>', $this->get_render_attribute_string( 'title' ), $settings['title'] );
-        endif; ?>
-    </div>
+<section class="gnje-product-slider">
 
-    <ul class="products <?php echo esc_attr( $class ) ?>">
-
-
-    </ul>
-</div>
-
-
-<!-- Swiper -->
-
-<div class="swiper-container product-slider"
-     data-row="<?php echo $settings['slides_to_show_row']['size']; ?>"
-     data-rowmobile="<?php echo $settings['slides_to_show_row_mobile']['size']; ?>"
-     data-column="<?php echo $settings['slides_to_show_columns']['size']; ?>"
-     data-columnmobile="<?php echo $settings['slides_to_show_columns_mobile']['size']; ?>"
-     data-autoplay="<?php echo $settings['autoplay']; ?>">
-    <div class="swiper-wrapper  ">
-        <?php
-        while ( $product_query->have_posts() ) : $product_query->the_post(); ?>
-        <div <?php wc_product_class( 'swiper-slide' ); ?>>
+    <div class="gnje-widget-header">
+        <div class="gnje-widget-title">
+            <?php if (isset($settings['title']) && $settings['title'] != '') :
+                echo '<h2>'.$settings['title'].'</h2><a>( نمایش بیشتر )</a><p>'.$settings['title-desc'].'</p>';
+            endif; ?>
+        </div>
+        <!-- Add Arrows -->
+        <div class="gnje-widget-arrow">
             <?php
-            /**
-             * Hook: woocommerce_before_shop_loop_item.
-             *
-             * @hooked woocommerce_template_loop_product_link_open - 10
-             */
-            do_action( 'woocommerce_before_shop_loop_item' );
-
-            /**
-             * Hook: woocommerce_before_shop_loop_item_title.
-             *
-             * @hooked woocommerce_show_product_loop_sale_flash - 10
-             * @hooked woocommerce_template_loop_product_thumbnail - 10
-             */
-            do_action( 'woocommerce_before_shop_loop_item_title' );
-
-            /**
-             * Hook: woocommerce_shop_loop_item_title.
-             *
-             * @hooked woocommerce_template_loop_product_title - 10
-             */
-            do_action( 'woocommerce_shop_loop_item_title' );
-
-            /**
-             * Hook: woocommerce_after_shop_loop_item_title.
-             *
-             * @hooked woocommerce_template_loop_rating - 5
-             * @hooked woocommerce_template_loop_price - 10
-             */
-            do_action( 'woocommerce_after_shop_loop_item_title' );
-
-            /**
-             * Hook: woocommerce_after_shop_loop_item.
-             *
-             * @hooked woocommerce_template_loop_product_link_close - 5
-             * @hooked woocommerce_template_loop_add_to_cart - 10
-             */
-            do_action( 'woocommerce_after_shop_loop_item' );
-            ?>
-            </div><?php endwhile;
-        ?>
-
+            if ($settings['show_nav']) { ?>
+                <div class="swiper-gnj-prev"><i class="fal fa-arrow-right"></i></i></div>
+                <div class="swiper-gnj-next"><i class="fal fa-arrow-left"></i></div>
+            <?php } ?>
+        </div>
     </div>
 
+    <!-- Swiper -->
 
-    <!-- Add Arrows -->
-    <?php
-    if ( $settings['show_nav'] ) { ?>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-    <?php } ?>
+    <div class="swiper-container product-slider"
+         data-row="<?php echo $settings['slides_to_show_row']['size']; ?>"
+         data-rowmobile="<?php echo $settings['slides_to_show_row_mobile']['size']; ?>"
+         data-column="<?php echo $settings['slides_to_show_columns']['size']; ?>"
+         data-columnmobile="<?php echo $settings['slides_to_show_columns_mobile']['size']; ?>"
+         data-autoplay="<?php echo $settings['autoplay']; ?>">
+        <div class="swiper-wrapper" itemscope itemtype="http://schema.org/ItemList">
+            <?php
+            while ($product_query->have_posts()) : $product_query->the_post(); ?>
+            <div <?php wc_product_class('swiper-slide'); ?>>
+                <?php
+                /**
+                 * Hook: woocommerce_before_shop_loop_item.
+                 *
+                 * @hooked woocommerce_template_loop_product_link_open - 10
+                 */
+                do_action('woocommerce_before_shop_loop_item');
 
-    <!-- Add Pagination -->
-    <?php if ( $settings['show_pag'] ) {
-        echo '<div class="swiper-pagination"></div></div>';
+                /**
+                 * Hook: woocommerce_before_shop_loop_item_title.
+                 *
+                 * @hooked woocommerce_show_product_loop_sale_flash - 10
+                 * @hooked woocommerce_template_loop_product_thumbnail - 10
+                 */
+                do_action('woocommerce_before_shop_loop_item_title');
 
-    }
-    ?>
-</div>
+                /**
+                 * Hook: woocommerce_shop_loop_item_title.
+                 *
+                 * @hooked woocommerce_template_loop_product_title - 10
+                 */
+                do_action('woocommerce_shop_loop_item_title');
+
+                /**
+                 * Hook: woocommerce_after_shop_loop_item_title.
+                 *
+                 * @hooked woocommerce_template_loop_rating - 5
+                 * @hooked woocommerce_template_loop_price - 10
+                 */
+                do_action('woocommerce_after_shop_loop_item_title');
+
+                /**
+                 * Hook: woocommerce_after_shop_loop_item.
+                 *
+                 * @hooked woocommerce_template_loop_product_link_close - 5
+                 * @hooked woocommerce_template_loop_add_to_cart - 10
+                 */
+                do_action('woocommerce_after_shop_loop_item');
+                ?>
+                </div><?php endwhile;
+            ?>
+
+        </div>
+
+        <!-- Add Pagination -->
+        <?php if ($settings['show_pag']) {
+            echo '<div class="swiper-pagination"></div></div>';
+
+        }
+        ?>
+    </div>
+</section>
 <?php
 
 
@@ -213,14 +210,14 @@ $this->admin_editor_js = "<script>(function ($) {
         var column_count = $(this).data('column');
         var column_countMobile = $(this).data('columnmobile');
         var slider_autoplay = $(this).data('autoplay');
-        var brkpnt = {640 : {slidesPerView: column_count, spaceBetween: 20, slidesPerColumn : row_count}};
+        var brkpnt = {640 : {slidesPerView: column_countMobile, spaceBetween: 20, slidesPerColumn : row_countMobile}};
 
         var conf_slider 	= {};
-        conf_slider.slidesPerView = column_countMobile;
-        conf_slider.slidesPerColumn = row_countMobile;
+        conf_slider.slidesPerView = column_count;
+        conf_slider.slidesPerColumn = row_count;
         conf_slider.spaceBetween = 30;
         conf_slider.pagination = {el: '.swiper-pagination',clickable: true,};
-        conf_slider.navigation = {nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev',};
+        conf_slider.navigation = {nextEl: '.swiper-gnj-next', prevEl: '.swiper-gnj-prev',};
         conf_slider.breakpoints = brkpnt;
         console.log(conf_slider);
         if(slider_autoplay)
@@ -230,14 +227,8 @@ $this->admin_editor_js = "<script>(function ($) {
     });
 })(jQuery);</script>";
 
-if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
-    add_action( 'elementor/frontend/after_enqueue_scripts', $this->editor_js() );
+if (\Elementor\Plugin::$instance->editor->is_edit_mode()) {
+    add_action('elementor/frontend/after_enqueue_scripts', $this->editor_js());
 }
-
-?>
-
-
-
-<?php
 wp_reset_postdata();
 ?>

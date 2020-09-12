@@ -147,3 +147,21 @@ input::-moz-focus-outer {
 .woocommerce-Tabs-panel #respond {
     display: none;
 }
+
+.gnj-second-image {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transition-duration: .5s;
+}
+.gnj-second-image:hover {
+    opacity: 1;
+}
+.related li{
+    position: relative;
+}
+.image_section

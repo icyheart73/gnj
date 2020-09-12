@@ -5,7 +5,6 @@ class Ganje_Single_Product_Free_Price{
     private $setting;
 
     function __construct() {
-
         $this->get_Settings();
         add_filter( 'woocommerce_get_price_html', array($this,'free_price_custom_label') , 999, 2);
         add_filter( 'woocommerce_variable_price_html', array($this,'free_variation_price_custom_label'), 20, 2 );

@@ -25,7 +25,7 @@ final class GanjePosts extends GanjeWidgetBase
      */
     function get_title()
     {
-        return 'پست گنجه';
+        return 'نوشته های  گنجه';
     }
 
     /**
@@ -150,6 +150,7 @@ final class GanjePosts extends GanjeWidgetBase
                 'grid' => 'شبکه ای',
                 'list' => 'لیست',
                 'carousel' => 'اسلاید',
+                'masonry ' => 'آجری',
             ],
             'description' => 'چیدمان بلاگ',
         ]);

@@ -24,18 +24,15 @@ class GANJE_Ajax {
             check_ajax_referer( 'ganje-nonce', 'nonce' );
         }
 
-        if ( ! isset( $_POST['id'] ) || empty( $_POST['id'] ) ) {
-            echo 'sds';
-        }
-
         $product = wc_get_product( sanitize_text_field( wp_unslash( $_POST['id'] ) ) );
-
-
+        if(!$product) {
+            echo 'یک متغیر را انتخاب کنید';
+            wp_die();
+        }
         include GNJ_PATH . '/public/public-class/calling-order/includes/view/html-popup-window.php';
 
-        //wp_send_json( $data );
-        echo $output;
 
+        echo $output;
         wp_die();
     }
 

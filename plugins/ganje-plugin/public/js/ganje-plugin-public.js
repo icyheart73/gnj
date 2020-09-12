@@ -27,14 +27,12 @@ jQuery(function ($) {
                     productQty = $('.quantity').find('input[name="quantity"]').val(),
                     dataOut = {};
 
-                // Проверяем ID товара, для вариаций свой, для простых свой.
                 if (0 !== productVariantId && typeof productVariantId !== 'undefined') {
                     prodictSelectedId = productVariantId;
                 } else {
                     prodictSelectedId = productId;
                 }
 
-                // Собираем данные для отправки.
                 let data = {
                     id: prodictSelectedId,
                     action: 'ganje_ajax_product_form',

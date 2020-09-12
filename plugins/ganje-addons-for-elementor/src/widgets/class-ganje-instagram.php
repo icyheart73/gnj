@@ -50,6 +50,7 @@ final class GanjeInstagram extends GanjeWidgetBase
             'label'		    => 'عنوان',
             'type'		    => Controls_Manager::TEXT,
             'default'       => 'اینستاگرام گنجه',
+            'class'         => 'instagram-title',
         ]);
         $this->add_control('username', [
             'label'         => 'username@',
@@ -102,16 +103,6 @@ final class GanjeInstagram extends GanjeWidgetBase
         ]);
 
 
-        $this->add_control('layout', [
-            'label'         => 'چیدمان',
-            'description'   => __('', 'gnje'),
-            'type'          => Controls_Manager::SELECT,
-            'default'       => 'grid',
-            'options' => [
-                'grid'      => 'جدولی',
-            ],
-        ]);
-
             //Grid
         $this->add_responsive_control('columns',[
             'label'         => 'تعداد ستون در هر ردیف',
@@ -135,9 +126,6 @@ final class GanjeInstagram extends GanjeWidgetBase
             'mobile_default' => [
                 'size' => 2,
                 'unit' => 'col',
-            ],
-            'condition'     => [
-                'layout' => 'grid',
             ],
 
         ]);
@@ -186,7 +174,7 @@ final class GanjeInstagram extends GanjeWidgetBase
             'show_time'         => '',
             'time_layout'       => 'elapsed',
             'date_format'       => '',
-            'layout'            => 'carousel',
+            'layout'            => 'grid',
             'columns'           => '',
 
             'slides_to_show'    => 4,

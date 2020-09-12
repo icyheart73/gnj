@@ -62,11 +62,13 @@ class Ganje_Plugin_Public
 
         require_once GNJ_PATH . '/public/public-class/view-product-addons.php';
         require_once GNJ_PATH . '/public/public-class/ganje-sharing-product.php';
+        require_once GNJ_PATH . '/public/public-class/ganje-product-loop.php';
 
-        if ($this->setting['free_price'] == 'on') {
+
+        /*if ($this->setting['free_price'] == 'on') {
 
             require_once GNJ_PATH . '/public/public-class/ganje-single-product-free-price.php';
-        }
+        }*/
         if ($this->setting['product_qa'] == 'on') {
 
             require_once GNJ_PATH . '/public/public-class/question-answer/view-product-qa.php';

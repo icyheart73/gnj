@@ -70,6 +70,11 @@ if (class_exists('WooCommerce')):
                     'type'		    => Controls_Manager::TEXT,
                     'default'       => 'محصولات گنجه',
                 ]);
+                $this->add_control('title-desc', [
+                    'label'		    => 'توضیحات عنوان',
+                    'type'		    => Controls_Manager::TEXT,
+                    'default'       => 'لورم اپیسوم متنی ساختگی بر یااستفاده از عنصر وب',
+                ]);
 
             $this->end_controls_section();
 
@@ -126,7 +131,7 @@ if (class_exists('WooCommerce')):
 			        'label'         => 'تعداد محصولات برای نمایش',
 			        'description'   => __('', 'gnje'),
 			        'type'          => Controls_Manager::NUMBER,
-			        'default'       => 6,
+			        'default'       => 12,
 		        ]);
 	        $this->add_responsive_control('slides_to_show_row',[
 		        'label'         =>'تعداد ردیف',
@@ -139,15 +144,15 @@ if (class_exists('WooCommerce')):
 		        ],
 		        'devices' => [ 'desktop', 'mobile' ],
 		        'desktop_default' => [
-			        'size' => 4,
+			        'size' => 1,
 			        'unit' => 'px',
 		        ],
 		        'tablet_default' => [
-			        'size' => 3,
+			        'size' => 1,
 			        'unit' => 'px',
 		        ],
 		        'mobile_default' => [
-			        'size' => 2,
+			        'size' => 1,
 			        'unit' => 'px',
 		        ],
 

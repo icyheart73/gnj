@@ -1,19 +1,19 @@
 (function($){
 	$.fn.lofCountDown = function( options ) {
-	 	return this.each(function() { 
+		return this.each(function() {
 			// get instance of the lofCountDown.
-			new  $.lofCountDown( this, options ); 
+			new  $.lofCountDown( this, options );
 		});
- 	 }
+	}
 	$.lofCountDown = function( obj, options ){
-		
+
 		this.options = $.extend({
-				autoStart			: true,
-				LeadingZero:true,
-				DisplayFormat:"<div>%%D%% Days</div><div>%%H%% Hours</div><div>%%M%% Minutes</div><div>%%S%% Seconds</div>",
-				FinishMessage:"Expired",
-				CountActive:true,
-				TargetDate:null
+			autoStart			: true,
+			LeadingZero:true,
+			DisplayFormat:"<div>%%D%% Days</div><div>%%H%% Hours</div><div>%%M%% Minutes</div><div>%%S%% Seconds</div>",
+			FinishMessage:"Expired",
+			CountActive:true,
+			TargetDate:null
 		}, options || {} );
 		if( this.options.TargetDate == null || this.options.TargetDate == '' ){
 			return ;
@@ -29,51 +29,51 @@
 			ddiff = new Date(dnow-dthen);
 		}
 		else {
-			 ddiff = new Date(dthen-dnow);
+			ddiff = new Date(dthen-dnow);
 		}
-		gsecs = Math.floor(ddiff.valueOf()/1000); 
+		gsecs = Math.floor(ddiff.valueOf()/1000);
 		this.CountBack(gsecs, this);
 
 	};
-	 $.lofCountDown.fn =  $.lofCountDown.prototype;
-     $.lofCountDown.fn.extend =  $.lofCountDown.extend = $.extend;
-	 $.lofCountDown.fn.extend({
+	$.lofCountDown.fn =  $.lofCountDown.prototype;
+	$.lofCountDown.fn.extend =  $.lofCountDown.extend = $.extend;
+	$.lofCountDown.fn.extend({
 		calculateDate:function( secs, num1, num2 ){
-			  var s = ((Math.floor(secs/num1))%num2).toString();
-			  if ( this.options.LeadingZero && s.length < 2) {
-					s = "0" + s;
-			  }
-			  return "<b>" + s + "</b>";
+			var s = ((Math.floor(secs/num1))%num2).toString();
+			if ( this.options.LeadingZero && s.length < 2) {
+				s = "0" + s;
+			}
+			return "<b>" + s + "</b>";
 		},
 		CountBack:function( secs, self ){
-			 if (secs < 0) {
+			if (secs < 0) {
 				self.element.innerHTML = '<div class="lof-labelexpired"> '+self.options.FinishMessage+"</div>";
 				return;
-			  }
-			  clearInterval(self.timer);
-			  DisplayStr = self.options.DisplayFormat.replace(/%%D%%/g, self.calculateDate( secs,86400,100000) );
-			  DisplayStr = DisplayStr.replace(/%%H%%/g, self.calculateDate(secs,3600,24));
-			  DisplayStr = DisplayStr.replace(/%%M%%/g, self.calculateDate(secs,60,60));
-			  DisplayStr = DisplayStr.replace(/%%S%%/g, self.calculateDate(secs,1,60));
-			  self.element.innerHTML = DisplayStr;
-			  if (self.options.CountActive) {
-				   self.timer = null;
-				 self.timer =  setTimeout( function(){
-					self.CountBack((secs+self.CountStepper),self);			
+			}
+			clearInterval(self.timer);
+			DisplayStr = self.options.DisplayFormat.replace(/%%D%%/g, self.calculateDate( secs,86400,100000) );
+			DisplayStr = DisplayStr.replace(/%%H%%/g, self.calculateDate(secs,3600,24));
+			DisplayStr = DisplayStr.replace(/%%M%%/g, self.calculateDate(secs,60,60));
+			DisplayStr = DisplayStr.replace(/%%S%%/g, self.calculateDate(secs,1,60));
+			self.element.innerHTML = DisplayStr;
+			if (self.options.CountActive) {
+				self.timer = null;
+				self.timer =  setTimeout( function(){
+					self.CountBack((secs+self.CountStepper),self);
 				},( self.SetTimeOutPeriod ) );
-			 }
+			}
 		}
-					
+
 	});
 	$(document).ready(function(){
 		$('[data-countdown="countdown"]').each(function(index, el) {
-            var $this = $(this);
-            var $date = $this.data('date').split("-");
-            $this.lofCountDown({
-                TargetDate:$date[0]+"/"+$date[1]+"/"+$date[2]+" "+$date[3]+":"+$date[4]+":"+$date[5],
-                DisplayFormat:"<div class=\"countdown-times\"><div class=\"day\">%%D%% Days </div><div class=\"hours\">%%H%% Hours </div><div class=\"minutes\">%%M%% Mins </div><div class=\"seconds\">%%S%% Secs </div></div>",
-                FinishMessage: "Expired"
-            });
-        });
+			var $this = $(this);
+			var $date = $this.data('date').split("-");
+			$this.lofCountDown({
+				TargetDate:$date[0]+"/"+$date[1]+"/"+$date[2]+" "+$date[3]+":"+$date[4]+":"+$date[5],
+				DisplayFormat:"<div class=\"countdown-times\"><div class=\"day\">%%D%% Days </div><div class=\"hours\">%%H%% Hours </div><div class=\"minutes\">%%M%% Mins </div><div class=\"seconds\">%%S%% Secs </div></div>",
+				FinishMessage: "Expired"
+			});
+		});
 	});
 })(jQuery)
