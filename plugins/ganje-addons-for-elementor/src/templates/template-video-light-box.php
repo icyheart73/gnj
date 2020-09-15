@@ -25,6 +25,7 @@ if ($url != '') {
         $data_config = '{"width":' . $settings['width'] . ',"height":' . $settings['height'] . '}';
         $color = $settings['color'];
         ?>
+        <div class="ganje-video-frame">
         <div class="gnje-wrap-content-video">
             <a href="<?php echo esc_url($url) ?>"
                class="gnje-video-button <?php echo esc_attr($settings['button_type']); ?>"
@@ -48,11 +49,13 @@ if ($url != '') {
                 printf('<div class="gnje-description" %s>%s</div>', $this->get_render_attribute_string('des'), $settings['des']);
             ?>
         </div>
+        </div>
     </div>
     <?php
 }
-if($aparat_url!=''){
-
-    echo $aparat_url;
+if($aparat_url!=''){?>
+<div class="ganje-video-frame">
+    <?=$aparat_url; ?>
+</div>
+<?php
 }
-

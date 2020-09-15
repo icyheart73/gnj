@@ -50,8 +50,8 @@ function set_product_cookie(){
             }
             $cookieCat = implode(',', $cookieCat);
             setcookie("ProductCookie", $cookieCat, time() + (86400 * 30), COOKIEPATH, COOKIE_DOMAIN);
-        }
 
+        }
 
 }
 

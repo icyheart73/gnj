@@ -36,6 +36,7 @@ final class GanjeCountDown extends GanjeWidgetBase
         return 'cs-font ganje-icon-clock-3';
     }
 
+
     /**
      * Register controls
      */
@@ -50,22 +51,29 @@ final class GanjeCountDown extends GanjeWidgetBase
             'type' => Controls_Manager::DATE_TIME,
             'description' => 'تاریخ و زمان پایان شمارش',
         ]);
+
+
+        $this->add_control('title', [
+            'label' => 'عنوان',
+            'type' => Controls_Manager::TEXT,
+            'description' => 'عنوان شمارنده را وارد کنید',
+        ]);
         $this->add_control(
             'align',
             [
-                'label' => __( 'Alignment', 'elementor' ),
+                'label' => 'چیدمان',
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left'    => [
-                        'title' => __( 'Left', 'elementor' ),
+                        'title' => 'چپ',
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => __( 'Center', 'elementor' ),
+                        'title' => 'وسط',
                         'icon' => 'fa fa-align-center',
                     ],
                     'right' => [
-                        'title' => __( 'Right', 'elementor' ),
+                        'title' => 'راست',
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
@@ -75,12 +83,6 @@ final class GanjeCountDown extends GanjeWidgetBase
                 ],
             ]
         );
-
-        $this->add_control('css_class', [
-            'label' => 'کلاس HTML سفارشی',
-            'type' => Controls_Manager::TEXT,
-            'description' => 'می توانید یک کلاس سفارشی HTML را به عنصر اضافه نمایید',
-        ]);
         $this->end_controls_section();
 	    $this->start_controls_section('normal_style_settings', [
 		    'label' => 'سبک نمایش',
@@ -104,6 +106,7 @@ final class GanjeCountDown extends GanjeWidgetBase
 	    $this->add_control('color', [
 		    'label' => 'رنگ',
 		    'type' => Controls_Manager::COLOR,
+            'default' => '#fff',
 		    'selectors' => [
 			    '{{WRAPPER}} .gnje-countdown .countdown-times > div' => 'color: {{COLOR}};',
 		    ],
@@ -111,6 +114,7 @@ final class GanjeCountDown extends GanjeWidgetBase
 	    $this->add_control('color_count', [
 		    'label' => 'رنگ شمارش گر',
 		    'type' => Controls_Manager::COLOR,
+            'default' => '#fff',
 		    'selectors' => [
 			    '{{WRAPPER}} .gnje-countdown .countdown-times > div b' => 'color: {{COLOR}};',
 		    ],
@@ -119,8 +123,9 @@ final class GanjeCountDown extends GanjeWidgetBase
 	    $this->add_control('bg_color', [
 		    'label' => 'رنگ پس زمینه',
 		    'type' => Controls_Manager::COLOR,
+            'default' => '#FF3E58',
 		    'selectors' => [
-			    '{{WRAPPER}} .gnje-countdown .countdown-times > div' => 'background-color: {{COLOR}};',
+			    '{{WRAPPER}} .gnje-countdown .countdown-times' => 'background-color: {{COLOR}};',
 		    ],
 	    ]);
 
@@ -156,10 +161,12 @@ final class GanjeCountDown extends GanjeWidgetBase
     protected function render()
     {
         $settings = array_merge([ // default settings
-            'date' => '',
+            'date' => '2020-08-11 12:00',
             'css_class' => '',
         ], $this->get_settings_for_display());
+
 
         $this->getViewTemplate('template', 'count-down', $settings);
     }
 }
+

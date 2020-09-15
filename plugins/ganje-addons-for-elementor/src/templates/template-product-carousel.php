@@ -75,7 +75,7 @@ $settings['speed'] ? $settings['speed'] : $settings['speed'] = 3000;
 $product_query = new WP_Query($settings['wc_attr']);
 
 
-$settings['title-desc'] = 'لورم اپیسوم متنی ساختگی بر یااستفاده از عنصر وب';
+
 ?>
 <section class="gnje-product-slider">
 
@@ -103,7 +103,7 @@ $settings['title-desc'] = 'لورم اپیسوم متنی ساختگی بر یا
          data-column="<?php echo $settings['slides_to_show_columns']['size']; ?>"
          data-columnmobile="<?php echo $settings['slides_to_show_columns_mobile']['size']; ?>"
          data-autoplay="<?php echo $settings['autoplay']; ?>">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper" itemscope itemtype="http://schema.org/ItemList">
             <?php
             while ($product_query->have_posts()) : $product_query->the_post(); ?>
             <div <?php wc_product_class('swiper-slide'); ?>>
@@ -171,11 +171,11 @@ $this->admin_editor_js = "<script>(function ($) {
         var column_count = $(this).data('column');
         var column_countMobile = $(this).data('columnmobile');
         var slider_autoplay = $(this).data('autoplay');
-        var brkpnt = {640 : {slidesPerView: column_count, spaceBetween: 20, slidesPerColumn : row_count}};
+        var brkpnt = {640 : {slidesPerView: column_countMobile, spaceBetween: 20, slidesPerColumn : row_countMobile}};
 
         var conf_slider 	= {};
-        conf_slider.slidesPerView = column_countMobile;
-        conf_slider.slidesPerColumn = row_countMobile;
+        conf_slider.slidesPerView = column_count;
+        conf_slider.slidesPerColumn = row_count;
         conf_slider.spaceBetween = 30;
         conf_slider.pagination = {el: '.swiper-pagination',clickable: true,};
         conf_slider.navigation = {nextEl: '.swiper-gnj-next', prevEl: '.swiper-gnj-prev',};
