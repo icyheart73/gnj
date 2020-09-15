@@ -1,32 +1,60 @@
 <?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Ganje
- */
+	// If Single or Archive (Category, Tag, Author or a Date based page)
+	if ( is_single() || is_archive() ) :
+?>
+		</div><!-- /.col -->
 
+		<?php get_sidebar(); ?>
+
+	</div><!-- /.row -->
+<?php
+	endif;
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ganje' ) ); ?>">
+	</main><!-- /#main -->
+
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<p>&copy; <?php echo date( 'Y' ); ?> <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></p>
+				</div>
+				
 				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'ganje' ), 'WordPress' );
+					if ( has_nav_menu( 'footer-menu' ) ) : // see function register_nav_menus() in functions.php
+						/*
+							Loading WordPress Custom Menu (theme_location) ... remove <div> <ul> containers and show only <li> items!!!
+							Menu name taken from functions.php!!! ... register_nav_menu( 'footer-menu', 'Footer Menu' );
+							!!! IMPORTANT: After adding all pages to the menu, don't forget to assign this menu to the Footer menu of "Theme locations" /wp-admin/nav-menus.php (on left side) ... Otherwise the themes will not know, which menu to use!!!
+						*/
+						wp_nav_menu(
+							array(
+								'theme_location'  => 'footer-menu',
+								'container'       => 'nav',
+								'container_class' => 'col-md-6',
+								'fallback_cb'     => '',
+								'items_wrap'      => '<ul class="menu nav justify-content-end">%3$s</ul>',
+								//'fallback_cb'    => 'WP_Bootstrap4_Navwalker_Footer::fallback',
+								'walker'          => new WP_Bootstrap4_Navwalker_Footer(),
+							)
+						);
+					endif;
 				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'ganje' ), 'ganje', '<a href="http://ganje-wp.ir">ganje</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+
+				<?php if ( is_active_sidebar( 'third_widget_area' ) ) : ?>
+					<div class="col-md-12">
+						<?php dynamic_sidebar( 'third_widget_area' ); ?>
+
+						<?php if ( current_user_can( 'manage_options' ) ) : ?>
+							<span class="edit-link"><a href="<?php echo esc_url( admin_url( 'widgets.php' ) ); ?>" class="badge badge-secondary"><?php _e( 'Edit', 'ganje' ); ?></a></span><!-- Show Edit Widget link -->
+						<?php endif; ?>
+					</div>
+				<?php endif; ?>
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</footer><!-- /#footer -->
+	
+</div><!-- /#wrapper -->
 
 <?php wp_footer(); ?>
 

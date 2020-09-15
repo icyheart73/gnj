@@ -1,0 +1,18 @@
+/* Error: Undefined variable.
+ *   ,
+ * 6 |     border-color: $color__border-button;
+ *   |                   ^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   _buttons.scss 6:16  @import
+ *   _forms.scss 1:9     root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a   \2577 \a 6 \2502      border-color: $color__border-button;\d\a   \2502                    ^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   _buttons.scss 6:16  @import\a   _forms.scss 1:9     root stylesheet";
+}

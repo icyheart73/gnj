@@ -1,40 +1,68 @@
 <?php
 /**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package Ganje
+ * The Template for displaying all single posts.
  */
 
-get_header();
+	get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
-		<?php
-		while ( have_posts() ) :
+	<?php
+		if ( have_posts() ) :
+			while ( have_posts() ) :
 			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'ganje' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'ganje' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
-
-			// If comments are open or we have at least one comment, load up the comment template.
+	?>
+		
+		<?php
+			get_template_part( 'content', 'single' );
+			
+			// If comments are open or we have at least one comment, load up the comment template
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;
-
-		endwhile; // End of the loop.
 		?>
+		
+	<?php
+			endwhile;
+		endif;
+		wp_reset_postdata(); // end of the loop.
+	?>
+	
+	<?php
+		$count_posts = wp_count_posts();
 
-	</main><!-- #main -->
+		if ( $count_posts->publish > '1' ) :
+			$next_post = get_next_post();
+			$prev_post = get_previous_post();
+	?>
+		<hr class="mt-5">
+		<div class="post-navigation d-flex justify-content-between">
+			<?php
+				if ( $prev_post ) {
+					$prev_title = get_the_title( $prev_post->ID );
+			?>
+				<div class="pr-3">
+					<a class="previous-post btn btn-lg btn-outline-secondary" href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" title="<?php echo esc_attr( $prev_title ); ?>">
+						<span class="arrow">&larr;</span>
+						<span class="title"><?php echo wp_kses_post( $prev_title ); ?></span>
+					</a>
+				</div>
+			<?php
+				}
+				if ( $next_post ) {
+					$next_title = get_the_title( $next_post->ID );
+			?>
+				<div class="pl-3">
+					<a class="next-post btn btn-lg btn-outline-secondary" href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" title="<?php echo esc_attr( $next_title ); ?>">
+						<span class="title"><?php echo wp_kses_post( $next_title ); ?></span>
+						<span class="arrow">&rarr;</span>
+					</a>
+				</div>
+			<?php
+				}
+			?>
+		</div><!-- /.post-navigation -->
+	<?php
+		endif;
+	?>
 
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer(); ?>

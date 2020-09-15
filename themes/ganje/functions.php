@@ -1,190 +1,478 @@
 <?php
-/**
- * Ganje functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package Ganje
- */
 
-if ( ! defined( '_S_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+require_once get_template_directory().'/inc/init.php';
+require_once get_template_directory().'/inc/class-single-woocommerce.php';
+
+/**
+ * Include Theme Customizer
+ *
+ * @since v1.0
+ */
+$theme_customizer = get_template_directory() . '/inc/customizer.php';
+if ( is_readable( $theme_customizer ) ) {
+	require_once $theme_customizer;
 }
-if ( ! function_exists( 'ganje_setup' ) ) :
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 */
-	function ganje_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Ganje, use a find and replace
-		 * to change 'ganje' to the name of your theme in all the template files.
-		 */
+
+
+/**
+ * Include Support for wordpress.com-specific functions.
+ * 
+ * @since v1.0
+ */
+$theme_wordpresscom = get_template_directory() . '/inc/wordpresscom.php';
+if ( is_readable( $theme_wordpresscom ) ) {
+	require_once $theme_wordpresscom;
+}
+
+
+/**
+ * Set the content width based on the theme's design and stylesheet
+ *
+ * @since v1.0
+ */
+if ( ! isset( $content_width ) ) {
+	$content_width = 800;
+}
+
+
+/**
+ * General Theme Settings
+ *
+ * @since v1.0
+ */
+if ( ! function_exists( 'ganje_setup_theme' ) ) :
+	function ganje_setup_theme() {
+
+		// Make theme available for translation: Translations can be filed in the /languages/ directory
 		load_theme_textdomain( 'ganje', get_template_directory() . '/languages' );
 
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
-
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
+		// Theme Support
 		add_theme_support( 'title-tag' );
-
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
+		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'html5', array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+			'script',
+			'style',
+		) );
 
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(
-			array(
-				'menu-1' => esc_html__( 'Primary', 'ganje' ),
-			)
-		);
+		// Add support for Block Styles.
+		add_theme_support( 'wp-block-styles' );
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
+		// Add support for editor styles.
+		add_theme_support( 'editor-styles' );
+		// Enqueue editor styles.
+		add_editor_style( 'style-editor.css' );
 
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
-		add_theme_support(
-			'html5',
-			array(
-				'search-form',
-				'comment-form',
-				'comment-list',
-				'gallery',
-				'caption',
-				'style',
-				'script',
-			)
-		);
+		// Default Attachment Display Settings
+		update_option( 'image_default_align', 'none' );
+		update_option( 'image_default_link_type', 'none' );
+		update_option( 'image_default_size', 'large' );
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'ganje_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
-		);
+		// Custom CSS-Styles of Wordpress Gallery
+		add_filter( 'use_default_gallery_style', '__return_false' );
 
-		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
+	}
+	add_action( 'after_setup_theme', 'ganje_setup_theme' );
+endif;
 
+
+/**
+ * Fire the wp_body_open action.
+ *
+ * Added for backwards compatibility to support pre 5.2.0 WordPress versions.
+ *
+ * @since v2.2
+ */
+if ( ! function_exists( 'wp_body_open' ) ) :
+	function wp_body_open() {
 		/**
-		 * Add support for core custom logo.
+		 * Triggered after the opening <body> tag.
 		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
+		 * @since v2.2
 		 */
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 250,
-				'width'       => 250,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-		);
+		do_action( 'wp_body_open' );
 	}
 endif;
-add_action( 'after_setup_theme', 'ganje_setup' );
+
 
 /**
- * Set the content width in pixels, based on the theme's design and stylesheet.
+ * Add new User fields to Userprofile
  *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
+ * @since v1.0
  */
-function ganje_content_width() {
-	// This variable is intended to be overruled from themes.
-	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'ganje_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'ganje_content_width', 0 );
+if ( ! function_exists( 'ganje_add_user_fields' ) ) :
+	function ganje_add_user_fields( $fields ) {
+		// Add new fields
+		$fields['facebook_profile'] = 'Facebook URL';
+		$fields['twitter_profile']  = 'Twitter URL';
+		$fields['linkedin_profile'] = 'LinkedIn URL';
+		$fields['xing_profile']     = 'Xing URL';
+		$fields['github_profile']   = 'GitHub URL';
+
+		return $fields;
+	}
+	add_filter( 'user_contactmethods', 'ganje_add_user_fields' ); // get_user_meta( $user->ID, 'facebook_profile', true );
+endif;
+
 
 /**
- * Register widget area.
+ * Test if a page is a blog page
+ * if ( is_blog() ) { ... }
  *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ * @since v1.0
+ */
+function is_blog() {
+	global $post;
+	$posttype = get_post_type( $post );
+
+	return ( ( is_archive() || is_author() || is_category() || is_home() || is_single() || ( is_tag() && ( 'post' === $posttype ) ) ) ? true : false );
+}
+
+
+/**
+ * Get the page number
+ *
+ * @since v1.0
+ */
+function get_page_number() {
+	if ( get_query_var( 'paged' ) ) {
+		print ' | ' . __( 'Page ' , 'ganje') . get_query_var( 'paged' );
+	}
+}
+
+
+/**
+ * Disable comments for Media (Image-Post, Jetpack-Carousel, etc.)
+ *
+ * @since v1.0
+ */
+function ganje_filter_media_comment_status( $open, $post_id = null ) {
+	$media_post = get_post( $post_id );
+	if ( 'attachment' === $media_post->post_type ) {
+		return false;
+	}
+	return $open;
+}
+add_filter( 'comments_open', 'ganje_filter_media_comment_status', 10, 2 );
+
+
+/**
+ * Style Edit buttons as badges: http://getbootstrap.com/components/#badges
+ *
+ * @since v1.0
+ */
+function ganje_custom_edit_post_link( $output ) {
+	$output = str_replace( 'class="post-edit-link"', 'class="post-edit-link badge badge-secondary"', $output );
+	return $output;
+}
+add_filter( 'edit_post_link', 'ganje_custom_edit_post_link' );
+
+function ganje_custom_edit_comment_link( $output ) {
+	$output = str_replace( 'class="comment-edit-link"', 'class="comment-edit-link badge badge-secondary"', $output );
+	return $output;
+}
+add_filter( 'edit_comment_link', 'ganje_custom_edit_comment_link' );
+
+
+/**
+ * Responsive oEmbed filter: http://getbootstrap.com/components/#responsive-embed
+ *
+ * @since v1.0
+ */
+function ganje_oembed_filter( $html ) {
+	$return = '<div class="embed-responsive embed-responsive-16by9">' . $html . '</div>';
+	return $return;
+}
+add_filter( 'embed_oembed_html', 'ganje_oembed_filter', 10, 4 );
+
+
+if ( ! function_exists( 'ganje_content_nav' ) ) :
+	/**
+	 * Display a navigation to next/previous pages when applicable
+	 *
+	 * @since v1.0
+	 */
+	function ganje_content_nav( $nav_id ) {
+		global $wp_query;
+
+		if ( $wp_query->max_num_pages > 1 ) :
+	?>
+			<div id="<?php echo $nav_id; ?>" class="d-flex mb-4 justify-content-between">
+				<div><?php next_posts_link( '<span aria-hidden="true">&larr;</span> ' . __( 'Older posts', 'ganje' ) ); ?></div>
+				<div><?php previous_posts_link( __( 'Newer posts', 'ganje' ) . ' <span aria-hidden="true">&rarr;</span>' ); ?></div>
+			</div><!-- /.d-flex -->
+	<?php
+		else :
+			echo '<div class="clearfix"></div>';
+		endif;
+	}
+
+	// Add Class
+	function posts_link_attributes() {
+		return 'class="btn btn-secondary btn-lg"';
+	}
+	add_filter( 'next_posts_link_attributes', 'posts_link_attributes' );
+	add_filter( 'previous_posts_link_attributes', 'posts_link_attributes' );
+
+endif;
+
+
+/**
+ * Init Widget areas in Sidebar
+ *
+ * @since v1.0
  */
 function ganje_widgets_init() {
+	// Area 1
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'ganje' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'ganje' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'name'          => 'Primary Widget Area (Sidebar)',
+			'id'            => 'primary_widget_area',
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+
+	// Area 2
+	register_sidebar(
+		array(
+			'name'          => 'Secondary Widget Area (Header Navigation)',
+			'id'            => 'secondary_widget_area',
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+
+	// Area 3
+	register_sidebar(
+		array(
+			'name'          => 'Third Widget Area (Footer)',
+			'id'            => 'third_widget_area',
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 		)
 	);
 }
 add_action( 'widgets_init', 'ganje_widgets_init' );
 
-/**
- * Enqueue scripts and styles.
- */
-function ganje_scripts() {
-	wp_enqueue_style( 'ganje-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'ganje-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'ganje-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+if ( ! function_exists( 'ganje_article_posted_on' ) ) :
+	/**
+	 * "Theme posted on" pattern
+	 *
+	 * @since v1.0
+	 */
+	function ganje_article_posted_on() {
+		printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author-meta vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'ganje' ),
+			esc_url( get_the_permalink() ),
+			esc_attr( get_the_date() . ' - ' . get_the_time() ),
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() . ' - ' . get_the_time() ),
+			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+			esc_attr( sprintf( __( 'View all posts by %s', 'ganje' ), get_the_author() ) ),
+			get_the_author()
+		);
 
-	wp_enqueue_script( 'ganje-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
 	}
+endif;
+
+
+/**
+ * Template for Password protected post form
+ *
+ * @since v1.0
+ */
+function ganje_password_form() {
+	global $post;
+	$label = 'pwbox-' . ( empty( $post->ID ) ? rand() : $post->ID );
+
+	$output = '<div class="row">';
+		$output .= '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">';
+		$output .= '<h4 class="col-md-12 alert alert-warning">' . __( 'This content is password protected. To view it please enter your password below.', 'ganje' ) . '</h4>';
+			$output .= '<div class="col-md-6">';
+				$output .= '<div class="input-group">';
+					$output .= '<input type="password" name="post_password" id="' . $label . '" placeholder="' . __( 'Password', 'ganje' ) . '" class="form-control" />';
+					$output .= '<div class="input-group-append"><input type="submit" name="submit" class="btn btn-primary" value="' . esc_attr( __( 'Submit', 'ganje' ) ) . '" /></div>';
+				$output .= '</div><!-- /.input-group -->';
+			$output .= '</div><!-- /.col -->';
+		$output .= '</form>';
+	$output .= '</div><!-- /.row -->';
+	return $output;
 }
-add_action( 'wp_enqueue_scripts', 'ganje_scripts' );
+add_filter( 'the_password_form', 'ganje_password_form' );
+
+
+if ( ! function_exists( 'ganje_comment' ) ) :
+	/**
+	 * Style Reply link
+	 *
+	 * @since v1.0
+	 */
+	function ganje_replace_reply_link_class( $class ) {
+		$output = str_replace( "class='comment-reply-link", "class='comment-reply-link btn btn-outline-secondary", $class );
+		return $output;
+	}
+	add_filter( 'comment_reply_link', 'ganje_replace_reply_link_class' );
+
+	/**
+	 * Template for comments and pingbacks:
+	 * add function to comments.php ... wp_list_comments( array( 'callback' => 'ganje_comment' ) );
+	 *
+	 * @since v1.0
+	 */
+	function ganje_comment( $comment, $args, $depth ) {
+		$GLOBALS['comment'] = $comment;
+		switch ( $comment->comment_type ) :
+			case 'pingback':
+			case 'trackback':
+	?>
+		<li class="post pingback">
+			<p><?php _e( 'Pingback:', 'ganje' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'ganje' ), '<span class="edit-link">', '</span>' ); ?></p>
+	<?php
+				break;
+			default:
+	?>
+		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+			<article id="comment-<?php comment_ID(); ?>" class="comment">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<?php
+							$avatar_size = ( '0' !== $comment->comment_parent ? 68 : 136 );
+							echo get_avatar( $comment, $avatar_size );
+
+							/* translators: 1: comment author, 2: date and time */
+							printf( __( '%1$s, %2$s', 'ganje' ),
+								sprintf( '<span class="fn">%s</span>', get_comment_author_link() ),
+								sprintf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
+									esc_url( get_comment_link( $comment->comment_ID ) ),
+									get_comment_time( 'c' ),
+									/* translators: 1: date, 2: time */
+									sprintf( __( '%1$s ago', 'ganje' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) )
+								)
+							);
+						?>
+
+						<?php
+							edit_comment_link( __( 'Edit', 'ganje' ), '<span class="edit-link">', '</span>' );
+						?>
+					</div><!-- .comment-author .vcard -->
+
+					<?php if ( '0' === $comment->comment_approved ) : ?>
+						<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'ganje' ); ?></em>
+						<br />
+					<?php endif; ?>
+
+				</footer>
+
+				<div class="comment-content"><?php comment_text(); ?></div>
+
+				<div class="reply">
+					<?php
+						comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'ganje' ) . ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) );
+					?>
+				</div><!-- .reply -->
+			</article><!-- #comment-## -->
+
+		<?php
+				break;
+		endswitch;
+
+	}
+
+	/**
+	 * Custom Comment form
+	 *
+	 * @since v1.0
+	 * @since v1.1: Added 'submit_button' and 'submit_field'
+	 * @since v2.0.2: Added '$consent' and 'cookies'
+	 */
+	function ganje_custom_commentform( $args = array(), $post_id = null ) {
+		if ( null === $post_id ) {
+			$post_id = get_the_ID();
+		}
+
+		$commenter     = wp_get_current_commenter();
+		$user          = wp_get_current_user();
+		$user_identity = $user->exists() ? $user->display_name : '';
+
+		$args = wp_parse_args( $args );
+
+		$req      = get_option( 'require_name_email' );
+		$aria_req = ( $req ? " aria-required='true' required" : '' );
+		$consent  = ( empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"' );
+		$fields   = array(
+			'author'  => '<div class="form-group"><label for="author">' . __( 'Name', 'ganje' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' . 
+						'<input type="text" id="author" name="author" class="form-control" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' /></div>',
+			'email'   => '<div class="form-group"><label for="email">' . __( 'Email', 'ganje' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' . 
+						'<input type="email" id="email" name="email" class="form-control" value="' . esc_attr( $commenter['comment_author_email'] ) . '"' . $aria_req . ' /></div>',
+			'url'     => '',
+			'cookies' => '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' /> ' .
+							'<label for="wp-comment-cookies-consent">' . __( 'Save my name, email, and website in this browser for the next time I comment.', 'ganje' ) . '</label></p>',
+		);
+
+		$fields = apply_filters( 'comment_form_default_fields', $fields );
+		$defaults = array(
+			'fields'               => $fields,
+			'comment_field'        => '<div class="form-group"><textarea id="comment" name="comment" class="form-control" aria-required="true" required placeholder="' . __( 'Comment', 'ganje' ) . ( $req ? '*' : '' ) . '"></textarea></div>',
+			/** This filter is documented in wp-includes/link-template.php */
+			'must_log_in'          => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'ganje' ), wp_login_url( apply_filters( 'the_permalink', get_the_permalink( get_the_ID() ) ) ) ) . '</p>',
+			/** This filter is documented in wp-includes/link-template.php */
+			'logged_in_as'         => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'ganje' ), get_edit_user_link(), $user->display_name, wp_logout_url( apply_filters( 'the_permalink', get_the_permalink( get_the_ID() ) ) ) ) . '</p>',
+			'comment_notes_before' => '',
+			'comment_notes_after'  => '<p class="small comment-notes">' . __( 'Your Email address will not be published.', 'ganje' ) . '</p>',
+			'id_form'              => 'commentform',
+			'id_submit'            => 'submit',
+			'class_submit'         => 'btn btn-primary',
+			'name_submit'          => 'submit',
+			'title_reply'          => '',
+			'title_reply_to'       => __( 'Leave a Reply to %s', 'ganje' ),
+			'cancel_reply_link'    => __( 'Cancel reply', 'ganje' ),
+			'label_submit'         => __( 'Post Comment', 'ganje' ),
+			'submit_button'        => '<input type="submit" id="%2$s" name="%1$s" class="%3$s" value="%4$s" />',
+			'submit_field'         => '<div class="form-submit">%1$s %2$s</div>',
+			'format'               => 'html5',
+		);
+
+		return $defaults;
+	}
+	add_filter( 'comment_form_defaults', 'ganje_custom_commentform' );
+
+endif;
+
 
 /**
- * Implement the Custom Header feature.
+ * Nav menus
+ *
+ * @since v1.0
  */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
+if ( function_exists( 'register_nav_menus' ) ) {
+	register_nav_menus(
+		array(
+			'main-menu'   => 'Main Navigation Menu',
+			'footer-menu' => 'Footer Menu',
+		)
+	);
 }
 
-/**
- * Load WooCommerce compatibility file.
- */
-if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/inc/woocommerce.php';
+// Custom Nav Walker: wp_bootstrap4_navwalker()
+$custom_walker = get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
+if ( is_readable( $custom_walker ) ) {
+	require_once $custom_walker;
+}
+
+$custom_walker_footer = get_template_directory() . '/inc/wp_bootstrap_navwalker_footer.php';
+if ( is_readable( $custom_walker_footer ) ) {
+	require_once $custom_walker_footer;
 }

@@ -1,53 +1,36 @@
 <?php
 /**
- * The template for displaying search results pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package Ganje
+ * The Template for displaying Search Results pages.
  */
 
-get_header();
+	get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<?php if ( have_posts() ) : ?>
+		
+		<header class="page-header">
+			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'ganje' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+		</header>
 
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'ganje' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
+		<?php
+			get_template_part( 'archive', 'loop' );
 		?>
-
-	</main><!-- #main -->
-
-<?php
-get_sidebar();
-get_footer();
+	
+	<?php else : ?>
+	
+		<article id="post-0" class="post no-results not-found">
+			<header class="entry-header">
+				<h1 class="entry-title"><?php _e( 'Nothing Found', 'ganje' ); ?></h1>
+			</header><!-- .entry-header -->
+			
+			<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'ganje' ); ?></p>
+			
+			<?php get_search_form(); ?>
+		</article><!-- /#post-0 -->
+	
+	<?php
+		endif;
+		wp_reset_postdata(); // end of the loop.
+	?>
+	
+<?php get_footer(); ?>

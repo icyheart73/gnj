@@ -1,51 +1,41 @@
 <?php
 /**
- * The template for displaying archive pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Ganje
+ * The Template for displaying Archive pages.
  */
 
-get_header();
+	get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<?php if ( have_posts() ) : ?>
 
-		<?php if ( have_posts() ) : ?>
+		<header class="page-header">
+			<h1 class="page-title">
+				<?php if ( is_day() ) : ?>
+					<?php printf( __( 'Daily Archives: %s', 'ganje' ), '<span>' . get_the_date() . '</span>' ); ?>
+				<?php elseif ( is_month() ) : ?>
+					<?php printf( __( 'Monthly Archives: %s', 'ganje' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'ganje' ) ) . '</span>' ); ?>
+				<?php elseif ( is_year() ) : ?>
+					<?php printf( __( 'Yearly Archives: %s', 'ganje' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'ganje' ) ) . '</span>' ); ?>
+				<?php else : ?>
+					<?php _e( 'Blog Archives', 'ganje' ); ?>
+				<?php endif; ?>
+			</h1>
+		</header>
 
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
+		<?php
+			get_template_part( 'archive', 'loop' );
 		?>
 
-	</main><!-- #main -->
+	<?php else : ?>
 
-<?php
-get_sidebar();
-get_footer();
+		<?php
+			// 404
+			get_template_part( 'content', 'none' );
+		?>
+
+	<?php
+		endif;
+		wp_reset_postdata(); // end of the loop.
+	?>
+
+<?php get_footer(); ?>
