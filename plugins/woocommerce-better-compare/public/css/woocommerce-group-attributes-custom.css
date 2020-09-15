@@ -1,0 +1,9 @@
+.shop_attributes tr, .shop_attributes tr td { 
+					background-color:  !important;
+					color:  !important;
+				} 
+				.shop_attributes tr.alt, .shop_attributes tr.alt td { 
+					background-color:  !important;
+					color:  !important;
+				}
+				
