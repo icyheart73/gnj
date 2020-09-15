@@ -1,1 +1,0 @@
-<?php /** @var string $product_shortlink */ ?>

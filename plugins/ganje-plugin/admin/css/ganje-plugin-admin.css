@@ -103,34 +103,3 @@ div[id*="gnj"] .widget-top .widget-action .toggle-indicator::before {
 div[id*="gnj"] .widget-inside {
     border-width: 0 0 3px 0;
 }
-
-.field-custom.description.description-wide.iconbox {
-    width: calc(100% - 45px);
-    height: 250px;
-    display: flex;
-    flex-wrap: wrap;
-    overflow-y: scroll;
-    padding: 15px;
-    margin-top: 10px;
-    margin-bottom: 25px;
-    border: 1px solid #cacaca;
-}
-
-.field-custom.description.description-wide.iconbox i {
-    display: inline-block;
-    padding: 6px;
-    font-size: 20px;
-    text-align: center;
-    width: 25px;
-    transition-duration: 0.3s;
-    box-sizing: content-box;
-}
-
-.field-custom.description.description-wide.iconbox i.active {
-    background-color: #f2f2f2;
-}
-
-.field-custom.description.description-wide.iconbox i:hover {
-    transform: scale(1.3);
-    background-color: #f2f2f2;
-}
